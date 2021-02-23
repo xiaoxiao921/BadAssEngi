@@ -32,6 +32,8 @@ namespace BadAssEngi.Skills.Secondary.OrbitalStrike
             _onClientChangeSceneHook = new Hook(typeof(NetworkManager).GetMethodCached("ClientChangeScene"),
                 typeof(OrbitalHooks).GetMethodCached("KeepOrbitalCdClientScene"));
             _origClientChangeScene = _onClientChangeSceneHook.GenerateTrampoline<DClientChangeScene>();
+
+            On.RoR2.TeleportOutController.AddTPOutEffect += KeepOrbitalCd;
         }
 
         private static void OrbitalStrikeMineDoNotStick(On.RoR2.Projectile.ProjectileStickOnImpact.orig_Detach orig, ProjectileStickOnImpact self)
@@ -70,11 +72,18 @@ namespace BadAssEngi.Skills.Secondary.OrbitalStrike
             _origClientChangeScene(instance, newSceneName, forceReload);
         }
 
+        private static void KeepOrbitalCd(On.RoR2.TeleportOutController.orig_AddTPOutEffect orig, CharacterModel characterModel, float beginAlpha, float endAlpha, float duration)
+        {
+            TryRestoringOrbitalCd();
+
+            orig(characterModel, beginAlpha, endAlpha, duration);
+        }
+
         private static void TryRestoringOrbitalCd()
         {
-            if (LocalUserManager.readOnlyLocalUsersList.Count > 0)
+            foreach (var localUser in LocalUserManager.readOnlyLocalUsersList)
             {
-                var nu = LocalUserManager.GetFirstLocalUser().currentNetworkUser;
+                var nu = localUser.currentNetworkUser;
                 if (nu)
                 {
                     var body = nu.GetCurrentBody();
