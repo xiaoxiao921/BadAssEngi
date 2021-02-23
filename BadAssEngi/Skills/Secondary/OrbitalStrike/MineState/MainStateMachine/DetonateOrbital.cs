@@ -1,4 +1,5 @@
 ﻿using BadAssEngi.Assets;
+using BadAssEngi.Assets.Sound;
 using EntityStates.Engi.Mine;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -14,7 +15,8 @@ namespace BadAssEngi.Skills.Secondary.OrbitalStrike.MineState.MainStateMachine
 		public override void OnEnter()
 		{
 			base.OnEnter();
-			if (NetworkServer.active)
+            AkSoundEngine.PostEvent(SoundHelper.OrbitalStrikeSound, outer.gameObject);
+            if (NetworkServer.active)
 			{
 				Explode();
 			}
