@@ -142,22 +142,25 @@ namespace BadAssEngi
                     {
                         if (NetworkServer.active)
                         {
-                            var deployableInfos = LocalUserManager.GetFirstLocalUser().currentNetworkUser.master
+                            var deployableInfos = networkUser.master
                                 .deployablesList;
 
                             if (deployableInfos != null && deployableInfos.Count >= 1)
                             {
                                 foreach (var deployableInfo in deployableInfos)
                                 {
-                                    if (deployableInfo.slot == DeployableSlot.EngiMine &&
-                                        !deployableInfo.deployable.GetComponent<RecursiveMine>())
+                                    if (deployableInfo.slot == DeployableSlot.EngiMine)
                                     {
-                                        EntityStateMachine
+                                        var isSatchel = body.skillLocator && body.skillLocator.secondary.skillDef == SkillLoader.SatchelMineSkillDef;
+                                        if (isSatchel)
+                                        {
+                                            EntityStateMachine
                                             .FindByCustomName(deployableInfo.deployable.gameObject, "Arming")
                                             .SetNextState(new MineArmingFullSatchel());
-                                        EntityStateMachine
-                                            .FindByCustomName(deployableInfo.deployable.gameObject, "Main")
-                                            .SetNextState(new DetonateSatchel());
+                                            EntityStateMachine
+                                                .FindByCustomName(deployableInfo.deployable.gameObject, "Main")
+                                                .SetNextState(new DetonateSatchel());
+                                        }
                                     }
                                 }
                             }
