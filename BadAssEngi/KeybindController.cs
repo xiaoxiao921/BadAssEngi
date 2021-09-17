@@ -151,7 +151,10 @@ namespace BadAssEngi
                                 {
                                     if (deployableInfo.slot == DeployableSlot.EngiMine)
                                     {
-                                        var isSatchel = body.skillLocator && body.skillLocator.secondary.skillDef == SkillLoader.SatchelMineSkillDef;
+                                        var isSatchel =
+                                            body.skillLocator &&
+                                            body.skillLocator.secondary.skillDef == SkillLoader.SatchelMineSkillDef &&
+                                            !deployableInfo.deployable.GetComponent<RecursiveMine>();
                                         if (isSatchel)
                                         {
                                             EntityStateMachine
