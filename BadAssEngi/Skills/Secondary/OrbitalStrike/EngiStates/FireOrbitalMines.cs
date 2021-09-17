@@ -55,7 +55,7 @@ namespace BadAssEngi.Skills.Secondary.OrbitalStrike.EngiStates
                 return;
             }
 
-            var goodState = (FireMines)Instantiate(typeof(FireMines));
+			var goodState = new FireMines();
 
             _effectPrefab = FireMines.effectPrefab;
 

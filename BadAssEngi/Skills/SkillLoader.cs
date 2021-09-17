@@ -37,6 +37,7 @@ namespace BadAssEngi.Skills
         internal static int SwappableGrenadeSkillVariant;
         internal static int SeekerSwarmSkillVariant;
         
+        internal static int SatchelMineSkillVariant;
         internal static int SwappableMineSkillVariant;
         internal static int OrbitalStrikeSkillVariant;
 
@@ -79,6 +80,9 @@ namespace BadAssEngi.Skills
             var skills = _engiSkillLocator.secondary._skillFamily.variants
                 .Select(variant => variant.skillDef).ToList();
 
+            SatchelMineSkillVariant = 0;
+            skills[SatchelMineSkillVariant] = SatchelMineSkillDef;
+
             SwappableMineSkillVariant = skills.Count;
             skills.Add(SwappableMineSkillDef);
 
@@ -118,13 +122,11 @@ namespace BadAssEngi.Skills
             ChargeSeekerMissileSkillDef.baseRechargeInterval = 0;
             ChargeSeekerMissileSkillDef.baseMaxStock = 1;
             ChargeSeekerMissileSkillDef.rechargeStock = 1;
-            ChargeSeekerMissileSkillDef.isBullets = false;
-            ChargeSeekerMissileSkillDef.shootDelay = 0.1f;
             ChargeSeekerMissileSkillDef.beginSkillCooldownOnSkillEnd = false;
             ChargeSeekerMissileSkillDef.requiredStock = 1;
             ChargeSeekerMissileSkillDef.stockToConsume = 1;
             ChargeSeekerMissileSkillDef.isCombatSkill = true;
-            ChargeSeekerMissileSkillDef.noSprint = true;
+            ChargeSeekerMissileSkillDef.cancelSprintingOnActivation = true;
             ChargeSeekerMissileSkillDef.canceledFromSprinting = false;
             ChargeSeekerMissileSkillDef.mustKeyPress = false;
             ChargeSeekerMissileSkillDef.icon = BaeAssets.IconMissileM1;
@@ -149,13 +151,11 @@ namespace BadAssEngi.Skills
             ChargeSwappableGrenadesSkillDef.baseRechargeInterval = 0;
             ChargeSwappableGrenadesSkillDef.baseMaxStock = 1;
             ChargeSwappableGrenadesSkillDef.rechargeStock = 1;
-            ChargeSwappableGrenadesSkillDef.isBullets = false;
-            ChargeSwappableGrenadesSkillDef.shootDelay = 0.1f;
             ChargeSwappableGrenadesSkillDef.beginSkillCooldownOnSkillEnd = false;
             ChargeSwappableGrenadesSkillDef.requiredStock = 1;
             ChargeSwappableGrenadesSkillDef.stockToConsume = 1;
             ChargeSwappableGrenadesSkillDef.isCombatSkill = true;
-            ChargeSwappableGrenadesSkillDef.noSprint = true;
+            ChargeSwappableGrenadesSkillDef.cancelSprintingOnActivation = true;
             ChargeSwappableGrenadesSkillDef.canceledFromSprinting = false;
             ChargeSwappableGrenadesSkillDef.mustKeyPress = false;
             ChargeSwappableGrenadesSkillDef.icon = BaeAssets.IconSwappableGrenades;
@@ -168,7 +168,6 @@ namespace BadAssEngi.Skills
             SwappableMineSkillDef.requiredStock = 1;
             SwappableMineSkillDef.stockToConsume = 1;
             SwappableMineSkillDef.fullRestockOnAssign = false;
-            SwappableMineSkillDef.shootDelay = 0.3f;
             SwappableMineSkillDef.skillName = "SwappableMine";
 
             SwappableMineSkillDef.skillNameToken = "Cluster and Satchel Pressured Mines";
@@ -191,11 +190,10 @@ namespace BadAssEngi.Skills
             SwappableMineSkillDef.baseRechargeInterval = Configuration.ClusterMineCooldown.Value;
             SwappableMineSkillDef.activationStateMachineName = "Weapon";
             SwappableMineSkillDef.activationState = new SerializableEntityStateType(typeof(FireClusterMines));
-            SwappableMineSkillDef.isBullets = false;
             SwappableMineSkillDef.beginSkillCooldownOnSkillEnd = true;
             SwappableMineSkillDef.interruptPriority = 0;
             SwappableMineSkillDef.isCombatSkill = true;
-            SwappableMineSkillDef.noSprint = true;
+            SwappableMineSkillDef.cancelSprintingOnActivation = true;
             SwappableMineSkillDef.canceledFromSprinting = false;
             SwappableMineSkillDef.mustKeyPress = false;
             SwappableMineSkillDef.icon = BaeAssets.IconSwappableMines;
@@ -205,14 +203,13 @@ namespace BadAssEngi.Skills
         {
             SatchelMineSkillDef = ScriptableObject.CreateInstance<SkillDef>();
             SatchelMineSkillDef.rechargeStock = 1;
-            SwappableMineSkillDef.requiredStock = 1;
-            SwappableMineSkillDef.stockToConsume = 1;
-            SwappableMineSkillDef.fullRestockOnAssign = false;
-            SwappableMineSkillDef.shootDelay = 0.3f;
-            SwappableMineSkillDef.skillName = "SwappableMine";
+            SatchelMineSkillDef.requiredStock = 1;
+            SatchelMineSkillDef.stockToConsume = 1;
+            SatchelMineSkillDef.fullRestockOnAssign = false;
+            SatchelMineSkillDef.skillName = "SatchelPressuredMine";
 
-            SwappableMineSkillDef.skillNameToken = "Satchel Pressured Mines";
-            SwappableMineSkillDef.skillDescriptionToken =
+            SatchelMineSkillDef.skillNameToken = "Satchel Pressured Mines";
+            SatchelMineSkillDef.skillDescriptionToken =
                 Environment.NewLine +
                 "Current Key Bind for detonating Satchels : <style=cIsUtility>" +
                 Configuration.SatchelManualDetonateKeyBind.Value + "</style>" +
@@ -225,11 +222,10 @@ namespace BadAssEngi.Skills
             SatchelMineSkillDef.baseRechargeInterval = Configuration.ClusterMineCooldown.Value;
             SatchelMineSkillDef.activationStateMachineName = "Weapon";
             SatchelMineSkillDef.activationState = new SerializableEntityStateType(typeof(FireSatchelMines));
-            SatchelMineSkillDef.isBullets = false;
             SatchelMineSkillDef.beginSkillCooldownOnSkillEnd = true;
             SatchelMineSkillDef.interruptPriority = 0;
             SatchelMineSkillDef.isCombatSkill = true;
-            SatchelMineSkillDef.noSprint = true;
+            SatchelMineSkillDef.cancelSprintingOnActivation = true;
             SatchelMineSkillDef.canceledFromSprinting = false;
             SatchelMineSkillDef.mustKeyPress = false;
             SatchelMineSkillDef.icon = _engiSkillLocator.secondary._skillFamily.variants[0].skillDef.icon;
@@ -255,11 +251,10 @@ namespace BadAssEngi.Skills
 
             OrbitalStrikeSkillDef.activationStateMachineName = "Weapon";
             OrbitalStrikeSkillDef.activationState = new SerializableEntityStateType(typeof(FireOrbitalMines));
-            OrbitalStrikeSkillDef.isBullets = false;
             OrbitalStrikeSkillDef.beginSkillCooldownOnSkillEnd = true;
             OrbitalStrikeSkillDef.interruptPriority = 0;
             OrbitalStrikeSkillDef.isCombatSkill = true;
-            OrbitalStrikeSkillDef.noSprint = false;
+            OrbitalStrikeSkillDef.cancelSprintingOnActivation = false;
             OrbitalStrikeSkillDef.canceledFromSprinting = false;
             OrbitalStrikeSkillDef.mustKeyPress = true;
             OrbitalStrikeSkillDef.icon = BaeAssets.IconOrbitalStrike;
@@ -296,13 +291,11 @@ namespace BadAssEngi.Skills
             SwappableTurretSkillDef.baseRechargeInterval = 30;
             SwappableTurretSkillDef.baseMaxStock = 2;
             SwappableTurretSkillDef.rechargeStock = 1;
-            SwappableTurretSkillDef.isBullets = false;
-            SwappableTurretSkillDef.shootDelay = 0;
             SwappableTurretSkillDef.beginSkillCooldownOnSkillEnd = false;
             SwappableTurretSkillDef.requiredStock = 1;
             SwappableTurretSkillDef.stockToConsume = 0;
             SwappableTurretSkillDef.isCombatSkill = false;
-            SwappableTurretSkillDef.noSprint = true;
+            SwappableTurretSkillDef.cancelSprintingOnActivation = true;
             SwappableTurretSkillDef.canceledFromSprinting = false;
             SwappableTurretSkillDef.mustKeyPress = false;
             SwappableTurretSkillDef.fullRestockOnAssign = false;

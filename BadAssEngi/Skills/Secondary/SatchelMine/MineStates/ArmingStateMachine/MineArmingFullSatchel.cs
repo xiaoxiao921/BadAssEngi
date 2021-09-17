@@ -13,7 +13,7 @@ namespace BadAssEngi.Skills.Secondary.SatchelMine.MineStates.ArmingStateMachine
 
         private void CheckInitState()
         {
-            var goodState = (MineArmingFull) Instantiate(typeof(MineArmingFull));
+            var goodState = new MineArmingFull();
 
             if (string.IsNullOrEmpty(pathToChildToEnable))
             {

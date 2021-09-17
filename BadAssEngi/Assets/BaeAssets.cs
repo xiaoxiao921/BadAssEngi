@@ -61,7 +61,6 @@ namespace BadAssEngi.Assets
         public static GameObject EngiClusterMineDepthOnePrefab { get; private set; }
         public static GameObject EngiClusterMineDepthTwoPrefab { get; private set; }
 
-
         public static GameObject EngiOrbitalMinePrefab { get; private set; }
         public static GameObject EngiSatchelMinePrefab { get; private set; }
 
@@ -203,12 +202,12 @@ namespace BadAssEngi.Assets
             orbitalMainStateMachine.initialStateType = new SerializableEntityStateType(typeof(WaitForStickOrbital));
             orbitalMainStateMachine.mainStateType = new SerializableEntityStateType(typeof(MineArmingUnarmedOrbital));
 
-            ProjectileCatalog.getAdditionalEntries += list => list.Add(EngiClusterMinePrefab);
-            ProjectileCatalog.getAdditionalEntries += list => list.Add(EngiClusterMineDepthOnePrefab);
-            ProjectileCatalog.getAdditionalEntries += list => list.Add(EngiClusterMineDepthTwoPrefab);
+            ProjectileAPI.Add(EngiClusterMinePrefab);
+            ProjectileAPI.Add(EngiClusterMineDepthOnePrefab);
+            ProjectileAPI.Add(EngiClusterMineDepthTwoPrefab);
 
-            ProjectileCatalog.getAdditionalEntries += list => list.Add(EngiSatchelMinePrefab);
-            ProjectileCatalog.getAdditionalEntries += list => list.Add(EngiOrbitalMinePrefab);
+            ProjectileAPI.Add(EngiSatchelMinePrefab);
+            ProjectileAPI.Add(EngiOrbitalMinePrefab);
         }
 
         private static void InitRebarPrefabs()
@@ -334,8 +333,8 @@ namespace BadAssEngi.Assets
             var swarmCollider = PrefabEngiSwarmRocket.GetComponent<BoxCollider>();
             swarmCollider.size = missileBoxSize;
 
-            ProjectileCatalog.getAdditionalEntries += list => list.Add(PrefabEngiTurretRocket);
-            ProjectileCatalog.getAdditionalEntries += list => list.Add(PrefabEngiSwarmRocket);
+            ProjectileAPI.Add(PrefabEngiTurretRocket);
+            ProjectileAPI.Add(PrefabEngiSwarmRocket);
         }
 
         private static void InitClusterBouncePrefabs()

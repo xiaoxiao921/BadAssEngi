@@ -83,7 +83,7 @@ namespace BadAssEngi.Skills.Primary.States
                 return;
             }
 
-            var _ = (ChargeGrenades)Instantiate(typeof(ChargeGrenades));
+			var _ = new ChargeGrenades();
 
             _baseTotalDuration = ChargeGrenades.baseTotalDuration;
             _baseMaxChargeTime = ChargeGrenades.baseMaxChargeTime;

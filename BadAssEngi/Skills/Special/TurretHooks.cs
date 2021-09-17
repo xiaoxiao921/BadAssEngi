@@ -5,6 +5,7 @@ using BadAssEngi.Networking;
 using EntityStates;
 using EntityStates.Engi.EngiWeapon;
 using EntityStates.EngiTurret.EngiTurretWeapon;
+using EntityStates.Toolbot;
 using Mono.Cecil.Cil;
 using MonoMod.Cil;
 using R2API.Networking;

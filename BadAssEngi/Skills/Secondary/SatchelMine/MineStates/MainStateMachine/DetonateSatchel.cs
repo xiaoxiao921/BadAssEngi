@@ -29,14 +29,13 @@ namespace BadAssEngi.Skills.Secondary.SatchelMine.MineStates.MainStateMachine
 			var damageScale = 0f;
             var blastRadiusScale = 0f;
 
-			BaseMineArmingState baseMineArmingState;
-			if ((baseMineArmingState = (armingStateMachine != null ? armingStateMachine.state : null) as BaseMineArmingState) != null)
-			{
-				damageScale = baseMineArmingState.damageScale;
+            if ((armingStateMachine?.state) is BaseMineArmingState baseMineArmingState)
+            {
+                damageScale = baseMineArmingState.damageScale;
                 blastRadiusScale = baseMineArmingState.blastRadiusScale;
-			}
+            }
 
-			var blastRadius = Detonate.blastRadius * blastRadiusScale;
+            var blastRadius = Detonate.blastRadius * blastRadiusScale;
 
 			new BlastAttack
 			{

@@ -69,10 +69,9 @@ namespace BadAssEngi.Skills.Secondary.ClusterMine.MineStates.MainStateMachine
 
         private void CheckInitState()
         {
-            var goodState = (Detonate) Instantiate(typeof(Detonate));
-
             if (string.IsNullOrEmpty(enterSoundString))
             {
+                var goodState = new Detonate();
                 enterSoundString = goodState.enterSoundString;
             }
         }

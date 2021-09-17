@@ -15,7 +15,7 @@ namespace BadAssEngi.Skills.Secondary.OrbitalStrike.MineState.MainStateMachine
         {
             base.OnEnter();
 
-            var _ = (PreDetonate) Instantiate(typeof(PreDetonate));
+            var _ = new PreDetonate();
             _duration = PreDetonate.duration;
         }
 

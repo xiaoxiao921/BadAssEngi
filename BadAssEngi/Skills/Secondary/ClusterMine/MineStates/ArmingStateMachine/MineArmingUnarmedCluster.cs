@@ -13,7 +13,7 @@ namespace BadAssEngi.Skills.Secondary.ClusterMine.MineStates.ArmingStateMachine
 
         private void CheckInitState()
         {
-            var goodState = (MineArmingUnarmed) Instantiate(typeof(MineArmingUnarmed));
+            var goodState = new MineArmingUnarmed();
 
             if (string.IsNullOrEmpty(pathToChildToEnable))
             {

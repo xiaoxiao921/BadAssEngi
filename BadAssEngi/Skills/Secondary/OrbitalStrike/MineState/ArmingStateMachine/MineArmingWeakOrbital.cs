@@ -14,7 +14,7 @@ namespace BadAssEngi.Skills.Secondary.OrbitalStrike.MineState.ArmingStateMachine
 
         private void CheckInitState()
         {
-            var goodState = (MineArmingWeak) Instantiate(typeof(MineArmingWeak));
+            var goodState = new MineArmingWeak();
 
             pathToChildToEnable = goodState.pathToChildToEnable;
             onEnterSfxPlaybackRate = goodState.onEnterSfxPlaybackRate;

@@ -32,7 +32,6 @@ namespace BadAssEngi
             }
         }
 
-        private static bool _hasSatchel;
         internal static void Update()
         {
             foreach (var networkUser in NetworkUser.readOnlyLocalPlayersList)
@@ -120,9 +119,7 @@ namespace BadAssEngi
                         var secondarySkillSlot = body.skillLocator ? body.skillLocator.secondary : null;
                         if (secondarySkillSlot)
                         {
-                            //var skillOverride = new GenericSkill.SkillOverride(body, SkillLoader.SatchelMineSkillDef, GenericSkill.SkillOverridePriority.Replacement);
-                            //var hasSkillOverride = secondarySkillSlot.FindSkillOverrideIndex(ref skillOverride) != 1;
-                            var hasSkillOverride = _hasSatchel;
+                            var hasSkillOverride = secondarySkillSlot.skillDef == SkillLoader.SatchelMineSkillDef;
                             if (hasSkillOverride)
                             {
                                 secondarySkillSlot.UnsetSkillOverride(body, SkillLoader.SatchelMineSkillDef,
@@ -138,8 +135,6 @@ namespace BadAssEngi
                                 Chat.AddMessage(
                                     "<style=cIsUtility>Mine Type is now: </style><style=cDeath>[Satchel]</style>");
                             }
-
-                            _hasSatchel = !_hasSatchel;
                         }
                     }
 

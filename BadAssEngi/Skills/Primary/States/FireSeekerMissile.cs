@@ -39,7 +39,7 @@ namespace BadAssEngi.Skills.Primary.States
                 return;
             }
 
-            var _ = (FireGrenades)Instantiate(typeof(FireGrenades));
+            _ = new FireGrenades();
 
             _effectPrefab = FireGrenades.effectPrefab;
         }
@@ -103,7 +103,7 @@ namespace BadAssEngi.Skills.Primary.States
                     missileTracker = characterBody.gameObject.AddComponent<MissileTracker>();
                 }
                 var currentTargetHurtBox = missileTracker.trackingTarget;
-                var target = currentTargetHurtBox != null ? currentTargetHurtBox.gameObject : null;
+                var target = currentTargetHurtBox?.gameObject;
                 FireMissileProjectile(target, this, BaeAssets.PrefabEngiSwarmRocket, targetMuzzle);
 			}
 

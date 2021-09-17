@@ -17,7 +17,7 @@ namespace BadAssEngi.Skills.Secondary.SatchelMine.EngiStates
 
         private float _force;
 
-        private const float BaseDuration = 2f;
+        private const float BaseDuration = 0.75f;
         private float _duration;
 
 		public override void OnEnter()
@@ -55,7 +55,7 @@ namespace BadAssEngi.Skills.Secondary.SatchelMine.EngiStates
                 return;
             }
 
-            var goodState = (FireMines)Instantiate(typeof(FireMines));
+			var goodState = new FireMines();
 
             _effectPrefab = FireMines.effectPrefab;
 

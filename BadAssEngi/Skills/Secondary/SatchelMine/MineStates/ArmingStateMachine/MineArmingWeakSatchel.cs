@@ -14,10 +14,9 @@ namespace BadAssEngi.Skills.Secondary.SatchelMine.MineStates.ArmingStateMachine
 
         private void CheckInitState()
         {
-            var goodState = (MineArmingWeak) Instantiate(typeof(MineArmingWeak));
-
             if (string.IsNullOrEmpty(pathToChildToEnable))
             {
+                var goodState = new MineArmingWeak();
                 pathToChildToEnable = goodState.pathToChildToEnable;
                 onEnterSfxPlaybackRate = goodState.onEnterSfxPlaybackRate;
                 onEnterSfx = goodState.onEnterSfx;

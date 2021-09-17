@@ -46,7 +46,6 @@ namespace BadAssEngi.Animations
             if (EngiEmoteController.EmoteButton && EngiEmoteController.EmoteWindow)
                 return;
 
-            
 
             var isLocal = false;
             foreach (var localUser in LocalUserManager.readOnlyLocalUsersList)
@@ -73,7 +72,7 @@ namespace BadAssEngi.Animations
 
             var parent =
                 self.hud.transform.Find(
-                    "MainContainer/MainUIArea/BottomRightCluster/Scaler");
+                    "MainContainer/MainUIArea/SpringCanvas/BottomRightCluster/Scaler");
 
             if (!parent)
                 return;

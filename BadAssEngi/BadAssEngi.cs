@@ -31,22 +31,22 @@ namespace BadAssEngi
     [BepInDependency(R2API.R2API.PluginGUID)]
     [BepInDependency("at.aster.charactercustomizer", BepInDependency.DependencyFlags.SoftDependency)]
     [R2APISubmoduleDependency(nameof(CommandHelper), nameof(SurvivorAPI), nameof(SoundAPI), nameof(LoadoutAPI),
-        nameof(EffectAPI), nameof(PrefabAPI), nameof(ResourcesAPI), nameof(NetworkingAPI))]
+        nameof(EffectAPI), nameof(PrefabAPI), nameof(ProjectileAPI), nameof(ResourcesAPI), nameof(NetworkingAPI))]
     [BepInPlugin(ModGuid, ModName, ModVer)]
     [NetworkCompatibility]
     public class BadAssEngi : BaseUnityPlugin
     {
         public const string ModGuid = "iDeathHD." + ModName;
         private const string ModName = "BadAssEngi";
-        private const string ModVer = "1.3.2";
+        private const string ModVer = "1.3.5";
 
-        internal static int EngiBodyIndex;
+        internal static BodyIndex EngiBodyIndex;
         private const string EngiBodyPrefabName = "EngiBody";
         internal static Texture2D OrigEngiTexture, OrigAltEngiTexture, OrigTurretTexture;
         private static readonly Transform[] CachedRebarEffects = new Transform[6];
 
         internal static BadAssEngi Instance { get; private set; }
-        
+
         public void Awake()
         {
             Configuration.Init(Config);
@@ -62,8 +62,6 @@ namespace BadAssEngi
 
         public void Start()
         {
-            EngiBodyIndex = BodyCatalog.FindBodyIndex(EngiBodyPrefabName);
-            
             KeybindController.RetrieveFirstGamePad();
         }
 
@@ -95,6 +93,8 @@ namespace BadAssEngi
             //DebugHelper.Init();
 
             CommandHelper.AddToConsoleWhenReady();
+
+            RoR2Application.onLoad += () => { EngiBodyIndex = BodyCatalog.FindBodyIndex(EngiBodyPrefabName); };
 
             On.RoR2.Run.Start += RemoveRebarEffects;
             On.RoR2.Run.OnDestroy += RestoreRebarEffects;
@@ -252,8 +252,8 @@ namespace BadAssEngi
 
             cursor.GotoNext(
                 i => i.MatchLdarg(0),
-                i => i.MatchCallvirt<CharacterMaster>("get_bodyInstanceObject"),
-                i => i.MatchCallvirt<GameObject>("GetComponent")
+                i => i.MatchCallOrCallvirt<CharacterMaster>("get_bodyInstanceObject"),
+                i => i.MatchCallOrCallvirt<GameObject>("GetComponent")
             );
             cursor.RemoveRange(5);
             cursor.Emit(OpCodes.Ldc_I4, 10000);

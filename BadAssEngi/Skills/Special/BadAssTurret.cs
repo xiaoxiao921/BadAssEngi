@@ -53,18 +53,18 @@ namespace BadAssEngi.Skills.Special
                 OwnerCharacterMaster = gameObject.GetComponent<Deployable>().ownerMaster;
             }
                 
-            var itemCount = turretInv.GetItemCount(ItemIndex.ExtraLife);
-            var itemCount2 = turretInv.GetItemCount(ItemIndex.ExtraLifeConsumed);
+            var itemCount = turretInv.GetItemCount(RoR2Content.Items.ExtraLife.itemIndex);
+            var itemCount2 = turretInv.GetItemCount(RoR2Content.Items.ExtraLifeConsumed.itemIndex);
 
             turretInv.CopyItemsFrom(OwnerCharacterMaster.inventory);
 
-            turretInv.ResetItem(ItemIndex.WardOnLevel);
-            turretInv.ResetItem(ItemIndex.BeetleGland);
-            turretInv.ResetItem(ItemIndex.CrippleWardOnLevel);
-            turretInv.ResetItem(ItemIndex.ExtraLife);
-            turretInv.ResetItem(ItemIndex.ExtraLifeConsumed);
-            turretInv.GiveItem(ItemIndex.ExtraLife, itemCount);
-            turretInv.GiveItem(ItemIndex.ExtraLifeConsumed, itemCount2);
+            turretInv.ResetItem(RoR2Content.Items.WardOnLevel.itemIndex);
+            turretInv.ResetItem(RoR2Content.Items.BeetleGland.itemIndex);
+            turretInv.ResetItem(RoR2Content.Items.CrippleWardOnLevel.itemIndex);
+            turretInv.ResetItem(RoR2Content.Items.ExtraLife.itemIndex);
+            turretInv.ResetItem(RoR2Content.Items.ExtraLifeConsumed.itemIndex);
+            turretInv.GiveItem(RoR2Content.Items.ExtraLife.itemIndex, itemCount);
+            turretInv.GiveItem(RoR2Content.Items.ExtraLifeConsumed.itemIndex, itemCount2);
 
             if (turretInv.infusionBonus > OwnerCharacterMaster.inventory.infusionBonus)
             {
@@ -116,9 +116,11 @@ namespace BadAssEngi.Skills.Special
 
                 if (OwnerCharacterMaster.GetBody().HasBuff(buffType))
                 {
-                    if (buffType == BuffIndex.AffixBlue || buffType == BuffIndex.AffixWhite ||
-                        buffType == BuffIndex.AffixRed || buffType == BuffIndex.AffixPoison ||
-                        buffType == BuffIndex.NoCooldowns)
+                    if (buffType == RoR2Content.Buffs.AffixBlue.buffIndex ||
+                        buffType == RoR2Content.Buffs.AffixWhite.buffIndex ||
+                        buffType == RoR2Content.Buffs.AffixRed.buffIndex ||
+                        buffType == RoR2Content.Buffs.AffixPoison.buffIndex ||
+                        buffType == RoR2Content.Buffs.NoCooldowns.buffIndex)
                     {
                         if (characterMaster.GetBody().HasBuff(buffType)) 
                             continue;
@@ -137,16 +139,16 @@ namespace BadAssEngi.Skills.Special
                             }
                         }
                     }
-                    else if (buffType != BuffIndex.NoCooldowns)
+                    else if (buffType != RoR2Content.Buffs.NoCooldowns.buffIndex)
                     {
                         characterMaster.GetBody().AddBuff(buffType);
                     }   
                 }
                 else if (characterMaster.GetBody().HasBuff(buffType))
                 {
-                    if (buffType == BuffIndex.AffixBlue || buffType == BuffIndex.AffixWhite ||
-                        buffType == BuffIndex.AffixRed || buffType == BuffIndex.AffixPoison ||
-                        buffType == BuffIndex.NoCooldowns)
+                    if (buffType == RoR2Content.Buffs.AffixBlue.buffIndex || buffType == RoR2Content.Buffs.AffixWhite.buffIndex ||
+                        buffType == RoR2Content.Buffs.AffixRed.buffIndex || buffType == RoR2Content.Buffs.AffixPoison.buffIndex ||
+                        buffType == RoR2Content.Buffs.NoCooldowns.buffIndex)
                     {
                         if (OwnerCharacterMaster.GetBody().HasBuff(buffType)) 
                             continue;
