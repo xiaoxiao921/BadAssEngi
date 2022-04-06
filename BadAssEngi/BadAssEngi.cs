@@ -30,15 +30,15 @@ namespace BadAssEngi
 {
     [BepInDependency(R2API.R2API.PluginGUID)]
     [BepInDependency("at.aster.charactercustomizer", BepInDependency.DependencyFlags.SoftDependency)]
-    [R2APISubmoduleDependency(nameof(CommandHelper), nameof(SurvivorAPI), nameof(SoundAPI), nameof(LoadoutAPI),
-        nameof(EffectAPI), nameof(PrefabAPI), nameof(ProjectileAPI), nameof(ResourcesAPI), nameof(NetworkingAPI))]
+    [R2APISubmoduleDependency(nameof(CommandHelper), nameof(SoundAPI), nameof(LoadoutAPI),
+        nameof(PrefabAPI), nameof(NetworkingAPI))]
     [BepInPlugin(ModGuid, ModName, ModVer)]
     [NetworkCompatibility]
     public class BadAssEngi : BaseUnityPlugin
     {
         public const string ModGuid = "iDeathHD." + ModName;
         private const string ModName = "BadAssEngi";
-        private const string ModVer = "1.3.5";
+        private const string ModVer = "1.3.6";
 
         internal static BodyIndex EngiBodyIndex;
         private const string EngiBodyPrefabName = "EngiBody";
@@ -58,11 +58,6 @@ namespace BadAssEngi
             InitHooks();
 
             Instance = this;
-        }
-
-        public void Start()
-        {
-            KeybindController.RetrieveFirstGamePad();
         }
 
         public void Update()
@@ -108,6 +103,8 @@ namespace BadAssEngi
             EmotesHooks.Init();
             OrbitalHooks.Init();
             TurretHooks.Init();
+
+            RoR2Application.onLoad += KeybindController.RetrieveFirstGamePad;
         }
 
         private static void ModCompatibilities()

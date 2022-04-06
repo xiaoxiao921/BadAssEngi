@@ -24,7 +24,7 @@ namespace BadAssEngi.Animations
             On.RoR2.CameraRigController.Update += AddUIOnCameraRig;
 
             On.RoR2.PlayerCharacterMasterController.CanSendBodyInput += FixBodyInputLossWhenHoveringEmoteButton;
-            IL.RoR2.CameraRigController.Update += FixCameraWorkLossWhenHoveringEmoteButton;
+            On.RoR2.CameraRigController.GenerateCameraModeContext += FixCameraWorkLossWhenHoveringEmoteButton;
 
             SceneManager.sceneLoaded += ShouldDisableUIAndResetEmotes;
 
@@ -200,22 +200,11 @@ namespace BadAssEngi.Animations
             return res;
         }
 
-        private static void FixCameraWorkLossWhenHoveringEmoteButton(ILContext il)
+        private static void FixCameraWorkLossWhenHoveringEmoteButton(On.RoR2.CameraRigController.orig_GenerateCameraModeContext orig, CameraRigController self, out RoR2.CameraModes.CameraModeBase.CameraModeContext result)
         {
-            var cursor = new ILCursor(il);
-            var getViewerMethod = typeof(CameraRigController).GetMethodCached("get_viewer");
-            var localUserField = typeof(NetworkUser).GetFieldCached("localUser");
+            orig(self, out result);
 
-            cursor.GotoNext(MoveType.After,
-                i => i.MatchCallOrCallvirt(getViewerMethod),
-                i => i.MatchLdfld(localUserField),
-                i => i.MatchCallOrCallvirt<LocalUser>("get_isUIFocused")
-            );
-            cursor.Index--;
-            cursor.Emit(OpCodes.Dup);
-            cursor.Index++;
-            cursor.EmitDelegate<Func<LocalUser, bool, bool>>((localUser, b) =>
-                localUser.eventSystem.currentSelectedGameObject != EngiEmoteController.EmoteButton && b);
+            result.viewerInfo.isUIFocused = result.viewerInfo.isUIFocused && self.localUserViewer.eventSystem.currentSelectedGameObject != EngiEmoteController.EmoteButton;
         }
 
         private static void EmotesDisableGameMusic(ILContext il)

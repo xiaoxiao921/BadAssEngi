@@ -127,8 +127,6 @@ namespace BadAssEngi.Assets
             using (var stream = execAssembly.GetManifestResourceStream(resourceName))
             {
                 var bundle = AssetBundle.LoadFromStream(stream);
-                var provider = new AssetBundleResourcesProvider(Prefix.TrimEnd(':'), bundle);
-                ResourcesAPI.AddProvider(provider);
 
                 PrefabEngiTurretGhostRocket = bundle.LoadAsset<GameObject>(PathPrefabEngiTurretGhostRocket);
                 PrefabEngiSwarmGhostRocket = bundle.LoadAsset<GameObject>(PathPrefabEngiSwarmGhostRocket);
@@ -164,7 +162,7 @@ namespace BadAssEngi.Assets
         private static void InitMinePrefabs()
         {
             EngiClusterMinePrefab = Resources.Load<GameObject>("prefabs/projectiles/engimine").InstantiateClone("BaeEngiMine");
-            EngiClusterMinePrefab.GetComponent<ProjectileSimple>().velocity = 40f;
+            EngiClusterMinePrefab.GetComponent<ProjectileSimple>().desiredForwardSpeed = 40f;
             EngiClusterMinePrefab.AddComponent<RecursiveMine>();
 
             var clusterArmingStateMachine = EngiClusterMinePrefab.GetComponentsInChildren<EntityStateMachine>().First(machine => machine.customName == "Arming");
@@ -181,7 +179,7 @@ namespace BadAssEngi.Assets
             EngiClusterMineDepthTwoPrefab.GetComponent<RecursiveMine>().RecursiveDepth = 2;
 
             EngiSatchelMinePrefab = Resources.Load<GameObject>("prefabs/projectiles/engimine").InstantiateClone("BaeSatchelMine");
-            EngiSatchelMinePrefab.GetComponent<ProjectileSimple>().velocity = 40f;
+            EngiSatchelMinePrefab.GetComponent<ProjectileSimple>().desiredForwardSpeed = 40f;
 
             var satchelArmingStateMachine = EngiSatchelMinePrefab.GetComponentsInChildren<EntityStateMachine>().First(machine => machine.customName == "Arming");
             satchelArmingStateMachine.initialStateType = new SerializableEntityStateType(typeof(MineArmingUnarmedSatchel));
@@ -192,7 +190,7 @@ namespace BadAssEngi.Assets
             satchelMainStateMachine.mainStateType = new SerializableEntityStateType(typeof(MineArmingUnarmedSatchel));
 
             EngiOrbitalMinePrefab = Resources.Load<GameObject>("prefabs/projectiles/engimine").InstantiateClone("BaeOrbitalMine");
-            EngiOrbitalMinePrefab.GetComponent<ProjectileSimple>().velocity = 40f;
+            EngiOrbitalMinePrefab.GetComponent<ProjectileSimple>().desiredForwardSpeed = 40f;
 
             var orbitalArmingStateMachine = EngiOrbitalMinePrefab.GetComponentsInChildren<EntityStateMachine>().First(machine => machine.customName == "Arming");
             orbitalArmingStateMachine.initialStateType = new SerializableEntityStateType(typeof(MineArmingUnarmedOrbital));
@@ -202,12 +200,12 @@ namespace BadAssEngi.Assets
             orbitalMainStateMachine.initialStateType = new SerializableEntityStateType(typeof(WaitForStickOrbital));
             orbitalMainStateMachine.mainStateType = new SerializableEntityStateType(typeof(MineArmingUnarmedOrbital));
 
-            ProjectileAPI.Add(EngiClusterMinePrefab);
-            ProjectileAPI.Add(EngiClusterMineDepthOnePrefab);
-            ProjectileAPI.Add(EngiClusterMineDepthTwoPrefab);
+            ContentAddition.AddProjectile(EngiClusterMinePrefab);
+            ContentAddition.AddProjectile(EngiClusterMineDepthOnePrefab);
+            ContentAddition.AddProjectile(EngiClusterMineDepthTwoPrefab);
 
-            ProjectileAPI.Add(EngiSatchelMinePrefab);
-            ProjectileAPI.Add(EngiOrbitalMinePrefab);
+            ContentAddition.AddProjectile(EngiSatchelMinePrefab);
+            ContentAddition.AddProjectile(EngiOrbitalMinePrefab);
         }
 
         private static void InitRebarPrefabs()
@@ -266,23 +264,8 @@ namespace BadAssEngi.Assets
             var swarmExploEffectComponent = PrefabEngiSwarmExplosionEffect.AddComponent<EffectComponent>();
             swarmExploEffectComponent.effectData = omniEffectComponent.effectData;
             var swarmExploVFXAttributes = PrefabEngiSwarmExplosionEffect.AddComponent<VFXAttributes>();
-
-            var turretEffectDef = new EffectDef
-            {
-                prefab = PrefabEngiTurretExplosionEffect,
-                prefabEffectComponent = turretExploEffectComponent,
-                prefabVfxAttributes = turretExploVFXAttributes,
-                prefabName = PrefabEngiTurretExplosionEffect.name
-            };
-            var swarmEffectDef = new EffectDef
-            {
-                prefab = PrefabEngiSwarmExplosionEffect,
-                prefabEffectComponent = swarmExploEffectComponent,
-                prefabVfxAttributes = swarmExploVFXAttributes,
-                prefabName = PrefabEngiSwarmExplosionEffect.name
-            };
-            EffectAPI.AddEffect(turretEffectDef);
-            EffectAPI.AddEffect(swarmEffectDef);
+            ContentAddition.AddEffect(PrefabEngiTurretExplosionEffect);
+            ContentAddition.AddEffect(PrefabEngiSwarmExplosionEffect);
 
             var engiHarpoonProjectilePrefab = Resources.Load<GameObject>("prefabs/projectiles/EngiHarpoon");
 
@@ -333,8 +316,8 @@ namespace BadAssEngi.Assets
             var swarmCollider = PrefabEngiSwarmRocket.GetComponent<BoxCollider>();
             swarmCollider.size = missileBoxSize;
 
-            ProjectileAPI.Add(PrefabEngiTurretRocket);
-            ProjectileAPI.Add(PrefabEngiSwarmRocket);
+            ContentAddition.AddProjectile(PrefabEngiTurretRocket);
+            ContentAddition.AddProjectile(PrefabEngiSwarmRocket);
         }
 
         private static void InitClusterBouncePrefabs()

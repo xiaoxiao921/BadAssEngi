@@ -311,41 +311,41 @@ namespace BadAssEngi.Skills
 
         private static void RegisterClusterMinesStates()
         {
-            LoadoutAPI.AddSkill(typeof(MineArmingFullCluster));
-            LoadoutAPI.AddSkill(typeof(MineArmingUnarmedCluster));
-            LoadoutAPI.AddSkill(typeof(MineArmingWeakCluster));
+            ContentAddition.AddEntityState<MineArmingFullCluster>(out _);
+            ContentAddition.AddEntityState<MineArmingUnarmedCluster>(out _);
+            ContentAddition.AddEntityState<MineArmingWeakCluster>(out _);
 
-            LoadoutAPI.AddSkill(typeof(ArmCluster));
-            LoadoutAPI.AddSkill(typeof(DetonateCluster));
-            LoadoutAPI.AddSkill(typeof(PreDetonateCluster));
-            LoadoutAPI.AddSkill(typeof(WaitForStickCluster));
-            LoadoutAPI.AddSkill(typeof(WaitForTargetCluster));
+            ContentAddition.AddEntityState<ArmCluster>(out _);
+            ContentAddition.AddEntityState<DetonateCluster>(out _);
+            ContentAddition.AddEntityState<PreDetonateCluster>(out _);
+            ContentAddition.AddEntityState<WaitForStickCluster>(out _);
+            ContentAddition.AddEntityState<WaitForTargetCluster>(out _);
         }
 
         private static void RegisterSatchelMinesStates()
         {
-            LoadoutAPI.AddSkill(typeof(MineArmingFullSatchel));
-            LoadoutAPI.AddSkill(typeof(MineArmingUnarmedSatchel));
-            LoadoutAPI.AddSkill(typeof(MineArmingWeakSatchel));
+            ContentAddition.AddEntityState<MineArmingFullSatchel>(out _);
+            ContentAddition.AddEntityState<MineArmingUnarmedSatchel>(out _);
+            ContentAddition.AddEntityState<MineArmingWeakSatchel>(out _);
 
-            LoadoutAPI.AddSkill(typeof(ArmSatchel));
-            LoadoutAPI.AddSkill(typeof(DetonateSatchel));
-            LoadoutAPI.AddSkill(typeof(PreDetonateSatchel));
-            LoadoutAPI.AddSkill(typeof(WaitForStickSatchel));
-            LoadoutAPI.AddSkill(typeof(WaitForTargetSatchel));
+            ContentAddition.AddEntityState<ArmSatchel>(out _);
+            ContentAddition.AddEntityState<DetonateSatchel>(out _);
+            ContentAddition.AddEntityState<PreDetonateSatchel>(out _);
+            ContentAddition.AddEntityState<WaitForStickSatchel>(out _);
+            ContentAddition.AddEntityState<WaitForTargetSatchel>(out _);
         }
 
         private static void RegisterOrbitalMinesStates()
         {
-            LoadoutAPI.AddSkill(typeof(MineArmingFullOrbital));
-            LoadoutAPI.AddSkill(typeof(MineArmingUnarmedOrbital));
-            LoadoutAPI.AddSkill(typeof(MineArmingWeakOrbital));
+            ContentAddition.AddEntityState<MineArmingFullOrbital>(out _);
+            ContentAddition.AddEntityState<MineArmingUnarmedOrbital>(out _);
+            ContentAddition.AddEntityState<MineArmingWeakOrbital>(out _);
 
-            LoadoutAPI.AddSkill(typeof(ArmOrbital));
-            LoadoutAPI.AddSkill(typeof(DetonateOrbital));
-            LoadoutAPI.AddSkill(typeof(PreDetonateOrbital));
-            LoadoutAPI.AddSkill(typeof(WaitForStickOrbital));
-            LoadoutAPI.AddSkill(typeof(WaitForTargetOrbital));
+            ContentAddition.AddEntityState<ArmOrbital>(out _);
+            ContentAddition.AddEntityState<DetonateOrbital>(out _);
+            ContentAddition.AddEntityState<PreDetonateOrbital>(out _);
+            ContentAddition.AddEntityState<WaitForStickOrbital>(out _);
+            ContentAddition.AddEntityState<WaitForTargetOrbital>(out _);
         }
     }
 }

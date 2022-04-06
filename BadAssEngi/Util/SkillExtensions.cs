@@ -14,20 +14,20 @@ namespace BadAssEngi.Util
             var family = ScriptableObject.CreateInstance<SkillFamily>();
             family.variants = new SkillFamily.Variant[skills.Length];
 
-            LoadoutAPI.AddSkillFamily(family);
-
             for (var i = 0; i < skills.Length; ++i)
             {
                 family.variants[i] = new SkillFamily.Variant
                 {
                     skillDef = skills[i],
-                    unlockableName = "",
                     viewableNode = new ViewablesCatalog.Node(skills[i].skillName, false)
                 };
 
-                LoadoutAPI.AddSkillDef(skills[i]);
+                ContentAddition.AddSkillDef(skills[i]);
+
                 LoadoutAPI.AddSkill(skills[i].activationState.stateType);
             }
+
+            ContentAddition.AddSkillFamily(family);
 
             return family;
         }

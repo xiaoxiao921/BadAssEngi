@@ -19,7 +19,9 @@ namespace BadAssEngi.Assets.SeekerMissileScripts
         {
             foreach (var particleSystem in _particleSystems)
             {
+#pragma warning disable CS0618 // Type or member is obsolete
                 particleSystem.enableEmission = false;
+#pragma warning restore CS0618 // Type or member is obsolete
             }
 
             _smoke.SetParent(null);
