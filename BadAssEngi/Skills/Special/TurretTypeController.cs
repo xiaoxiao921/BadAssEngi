@@ -1,7 +1,4 @@
 ﻿using System.Collections.Generic;
-using BadAssEngi.Networking;
-using R2API.Networking;
-using R2API.Networking.Interfaces;
 using RoR2;
 using RoR2.CharacterAI;
 using UnityEngine;
@@ -10,14 +7,6 @@ namespace BadAssEngi.Skills.Special
 {
     internal static class TurretTypeController
     {
-        internal enum TurretType
-        {
-            Default,
-            Minigun,
-            Railgun,
-            Shotgun,
-        }
-
         internal const string InternalDefaultTurretName = "Default";
         internal const string InternalMinigunTurretName = "Minigun";
         internal const string InternalRailgunTurretName = "Railgun";
@@ -39,28 +28,28 @@ namespace BadAssEngi.Skills.Special
             { 3, InternalShotgunTurretName }
         };
 
-        internal static int LocalTurretPrefabIndex;
+        internal static TurretType LocalTurretPrefabIndex;
 
         internal static TurretType CurrentTurretType;
         internal static TurretType SenderTurretType;
 
         internal static Color LatestTurretColorReceived;
 
-        internal static string GiveNextTurretTypeExternalToInternal(string currentType)
+        internal static TurretType GiveNextTurretTypeExternalToInternal(string currentType)
         {
             switch (currentType)
             {
                 case ExternalDefaultTurretName:
-                    return InternalMinigunTurretName;
+                    return TurretType.Minigun;
                 case ExternalMinigunTurretName:
-                    return InternalRailgunTurretName;
+                    return TurretType.Railgun;
                 case ExternalRailgunTurretName:
-                    return InternalShotgunTurretName;
+                    return TurretType.Shotgun;
                 case ExternalShotgunTurretName:
-                    return InternalDefaultTurretName;
+                    return TurretType.Default;
             }
 
-            return InternalDefaultTurretName;
+            return TurretType.Default;
         }
 
         internal static void SetTurretType(TurretType turretType)
@@ -90,7 +79,7 @@ namespace BadAssEngi.Skills.Special
                     }
                     break;
                 case TurretType.Minigun:
-                    LocalTurretPrefabIndex = 1;
+                    LocalTurretPrefabIndex = TurretType.Minigun;
 
                     characterBody.baseAttackSpeed = Configuration.MinigunTurretAttackSpeed.Value;
                     characterBody.levelDamage = Configuration.MinigunTurretDamagePerLevel.Value;
@@ -107,7 +96,7 @@ namespace BadAssEngi.Skills.Special
                     }
                     break;
                 case TurretType.Railgun:
-                    LocalTurretPrefabIndex = 2;
+                    LocalTurretPrefabIndex = TurretType.Railgun;
 
                     //new RebarColorMsg { Id = 3 }.Send(NetworkDestination.Clients);
 
@@ -126,7 +115,7 @@ namespace BadAssEngi.Skills.Special
                     }
                     break;
                 case TurretType.Shotgun:
-                    LocalTurretPrefabIndex = 3;
+                    LocalTurretPrefabIndex = TurretType.Shotgun;
 
                     characterBody.baseAttackSpeed = Configuration.ShotgunTurretAttackSpeed.Value;
                     characterBody.levelDamage = Configuration.ShotgunTurretDamagePerLevel.Value;
@@ -145,14 +134,14 @@ namespace BadAssEngi.Skills.Special
             }
         }
 
-        internal static void SetCurrentTurretType(string turretType, GameObject body, GameObject master)
+        internal static void SetCurrentTurretType(TurretType turretType, GameObject body, GameObject master)
         {
             var badAssTurret = master.GetComponent<BadAssTurret>();
             var characterBody = body.GetComponent<CharacterBody>();
             var aiSkillDrivers = master.GetComponents<AISkillDriver>();
             switch (turretType)
             {
-                case InternalDefaultTurretName:
+                case TurretType.Default:
                     badAssTurret.Index = 0;
 
                     characterBody.baseAttackSpeed = Configuration.DefaultTurretAttackSpeed.Value;
@@ -169,8 +158,8 @@ namespace BadAssEngi.Skills.Special
                         }
                     }
                     break;
-                case InternalMinigunTurretName:
-                    badAssTurret.Index = 1;
+                case TurretType.Minigun:
+                    badAssTurret.Index = TurretType.Minigun;
 
                     characterBody.baseAttackSpeed = Configuration.MinigunTurretAttackSpeed.Value;
                     characterBody.levelDamage = Configuration.MinigunTurretDamagePerLevel.Value;
@@ -186,8 +175,8 @@ namespace BadAssEngi.Skills.Special
                         }
                     }
                     break;
-                case InternalRailgunTurretName:
-                    badAssTurret.Index = 2;
+                case TurretType.Railgun:
+                    badAssTurret.Index = TurretType.Railgun;
 
                     //new RebarColorMsg { Id = 3 }.Send(NetworkDestination.Clients);
 
@@ -205,8 +194,8 @@ namespace BadAssEngi.Skills.Special
                         }
                     }
                     break;
-                case InternalShotgunTurretName:
-                    badAssTurret.Index = 3;
+                case TurretType.Shotgun:
+                    badAssTurret.Index = TurretType.Shotgun;
 
                     characterBody.baseAttackSpeed = Configuration.ShotgunTurretAttackSpeed.Value;
                     characterBody.levelDamage = Configuration.ShotgunTurretDamagePerLevel.Value;

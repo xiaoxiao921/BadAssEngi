@@ -103,7 +103,7 @@ namespace BadAssEngi.Skills.Primary.States
                     missileTracker = characterBody.gameObject.AddComponent<MissileTracker>();
                 }
                 var currentTargetHurtBox = missileTracker.trackingTarget;
-                var target = currentTargetHurtBox?.gameObject;
+                var target = currentTargetHurtBox ? currentTargetHurtBox.gameObject : null;
                 FireMissileProjectile(target, this, BaeAssets.PrefabEngiSwarmRocket, targetMuzzle);
 			}
 

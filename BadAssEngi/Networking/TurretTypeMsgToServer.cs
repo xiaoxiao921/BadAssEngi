@@ -21,7 +21,7 @@ namespace BadAssEngi.Networking
         public void OnReceived()
         {
             // Destination : Server
-            TurretTypeController.SenderTurretType = (TurretTypeController.TurretType) TurretTypeId;
+            TurretTypeController.SenderTurretType = (TurretType) TurretTypeId;
         }
     }
 }

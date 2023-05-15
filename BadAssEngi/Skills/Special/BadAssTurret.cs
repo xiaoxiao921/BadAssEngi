@@ -8,9 +8,17 @@ using UnityEngine;
 
 namespace BadAssEngi.Skills.Special
 {
+    internal enum TurretType
+    {
+        Default,
+        Minigun,
+        Railgun,
+        Shotgun,
+    }
+
     internal class BadAssTurret : MonoBehaviour
     {
-        internal int Index;
+        internal TurretType Index;
         internal uint SoundGunId;
         internal CharacterMaster OwnerCharacterMaster;
 
@@ -20,14 +28,14 @@ namespace BadAssEngi.Skills.Special
         {
             OwnerCharacterMaster.inventory.onInventoryChanged += UpdateInventory;
             On.RoR2.CharacterBody.UpdateBuffs += CharacterBodyOnUpdateBuffs;
-            
+
             AkSoundEngine.PostEvent(SoundHelper.TurretAlive, gameObject);
 
-            if (Index == 2)
+            if (Index == TurretType.Railgun)
             {
                 SoundGunId = AkSoundEngine.PostEvent(SoundHelper.RailGunTurretTargeting, gameObject);
             }
-            else if (Index == 3)
+            else if (Index == TurretType.Shotgun)
             {
                 SoundGunId = AkSoundEngine.PostEvent(SoundHelper.RocketTurretReload, gameObject);
             }
@@ -52,7 +60,7 @@ namespace BadAssEngi.Skills.Special
             {
                 OwnerCharacterMaster = gameObject.GetComponent<Deployable>().ownerMaster;
             }
-                
+
             var itemCount = turretInv.GetItemCount(RoR2Content.Items.ExtraLife.itemIndex);
             var itemCount2 = turretInv.GetItemCount(RoR2Content.Items.ExtraLifeConsumed.itemIndex);
 
@@ -122,7 +130,7 @@ namespace BadAssEngi.Skills.Special
                         buffType == RoR2Content.Buffs.AffixPoison.buffIndex ||
                         buffType == RoR2Content.Buffs.NoCooldowns.buffIndex)
                     {
-                        if (characterMaster.GetBody().HasBuff(buffType)) 
+                        if (characterMaster.GetBody().HasBuff(buffType))
                             continue;
 
                         var timedBuffs = OwnerCharacterMaster.GetBody().timedBuffs;
@@ -142,7 +150,7 @@ namespace BadAssEngi.Skills.Special
                     else if (buffType != RoR2Content.Buffs.NoCooldowns.buffIndex)
                     {
                         characterMaster.GetBody().AddBuff(buffType);
-                    }   
+                    }
                 }
                 else if (characterMaster.GetBody().HasBuff(buffType))
                 {
@@ -150,7 +158,7 @@ namespace BadAssEngi.Skills.Special
                         buffType == RoR2Content.Buffs.AffixRed.buffIndex || buffType == RoR2Content.Buffs.AffixPoison.buffIndex ||
                         buffType == RoR2Content.Buffs.NoCooldowns.buffIndex)
                     {
-                        if (OwnerCharacterMaster.GetBody().HasBuff(buffType)) 
+                        if (OwnerCharacterMaster.GetBody().HasBuff(buffType))
                             continue;
 
                         var timedBuffs = characterMaster.GetBody().timedBuffs;

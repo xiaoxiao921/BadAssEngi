@@ -20,13 +20,11 @@ using RoR2.Projectile;
 using RoR2.UI;
 using UnityEngine;
 using UnityEngine.Networking;
-using UnityEngine.Rendering;
 
 namespace BadAssEngi.Assets
 {
     public static class BaeAssets
     {
-        private const string Prefix = "@BadAssEngi:";
         private const string AssetBundleFileName = "badassengi";
         private const string AssetBundleUIFileName = "badassengiui";
 
@@ -38,6 +36,8 @@ namespace BadAssEngi.Assets
         private const string PathPrefabOrbitalStrike = "assets/created prefab/floor detection.prefab";
 
         private const string PathPrefabEngiRocketCrosshair = "assets/created prefab/engi rocket crosshair.prefab";
+
+        private const string PathPrefabEngiTurretRailGun = "assets/railgun/railgun fire.prefab";
 
         private const string PathPrefabEngiClusterMineVisual = "assets/created prefab/cluster mine visual.prefab";
         private const string PathPrefabEngiClusterMineVisualBounce = "assets/created prefab/cluster mine visual bounce.prefab";
@@ -51,8 +51,6 @@ namespace BadAssEngi.Assets
         private const string PathPrefabEngiCustomAnimation = "assets/created prefab/EngiFix.prefab";
 
         private const string PathPrefabEmoteWindow = "assets/badassengi/startup prefab.prefab";
-
-
 
         private static bool Loaded { get; set; }
 
@@ -73,7 +71,7 @@ namespace BadAssEngi.Assets
         public static GameObject PrefabEngiSwarmGhostRocket { get; private set; }
         public static GameObject PrefabEngiSwarmExplosionEffect { get; private set; }
         public static GameObject PrefabEngiRocketCrosshair { get; private set; }
-
+        public static GameObject PrefabEngiTurretRailGunPrefab { get; private set; }
         internal static Material RailGunTrailMaterial { get; set; }
         internal static Color[] EngiRebarColor { get; set; }
         internal static GameObject RailGunPrefab { get; private set; }
@@ -110,9 +108,9 @@ namespace BadAssEngi.Assets
 
             InitMinePrefabs();
 
-            InitRebarPrefabs();
-
             LoadFromAssetBundle();
+
+            InitRebarPrefabs();
 
             AddPrefabsToGame();
 
@@ -136,6 +134,8 @@ namespace BadAssEngi.Assets
                 PrefabEngiTurretExplosionEffect = bundle.LoadAsset<GameObject>(PathPrefabEngiTurretExplosionEffect);
                 PrefabOrbitalStrike = bundle.LoadAsset<GameObject>(PathPrefabOrbitalStrike);
                 PrefabEngiRocketCrosshair = bundle.LoadAsset<GameObject>(PathPrefabEngiRocketCrosshair);
+
+                PrefabEngiTurretRailGunPrefab = bundle.LoadAsset<GameObject>(PathPrefabEngiTurretRailGun);
 
                 PrefabEngiClusterMineVisual = bundle.LoadAsset<GameObject>(PathPrefabEngiClusterMineVisual);
                 PrefabEngiClusterMineVisualBounce = bundle.LoadAsset<GameObject>(PathPrefabEngiClusterMineVisualBounce);
@@ -213,65 +213,13 @@ namespace BadAssEngi.Assets
         private static void InitRebarPrefabs()
         {
             MiniGunPrefab = Resources.Load<GameObject>("prefabs/effects/tracers/tracercommandoboost").InstantiateClone("BAEMiniGunTracerPrefab", false);
-            RailGunPrefab = Resources.Load<GameObject>("prefabs/effects/tracers/tracertoolbotrebar").InstantiateClone("BAERailGunTracerPrefab", false);
 
             ContentAddition.AddEffect(MiniGunPrefab);
-            ContentAddition.AddEffect(RailGunPrefab);
 
-            var stickEffectTransform = RailGunPrefab.transform.Find("StickEffect");
+            PrefabEngiTurretRailGunPrefab.AddComponent<NetworkIdentity>();
+            PrefabEngiTurretRailGunPrefab.RegisterNetworkPrefab();
 
-            _rebarEffects = new List<Transform>();
-
-            var rebarEffect = stickEffectTransform.Find("FlickeringPointLight");
-            rebarEffect.transform.parent = null;
-            _rebarEffects.Add(rebarEffect);
-
-            rebarEffect = stickEffectTransform.Find("Flash");
-            rebarEffect.transform.parent = null;
-            _rebarEffects.Add(rebarEffect);
-
-            rebarEffect = stickEffectTransform.Find("Dust");
-            rebarEffect.transform.parent = null;
-            _rebarEffects.Add(rebarEffect);
-
-            rebarEffect = stickEffectTransform.Find("Dust, Directional");
-            rebarEffect.transform.parent = null;
-            _rebarEffects.Add(rebarEffect);
-
-            rebarEffect = stickEffectTransform.Find("Debris");
-            rebarEffect.transform.parent = null;
-            _rebarEffects.Add(rebarEffect);
-
-            rebarEffect = stickEffectTransform.Find("RebarMesh");
-            rebarEffect.transform.parent = null;
-            _rebarEffects.Add(rebarEffect);
-
-            var railGunParticleSystemRenderer = RailGunPrefab.transform.Find("BeamObject").GetComponentInChildren<ParticleSystemRenderer>();
-            RailGunTrailMaterial = GameObject.Instantiate(railGunParticleSystemRenderer.trailMaterial);
-            RailGunTrailMaterial.name = "BAERailGunTrailMaterial";
-            railGunParticleSystemRenderer.trailMaterial = RailGunTrailMaterial;
-
-            const int MaxMaterialPropertyCount = 1000;
-            EngiRebarColor = new Color[MaxMaterialPropertyCount];
-
-            /*OrigRebarColor = new Color[MaxMaterialPropertyCount];
-            for (int i = 0; i < MaxMaterialPropertyCount; i++)
-            {
-                if (RailGunTrailMaterial.HasProperty(i) && RailGunTrailMaterial.shader.GetPropertyType(i) == ShaderPropertyType.Color)
-                {
-                    OrigRebarColor[i] = RailGunTrailMaterial.GetColor(i);
-                }
-            }*/
-
-            for (int i = 0; i < MaxMaterialPropertyCount; i++)
-            {
-                if (RailGunTrailMaterial.HasProperty(i))
-                {
-                    var c = new Color(7.5f, 7.5f, 375f);
-                    EngiRebarColor[i] = c;
-                    RailGunTrailMaterial.SetColor(i, c);
-                }
-            }
+            PrefabEngiTurretRailGunPrefab.AddComponent<DestroyOnParticleEnd>();
         }
 
         private static void AddPrefabsToGame()

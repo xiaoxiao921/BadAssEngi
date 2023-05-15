@@ -36,7 +36,7 @@ namespace BadAssEngi.Skills
 
         internal static int SwappableGrenadeSkillVariant;
         internal static int SeekerSwarmSkillVariant;
-        
+
         internal static int SatchelMineSkillVariant;
         internal static int SwappableMineSkillVariant;
         internal static int OrbitalStrikeSkillVariant;
@@ -68,7 +68,7 @@ namespace BadAssEngi.Skills
             SwappableGrenadeSkillVariant = skills.Count;
             skills.Add(ChargeSwappableGrenadesSkillDef);
 
-            _engiSkillLocator.primary.SetSkillFamily(skills.ToArray());
+            _engiSkillLocator.primary.SetSkillFamily(_engiSkillLocator.primary._skillFamily.name, skills.ToArray());
         }
 
         private static void InitEngiSecondarySkills()
@@ -89,7 +89,7 @@ namespace BadAssEngi.Skills
             OrbitalStrikeSkillVariant = skills.Count;
             skills.Add(OrbitalStrikeSkillDef);
 
-            _engiSkillLocator.secondary.SetSkillFamily(skills.ToArray());
+            _engiSkillLocator.secondary.SetSkillFamily(_engiSkillLocator.secondary._skillFamily.name, skills.ToArray());
         }
 
         private static void InitEngiSpecialSkills()
@@ -102,7 +102,7 @@ namespace BadAssEngi.Skills
             SwappableTurretSkillVariant = skills.Count;
             skills.Add(SwappableTurretSkillDef);
 
-            _engiSkillLocator.special.SetSkillFamily(skills.ToArray());
+            _engiSkillLocator.special.SetSkillFamily(_engiSkillLocator.special._skillFamily.name, skills.ToArray());
         }
 
         private static void SeekerMissile()
@@ -112,10 +112,10 @@ namespace BadAssEngi.Skills
             ChargeSeekerMissileSkillDef.skillNameToken = "Seeker Swarm";
 
             ChargeSeekerMissileSkillDef.skillDescriptionToken =
-                "Seeker : Auto-targeting. Charge up to <style=cIsDamage>" + Configuration.SeekerMissileMaxProjectileNumber.Value + 
+                "Seeker : Auto-targeting. Charge up to <style=cIsDamage>" + Configuration.SeekerMissileMaxProjectileNumber.Value +
                 "</style> missiles that deal <style=cIsDamage>" +
                 Configuration.SeekerMissileDamageCoefficient.Value * 100f + "% damage</style> each.";
-            
+
             ChargeSeekerMissileSkillDef.activationStateMachineName = "Weapon";
             ChargeSeekerMissileSkillDef.activationState = new SerializableEntityStateType(typeof(ChargeSeekerMissile));
             ChargeSeekerMissileSkillDef.interruptPriority = InterruptPriority.Any;
@@ -141,7 +141,7 @@ namespace BadAssEngi.Skills
             ChargeSwappableGrenadesSkillDef.skillDescriptionToken =
                 "Current Key Bind for switching : <style=cIsUtility>" + Configuration.GrenadeTypeKeyBind.Value + "</style>" +
                 Environment.NewLine +  "Bouncing : Charge up to <style=cIsDamage>8</style> grenades that deal <style=cIsDamage>100% damage</style> each." +
-                Environment.NewLine +  "Seeker : Auto-targeting. Charge up to <style=cIsDamage>" + 
+                Environment.NewLine +  "Seeker : Auto-targeting. Charge up to <style=cIsDamage>" +
                 Configuration.SeekerMissileMaxProjectileNumber.Value + "</style> missiles that deal <style=cIsDamage>" +
                 Configuration.SeekerMissileDamageCoefficient.Value * 100f + "% damage</style> each.";
 
@@ -172,17 +172,17 @@ namespace BadAssEngi.Skills
 
             SwappableMineSkillDef.skillNameToken = "Cluster and Satchel Pressured Mines";
             SwappableMineSkillDef.skillDescriptionToken =
-                Environment.NewLine + 
+                Environment.NewLine +
                 Environment.NewLine + "Current Key Bind for switching : <style=cIsUtility>" + Configuration.MineTypeKeyBind.Value + "</style>. " +
                 "Current Key Bind for detonating Satchels : <style=cIsUtility>" + Configuration.SatchelManualDetonateKeyBind.Value + "</style>" +
-                Environment.NewLine + "<style=cIsUtility>Cluster</style> : Place a mine that explode into <style=cIsDamage>rebars</style> for <style=cIsDamage>30x" + 
+                Environment.NewLine + "<style=cIsUtility>Cluster</style> : Place a mine that explode into <style=cIsDamage>rebars</style> for <style=cIsDamage>30x" +
                 Configuration.ClusterMineDamageCoefficient.Value * 100f +
                 "% damage</style> when an enemy walks nearby. " +
                 Environment.NewLine + "The first mine and the second set of mines explodes into <style=cIsDamage>3</style> mines." +
-                Environment.NewLine + "<style=cIsUtility>Satchel</style> : Place a mine that will explode for <style=cIsDamage>" + 
+                Environment.NewLine + "<style=cIsUtility>Satchel</style> : Place a mine that will explode for <style=cIsDamage>" +
                 Configuration.SatchelMineDamageCoefficient.Value * 100f +
                 "% damage</style> when an enemy walks nearby. \n<style=cIsDamage>Can be manually detonated</style>. <style=cIsUtility>Knockback nearby units</style>." +
-                Environment.NewLine + "Base stock : " + 
+                Environment.NewLine + "Base stock : " +
                 Configuration.ClusterMineBaseMaxStock.Value + "." +
                 Environment.NewLine + Environment.NewLine;
 
@@ -271,17 +271,17 @@ namespace BadAssEngi.Skills
                 Environment.NewLine +
                 Environment.NewLine + "Current Key Bind for switching : <style=cIsUtility>" + Configuration.TurretTypeKeyBind.Value + "</style>" +
                 Environment.NewLine + "Place a turret that <style=cIsUtility>inherits all your items.</style> You can <color=green>ping</color> your turrets to swap between the modes." +
-                Environment.NewLine + "<style=cIsUtility>Default Mode</style> : Fire a cannon for <style=cIsDamage>" + 
-                Configuration.DefaultTurretDamageCoefficient.Value * 100 + " damage</style> with <style=cIsUtility>" + 
+                Environment.NewLine + "<style=cIsUtility>Default Mode</style> : Fire a cannon for <style=cIsDamage>" +
+                Configuration.DefaultTurretDamageCoefficient.Value * 100 + " damage</style> with <style=cIsUtility>" +
                 Configuration.DefaultTurretAttackSpeed.Value + " base attack speed</style>." +
-                Environment.NewLine + "<style=cIsUtility>Minigun Mode</style> : Fire a minigun for <style=cIsDamage>" + 
-                Configuration.MinigunTurretDamageCoefficient.Value * 100 + " damage</style> with <style=cIsUtility>" + 
+                Environment.NewLine + "<style=cIsUtility>Minigun Mode</style> : Fire a minigun for <style=cIsDamage>" +
+                Configuration.MinigunTurretDamageCoefficient.Value * 100 + " damage</style> with <style=cIsUtility>" +
                 Configuration.MinigunTurretAttackSpeed.Value + " base attack speed</style>." +
-                Environment.NewLine + "<style=cIsUtility>Railgun Mode</style> : Fire a railgun for <style=cIsDamage>" + 
-                Configuration.RailgunTurretDamageCoefficient.Value * 100 + " damage</style> with <style=cIsUtility>" + 
+                Environment.NewLine + "<style=cIsUtility>Railgun Mode</style> : Fire a railgun for <style=cIsDamage>" +
+                Configuration.RailgunTurretDamageCoefficient.Value * 100 + " damage</style> with <style=cIsUtility>" +
                 Configuration.RailgunTurretAttackSpeed.Value + " base attack speed</style>." +
-                Environment.NewLine + "<style=cIsUtility>Shotgun Mode</style> : Fire rockets for <style=cIsDamage>" + 
-                Configuration.ShotgunTurretDamageCoefficient.Value * 100 + " damage</style> with <style=cIsUtility>" + 
+                Environment.NewLine + "<style=cIsUtility>Shotgun Mode</style> : Fire rockets for <style=cIsDamage>" +
+                Configuration.ShotgunTurretDamageCoefficient.Value * 100 + " damage</style> with <style=cIsUtility>" +
                 Configuration.ShotgunTurretAttackSpeed.Value + " base attack speed</style>." +
                 Environment.NewLine + "Can place up to 2.";
 

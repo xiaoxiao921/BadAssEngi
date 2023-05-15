@@ -1,6 +1,7 @@
 ﻿using BadAssEngi.Assets;
 using BadAssEngi.Assets.Sound;
 using EntityStates.Engi.Mine;
+using EntityStates.Toolbot;
 using RoR2;
 using RoR2.Projectile;
 using UnityEngine;
@@ -8,7 +9,7 @@ using UnityEngine.Networking;
 
 namespace BadAssEngi.Skills.Secondary.ClusterMine.MineStates.MainStateMachine
 {
-	public class DetonateCluster : BaseMineState
+    public class DetonateCluster : BaseMineState
 	{
         private ProjectileDamage _projectileDamage;
         public override bool shouldStick => false;
@@ -38,7 +39,7 @@ namespace BadAssEngi.Skills.Secondary.ClusterMine.MineStates.MainStateMachine
                         var z2 = Random.Range(0f, 360f);
                         var angVecLeft = Quaternion.Euler(-20, -90, z) * new Vector3(aimDirection.x, aimDirection.y, aimDirection.z).normalized;
                         var angVecRight = Quaternion.Euler(20, 90, z2) * new Vector3(aimDirection.x, aimDirection.y, aimDirection.z).normalized;
-                        
+
                         var minePrefab = currentRecursiveMine.RecursiveDepth == 0
                             ? BaeAssets.EngiClusterMineDepthOnePrefab
                             : BaeAssets.EngiClusterMineDepthTwoPrefab;
@@ -78,14 +79,11 @@ namespace BadAssEngi.Skills.Secondary.ClusterMine.MineStates.MainStateMachine
 
 		private void Explode()
 		{
-			var z = Random.Range(0f, 50f);
-            const float maxDistance = 99999f;
-            
             var baseMineArmingState = (BaseMineArmingState)armingStateMachine.state;
 
             //if (armingStateMachine. == 0) // why it happens ?
-              //  baseMineArmingState.damageScale = 1f; 
-              
+              //  baseMineArmingState.damageScale = 1f;
+
             new BlastAttack
             {
                 procChainMask = projectileController.procChainMask,
@@ -102,66 +100,87 @@ namespace BadAssEngi.Skills.Secondary.ClusterMine.MineStates.MainStateMachine
                 position = outer.transform.position,
                 damageColorIndex = _projectileDamage.damageColorIndex
             }.Fire();
-            
-            for (float x = -90; x <= 180; x += 45) // -90 to 90 for upper sphere
+
+            var genericBullet = new FireSpear();
+
+            // -90 to 90 for upper sphere
+            /*for (float x = -90; x <= 180; x += 45)
             {
                 for (float y = 0f; y <= 360f; y += 72)
                 {
-                    var ray = new Ray(outer.gameObject.transform.position, Quaternion.Euler(x, y, z) * Vector3.up);
-
-                    /*var randomRed = Random.Range(5f, 10f);
-                    var randomGreen = Random.Range(5f, 10f);
-                    var randomBlue = Random.Range(5, 10) * 50f;*/
-                    //Debug.Log($"Color : {randomRed} | {randomGreen} | {randomBlue}");
-
-                    var genericBullet = new EntityStates.Toolbot.FireSpear();
-                    new BulletAttack
-                    {
-                        aimVector = ray.direction,
-                        origin = ray.origin,
-                        owner = projectileController.owner,
-                        weapon = outer.gameObject,
-                        bulletCount = 1u,
-                        damage = _projectileDamage.damage * baseMineArmingState.damageScale,
-                        damageColorIndex = DamageColorIndex.Default,
-                        damageType = DamageType.Generic,
-                        falloffModel = BulletAttack.FalloffModel.None,
-                        force = 0.1f,
-                        HitEffectNormal = false,
-                        procChainMask = default,
-                        procCoefficient = 0.05f,
-                        maxDistance = maxDistance,
-                        radius = genericBullet.bulletRadius,
-                        isCrit = _projectileDamage.crit,
-                        muzzleName = genericBullet.muzzleName,
-                        minSpread = genericBullet.minSpread,
-                        maxSpread = genericBullet.maxSpread,
-                        hitEffectPrefab = null,
-                        smartCollision = true,
-                        sniper = false,
-                        spreadPitchScale = 0.5f,
-                        spreadYawScale = 1f,
-                        //tracerEffectPrefab = _railGunPrefab
-                        tracerEffectPrefab = null
-                    }.Fire();
-
-                    var currentVisual = Configuration.ClusterMineVisualBouncing.Value
-                        ? BaeAssets.PrefabEngiClusterMineVisualBounce
-                        : BaeAssets.PrefabEngiClusterMineVisual;
-                    var clusterVisual = Object.Instantiate(currentVisual, outer.gameObject.transform.position, Quaternion.Euler(x, y, z));
-
-                    if (Configuration.ClusterMineVisualBouncing.Value)
-                    {
-                        var clusterComp =
-                            clusterVisual.GetComponent<ClusterController>();
-
-                        clusterComp.Owner = projectileController.owner;
-                        clusterComp.Damage = _projectileDamage.damage * baseMineArmingState.damageScale;
-                    }
-
-                    NetworkServer.Spawn(clusterVisual);
+			        var z = Random.Range(0f, 50f);
+                    SpawnClusterProjectile(baseMineArmingState, genericBullet, Quaternion.Euler(x, y, z) * Vector3.up);
                 }
+            }*/
+
+            const int RandomPointCount = 30;
+            for (int i = 0; i < RandomPointCount; i++)
+            {
+                //Vector3 randomDirection = Random.insideUnitSphere.normalized;
+
+                float phi = i * (Mathf.PI * (3f - Mathf.Sqrt(5f))); // Fibonacci angle
+
+                float y = 1 - (i / (float)(RandomPointCount - 1)) * 2; // Map to range [-1, 1]
+                float radiusAtY = Mathf.Sqrt(1 - y * y); // Radius at current height
+
+                float x = Mathf.Cos(phi) * radiusAtY;
+                float z = Mathf.Sin(phi) * radiusAtY;
+
+                Vector3 randomDirection = new Vector3(x, y, z);
+
+                SpawnClusterProjectile(baseMineArmingState, genericBullet, randomDirection);
             }
-		}
-	}
+        }
+
+        private void SpawnClusterProjectile(BaseMineArmingState baseMineArmingState, FireSpear genericBullet, Vector3 direction)
+        {
+            var ray = new Ray(outer.gameObject.transform.position, direction);
+
+            const float maxDistance = 99999f;
+            new BulletAttack
+            {
+                aimVector = ray.direction,
+                origin = ray.origin,
+                owner = projectileController.owner,
+                weapon = outer.gameObject,
+                bulletCount = 1u,
+                damage = _projectileDamage.damage * baseMineArmingState.damageScale,
+                damageColorIndex = DamageColorIndex.Default,
+                damageType = DamageType.Generic,
+                falloffModel = BulletAttack.FalloffModel.None,
+                force = 0.1f,
+                HitEffectNormal = false,
+                procChainMask = default,
+                procCoefficient = 0.05f,
+                maxDistance = maxDistance,
+                radius = genericBullet.bulletRadius,
+                isCrit = _projectileDamage.crit,
+                muzzleName = genericBullet.muzzleName,
+                minSpread = genericBullet.minSpread,
+                maxSpread = genericBullet.maxSpread,
+                hitEffectPrefab = null,
+                smartCollision = true,
+                sniper = false,
+                spreadPitchScale = 0.5f,
+                spreadYawScale = 1f,
+                tracerEffectPrefab = null
+            }.Fire();
+
+            var currentVisual = Configuration.ClusterMineVisualBouncing.Value
+                ? BaeAssets.PrefabEngiClusterMineVisualBounce
+                : BaeAssets.PrefabEngiClusterMineVisual;
+            var clusterVisual = Object.Instantiate(currentVisual, outer.gameObject.transform.position, Quaternion.LookRotation(direction));
+
+            if (Configuration.ClusterMineVisualBouncing.Value)
+            {
+                var clusterComp =
+                    clusterVisual.GetComponent<ClusterController>();
+
+                clusterComp.Owner = projectileController.owner;
+                clusterComp.Damage = _projectileDamage.damage * baseMineArmingState.damageScale;
+            }
+
+            NetworkServer.Spawn(clusterVisual);
+        }
+    }
 }

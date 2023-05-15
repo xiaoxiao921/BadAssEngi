@@ -53,23 +53,23 @@ namespace BadAssEngi
                     {
                         switch (TurretTypeController.CurrentTurretType)
                         {
-                            case TurretTypeController.TurretType.Default:
-                                TurretTypeController.CurrentTurretType = TurretTypeController.TurretType.Minigun;
+                            case TurretType.Default:
+                                TurretTypeController.CurrentTurretType = TurretType.Minigun;
                                 Chat.AddMessage(
                                     "<style=cIsUtility>Turret Type is now: </style><style=cDeath>[Minigun]</style>");
                                 break;
-                            case TurretTypeController.TurretType.Minigun:
-                                TurretTypeController.CurrentTurretType = TurretTypeController.TurretType.Railgun;
+                            case TurretType.Minigun:
+                                TurretTypeController.CurrentTurretType = TurretType.Railgun;
                                 Chat.AddMessage(
                                     "<style=cIsUtility>Turret Type is now: </style><style=cDeath>[Railgun]</style>");
                                 break;
-                            case TurretTypeController.TurretType.Railgun:
-                                TurretTypeController.CurrentTurretType = TurretTypeController.TurretType.Shotgun;
+                            case TurretType.Railgun:
+                                TurretTypeController.CurrentTurretType = TurretType.Shotgun;
                                 Chat.AddMessage(
                                     "<style=cIsUtility>Turret Type is now: </style><style=cDeath>[Hydra Launcher]</style>");
                                 break;
-                            case TurretTypeController.TurretType.Shotgun:
-                                TurretTypeController.CurrentTurretType = TurretTypeController.TurretType.Default;
+                            case TurretType.Shotgun:
+                                TurretTypeController.CurrentTurretType = TurretType.Default;
                                 Chat.AddMessage(
                                     "<style=cIsUtility>Turret Type is now: </style><style=cDeath>[WeakBoy]</style>");
                                 break;

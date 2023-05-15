@@ -42,13 +42,13 @@ namespace BadAssEngi.Skills.Special
         private static void TurretFiringHook(ILContext il)
         {
             var cursor = new ILCursor(il);
-            var index = 0;
+            var index = TurretType.Default;
             BadAssTurret currentTurret = null;
             var soundMsg = new PlaySoundMsg();
 
             cursor.Emit(OpCodes.Ldarg_0);
-            cursor.Emit(OpCodes.Call, typeof(EntityState).GetMethodCached("get_characterBody"));
-            cursor.Emit(OpCodes.Callvirt, typeof(CharacterBody).GetMethodCached("get_master"));
+            cursor.Emit(OpCodes.Call, typeof(EntityState).GetMethodCached("get_" + nameof(EntityState.characterBody)));
+            cursor.Emit(OpCodes.Callvirt, typeof(CharacterBody).GetMethodCached("get_" + nameof(CharacterBody.master)));
 
             cursor.EmitDelegate<Action<CharacterMaster>>(characterMaster =>
             {
@@ -62,13 +62,13 @@ namespace BadAssEngi.Skills.Special
             });
 
             cursor.GotoNext(
-                i => i.MatchLdsfld("EntityStates.EngiTurret.EngiTurretWeapon.FireGauss", "attackSoundString")
+                i => i.MatchLdsfld<FireGauss>(nameof(FireGauss.attackSoundString))
             );
             cursor.Remove();
 
             cursor.EmitDelegate<Func<string>>( () =>
             {
-                if (index == 1)
+                if (index == TurretType.Minigun)
                 {
                     soundMsg.NetId = currentTurret.gameObject.GetComponent<NetworkIdentity>().netId;
                     soundMsg.SoundName = SoundHelper.MiniGunTurretShot;
@@ -76,7 +76,7 @@ namespace BadAssEngi.Skills.Special
                     return "";
                 }
 
-                if (index == 2)
+                if (index == TurretType.Railgun)
                 {
                     soundMsg.NetId = currentTurret.gameObject.GetComponent<NetworkIdentity>().netId;
                     soundMsg.SoundName = SoundHelper.RailGunTurretShot;
@@ -84,19 +84,18 @@ namespace BadAssEngi.Skills.Special
                     return "";
                 }
 
-                return typeof(RoR2Application).Assembly
-                    .GetType("EntityStates.EngiTurret.EngiTurretWeapon.FireGauss").GetFieldValue<string>("attackSoundString");
+                return FireGauss.attackSoundString;
             });
 
             cursor.GotoNext(
-                i => i.MatchCall<EntityState>("get_gameObject")
+                i => i.MatchCall<EntityState>("get_" + nameof(EntityState.gameObject))
             );
             cursor.Index++;
 
 
             cursor.Emit(OpCodes.Ldstr, SoundHelper.TurretRTPCAttackSpeed);
             cursor.Emit(OpCodes.Ldarg_0);
-            cursor.Emit(OpCodes.Ldfld, typeof(BaseState).GetFieldCached("attackSpeedStat"));
+            cursor.Emit(OpCodes.Ldfld, typeof(BaseState).GetFieldCached(nameof(BaseState.attackSpeedStat)));
 
             cursor.GotoNext(
                 i => i.MatchCall(typeof(RoR2.Util).GetMethodCached("PlaySound", new[] { typeof(string), typeof(GameObject) }))
@@ -105,13 +104,13 @@ namespace BadAssEngi.Skills.Special
             cursor.Emit(OpCodes.Call, typeof(RoR2.Util).GetMethodCached("PlaySound", new[] { typeof(string), typeof(GameObject), typeof(string), typeof(float) }));
 
             cursor.GotoNext(
-                i => i.MatchLdfld("EntityStates.EngiTurret.EngiTurretWeapon.FireGauss", "duration")
+                i => i.MatchLdfld<FireGauss>(nameof(FireGauss.duration))
             );
             cursor.Index++;
 
             cursor.EmitDelegate<Func<float, float>>(duration =>
             {
-                if (index == 1)
+                if (index == TurretType.Minigun)
                 {
                     return 0.0000001f;
                 }
@@ -120,25 +119,47 @@ namespace BadAssEngi.Skills.Special
             });
 
             cursor.GotoNext(
-                i => i.MatchLdsfld("EntityStates.EngiTurret.EngiTurretWeapon.FireGauss", "tracerEffectPrefab"),
-                i => i.MatchStfld<BulletAttack>("tracerEffectPrefab")
+                i => i.MatchLdsfld<FireGauss>(nameof(FireGauss.tracerEffectPrefab)),
+                i => i.MatchStfld<BulletAttack>(nameof(BulletAttack.tracerEffectPrefab))
                 );
             cursor.Index++;
 
-            cursor.EmitDelegate<Func<GameObject, GameObject>>(prefab =>
+            cursor.Emit(OpCodes.Ldarg_0);
+            cursor.EmitDelegate<Func<GameObject, FireGauss, GameObject >>((tracerEffectPrefab, fireGaussInstance) =>
             {
-                if (index == 1)
+                if (index == TurretType.Minigun)
                 {
-                    prefab = BaeAssets.MiniGunPrefab;
+                    tracerEffectPrefab = BaeAssets.MiniGunPrefab;
                 }
 
-                if (index == 2)
+                if (index == TurretType.Railgun)
                 {
-                    //new RebarColorMsg { Id = 3 }.Send(NetworkDestination.Clients);
-                    prefab = BaeAssets.RailGunPrefab;
+                    tracerEffectPrefab = null;
+
+                    static Transform GetTurretMuzzle(GameObject obj)
+                    {
+                        const string muzzleName = "Muzzle";
+                        ModelLocator component = obj.GetComponent<ModelLocator>();
+                        if (component && component.modelTransform)
+                        {
+                            ChildLocator component2 = component.modelTransform.GetComponent<ChildLocator>();
+                            if (component2)
+                            {
+                                int childIndex = component2.FindChildIndex(muzzleName);
+                                Transform transform = component2.FindChild(childIndex);
+                                return component2.FindChild(childIndex);
+                            }
+                        }
+
+                        return null;
+                    }
+
+                    var turretMuzzleTransform = GetTurretMuzzle(fireGaussInstance.gameObject);
+                    var railgunTracer = UnityEngine.Object.Instantiate(BaeAssets.PrefabEngiTurretRailGunPrefab, turretMuzzleTransform.position, Quaternion.LookRotation(fireGaussInstance.GetAimRay().direction, fireGaussInstance.transform.up));
+                    NetworkServer.Spawn(railgunTracer);
                 }
 
-                return prefab;
+                return tracerEffectPrefab;
             });
             cursor.Index += 2;
 
@@ -146,70 +167,82 @@ namespace BadAssEngi.Skills.Special
             // we setting the bulletattack instance fields here
             //
             cursor.Emit(OpCodes.Ldc_R4, Configuration.RailgunTurretMaxDistanceTargeting.Value + 1f);
-            cursor.Emit(OpCodes.Callvirt, typeof(BulletAttack).GetMethodCached("set_maxDistance"));
+            cursor.Emit(OpCodes.Callvirt, typeof(BulletAttack).GetMethodCached("set_" + nameof(BulletAttack.maxDistance)));
             cursor.Emit(OpCodes.Dup);
 
             cursor.Emit(OpCodes.Ldc_R4, 0f);
             cursor.EmitDelegate<Func<float, float>>(spread =>
             {
-                if (index == 1)
+                if (index == TurretType.Minigun)
                 {
                     spread = 1f;
                 }
 
                 return spread;
             });
-            cursor.Emit(OpCodes.Stfld, typeof(BulletAttack).GetFieldCached("spreadPitchScale"));
+            cursor.Emit(OpCodes.Stfld, typeof(BulletAttack).GetFieldCached(nameof(BulletAttack.spreadPitchScale)));
             cursor.Emit(OpCodes.Dup);
 
             cursor.Emit(OpCodes.Ldc_R4, 0f);
             cursor.EmitDelegate<Func<float, float>>(spread =>
             {
-                if (index == 1)
+                if (index == TurretType.Minigun)
                 {
                     spread = 1f;
                 }
 
                 return spread;
             });
-            cursor.Emit(OpCodes.Stfld, typeof(BulletAttack).GetFieldCached("spreadYawScale"));
+            cursor.Emit(OpCodes.Stfld, typeof(BulletAttack).GetFieldCached(nameof(BulletAttack.spreadYawScale)));
             cursor.Emit(OpCodes.Dup);
 
             cursor.Emit(OpCodes.Ldc_R4, 1f);
             cursor.EmitDelegate<Func<float, float>>(procCoefficient =>
             {
-                if (index == 1)
+                if (index == TurretType.Minigun)
                 {
                     procCoefficient = Configuration.MinigunTurretProcCoefficient.Value;
                 }
 
                 return procCoefficient;
             });
-            cursor.Emit(OpCodes.Stfld, typeof(BulletAttack).GetFieldCached("procCoefficient"));
+            cursor.Emit(OpCodes.Stfld, typeof(BulletAttack).GetFieldCached(nameof(BulletAttack.procCoefficient)));
             cursor.Emit(OpCodes.Dup);
 
             cursor.GotoPrev(MoveType.After,
-                i => i.MatchLdsfld<FireGauss>("damageCoefficient"));
+                i => i.MatchLdsfld<FireGauss>(nameof(FireGauss.damageCoefficient)));
             cursor.EmitDelegate<Func<float, float>>(damageCoefficient =>
             {
-                if (index == 0)
+                if (index == TurretType.Default)
                 {
                     damageCoefficient = Configuration.DefaultTurretDamageCoefficient.Value;
                 }
-                else if (index == 1)
+                else if (index == TurretType.Minigun)
                 {
                     damageCoefficient = Configuration.MinigunTurretDamageCoefficient.Value;
                 }
-                else if (index == 2)
+                else if (index == TurretType.Railgun)
                 {
                     damageCoefficient = Configuration.RailgunTurretDamageCoefficient.Value;
                 }
-                else if (index == 3)
+                else if (index == TurretType.Shotgun)
                 {
                     damageCoefficient = Configuration.ShotgunTurretDamageCoefficient.Value;
                 }
 
                 return damageCoefficient;
+            });
+
+            cursor.GotoNext(i => i.MatchCallOrCallvirt<BulletAttack>(nameof(BulletAttack.Fire)));
+            cursor.EmitDelegate<Func<BulletAttack, BulletAttack>>(bulletAttack =>
+            {
+                if (index == TurretType.Railgun)
+                {
+                    bulletAttack.stopperMask = LayerIndex.world.mask;
+                    bulletAttack.hitEffectPrefab = null;
+                }
+
+                return bulletAttack;
             });
         }
 
@@ -222,13 +255,13 @@ namespace BadAssEngi.Skills.Special
             }
 
             var turretIndex = self.outer.commonComponents.characterBody.master.GetComponent<BadAssTurret>().Index;
-            if (turretIndex != 3)
+            if (turretIndex != TurretType.Shotgun)
             {
                 orig(self);
                 return;
             }
 
-            var ptr = typeof(BaseState).GetMethod("OnEnter").MethodHandle.GetFunctionPointer();
+            var ptr = typeof(BaseState).GetMethod(nameof(BaseState.OnEnter)).MethodHandle.GetFunctionPointer();
             var baseOnEnter = (Action)Activator.CreateInstance(typeof(Action), self, ptr);
             baseOnEnter();
 
@@ -395,7 +428,7 @@ namespace BadAssEngi.Skills.Special
                                 var cm = cb.master;
                                 var turretSkillVariant = cm.loadout.bodyLoadoutManager.GetSkillVariant(cb.bodyIndex, 3);
                                 if (turretSkillVariant == 0)
-                                    TurretTypeController.CurrentTurretType = TurretTypeController.TurretType.Default;
+                                    TurretTypeController.CurrentTurretType = TurretType.Default;
 
                                 new TurretTypeMsgToServer {TurretTypeId = (byte)TurretTypeController.CurrentTurretType}
                                     .Send(NetworkDestination.Server);

@@ -9,9 +9,11 @@ namespace BadAssEngi.Util
 {
     internal static class SkillExtensions
     {
-        internal static SkillFamily AddSkillFamily(params SkillDef[] skills)
+        internal static SkillFamily AddSkillFamily(string skillFamilyName, params SkillDef[] skills)
         {
             var family = ScriptableObject.CreateInstance<SkillFamily>();
+            var familySO = (ScriptableObject)family;
+            familySO.name = skillFamilyName;
             family.variants = new SkillFamily.Variant[skills.Length];
 
             for (var i = 0; i < skills.Length; ++i)
@@ -32,9 +34,9 @@ namespace BadAssEngi.Util
             return family;
         }
 
-        internal static void SetSkillFamily(this GenericSkill genericSkill, params SkillDef[] skills)
+        internal static void SetSkillFamily(this GenericSkill genericSkill, string skillFamilyName, params SkillDef[] skills)
         {
-            var family = AddSkillFamily(skills);
+            var family = AddSkillFamily(skillFamilyName, skills);
 
             genericSkill._skillFamily = family;
         }
