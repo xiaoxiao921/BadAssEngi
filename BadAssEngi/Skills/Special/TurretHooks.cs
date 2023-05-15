@@ -58,7 +58,7 @@ namespace BadAssEngi.Skills.Special
                     new StopSoundMsg {soundPlayId = currentTurret.SoundGunId}.Send(NetworkDestination.Clients);
                     index = currentTurret.Index;
                 }
-                    
+
             });
 
             cursor.GotoNext(
@@ -92,7 +92,7 @@ namespace BadAssEngi.Skills.Special
                 i => i.MatchCall<EntityState>("get_gameObject")
             );
             cursor.Index++;
-            
+
 
             cursor.Emit(OpCodes.Ldstr, SoundHelper.TurretRTPCAttackSpeed);
             cursor.Emit(OpCodes.Ldarg_0);
@@ -134,7 +134,7 @@ namespace BadAssEngi.Skills.Special
 
                 if (index == 2)
                 {
-                    new RebarColorMsg { Id = 3 }.Send(NetworkDestination.Clients);
+                    //new RebarColorMsg { Id = 3 }.Send(NetworkDestination.Clients);
                     prefab = BaeAssets.RailGunPrefab;
                 }
 
@@ -290,7 +290,7 @@ namespace BadAssEngi.Skills.Special
                             var cb = leader.characterBody;
                             var cm = cb.master;
                             var turretSkillVariant = cm.loadout.bodyLoadoutManager.GetSkillVariant(cb.bodyIndex, 3);
-                            if (playerCharacterMasterController.master.GetBody().netId.Value == leader.characterBody.netId.Value && 
+                            if (playerCharacterMasterController.master.GetBody().netId.Value == leader.characterBody.netId.Value &&
                                 turretSkillVariant == SkillLoader.SwappableTurretSkillVariant)
                             {
                                 pingerController = playerCharacterMasterController.pingerController;
@@ -323,7 +323,7 @@ namespace BadAssEngi.Skills.Special
                                 }
                             }
                         }
-                    }    
+                    }
                 }
             }
 
@@ -360,11 +360,11 @@ namespace BadAssEngi.Skills.Special
                 TurretTypeController.SetTurretType(turretType);
             });
 
-            
+
             cursor.GotoNext(i => i.MatchStloc(2)); // TODO: ??? safe to remove ?
 
-            cursor.GotoNext(i => i.MatchStloc(4)); // TODO: clean this stloc 
-            cursor.EmitDelegate<Func<Deployable, Deployable>>(turret => 
+            cursor.GotoNext(i => i.MatchStloc(4)); // TODO: clean this stloc
+            cursor.EmitDelegate<Func<Deployable, Deployable>>(turret =>
             {
                 var ai = turret.GetComponent<CharacterMaster>().GetBody().GetComponent<NetworkIdentity>().netId;
                 var turretColorMsg = new TurretColorMsg

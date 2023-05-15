@@ -24,7 +24,7 @@ namespace BadAssEngi
             foreach (var controller in ReInput.controllers.Controllers)
             {
                 var gamePad = controller.GetTemplate<IGamepadTemplate>();
-                if (gamePad == null) 
+                if (gamePad == null)
                     continue;
 
                 Configuration.DPad = gamePad.dPad;
@@ -122,15 +122,22 @@ namespace BadAssEngi
                             var hasSkillOverride = secondarySkillSlot.skillDef == SkillLoader.SatchelMineSkillDef;
                             if (hasSkillOverride)
                             {
-                                secondarySkillSlot.UnsetSkillOverride(body, SkillLoader.SatchelMineSkillDef,
-                                    GenericSkill.SkillOverridePriority.Replacement);
+                                var oldCd = secondarySkillSlot.rechargeStopwatch;
+                                var oldStock = secondarySkillSlot.stock;
+                                secondarySkillSlot.UnsetSkillOverride(body, SkillLoader.SatchelMineSkillDef, GenericSkill.SkillOverridePriority.Replacement);
+                                secondarySkillSlot.rechargeStopwatch = oldCd;
+                                secondarySkillSlot.stock = oldStock;
 
                                 Chat.AddMessage(
                                     "<style=cIsUtility>Mine Type is now: </style><style=cDeath>[Cluster]</style>");
                             }
                             else
                             {
+                                var oldCd = secondarySkillSlot.rechargeStopwatch;
+                                var oldStock = secondarySkillSlot.stock;
                                 secondarySkillSlot.SetSkillOverride(body, SkillLoader.SatchelMineSkillDef, GenericSkill.SkillOverridePriority.Replacement);
+                                secondarySkillSlot.rechargeStopwatch = oldCd;
+                                secondarySkillSlot.stock = oldStock;
 
                                 Chat.AddMessage(
                                     "<style=cIsUtility>Mine Type is now: </style><style=cDeath>[Satchel]</style>");

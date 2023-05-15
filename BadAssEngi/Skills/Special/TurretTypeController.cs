@@ -109,8 +109,8 @@ namespace BadAssEngi.Skills.Special
                 case TurretType.Railgun:
                     LocalTurretPrefabIndex = 2;
 
-                    new RebarColorMsg { Id = 3 }.Send(NetworkDestination.Clients);
-                    
+                    //new RebarColorMsg { Id = 3 }.Send(NetworkDestination.Clients);
+
                     characterBody.baseAttackSpeed = Configuration.RailgunTurretAttackSpeed.Value;
                     characterBody.levelDamage = Configuration.RailgunTurretDamagePerLevel.Value;
                     characterBody.baseNameToken = ExternalRailgunTurretName;
@@ -189,7 +189,7 @@ namespace BadAssEngi.Skills.Special
                 case InternalRailgunTurretName:
                     badAssTurret.Index = 2;
 
-                    new RebarColorMsg { Id = 3 }.Send(NetworkDestination.Clients);
+                    //new RebarColorMsg { Id = 3 }.Send(NetworkDestination.Clients);
 
                     characterBody.baseAttackSpeed = Configuration.RailgunTurretAttackSpeed.Value;
                     characterBody.levelDamage = Configuration.RailgunTurretDamagePerLevel.Value;

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using MonoMod.RuntimeDetour;
 using R2API.Utils;
 using RoR2;
@@ -60,21 +61,42 @@ namespace BadAssEngi.Skills.Secondary.OrbitalStrike
 
         private static void KeepOrbitalCdServerScene(NetworkManager instance, string newSceneName)
         {
-            TryRestoringOrbitalCd();
+            try
+            {
+                TryRestoringOrbitalCd();
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex);
+            }
 
             _origServerChangeScene(instance, newSceneName);
         }
 
         private static void KeepOrbitalCdClientScene(NetworkManager instance, string newSceneName, bool forceReload)
         {
-            TryRestoringOrbitalCd();
+            try
+            {
+                TryRestoringOrbitalCd();
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex);
+            }
 
             _origClientChangeScene(instance, newSceneName, forceReload);
         }
 
         private static void KeepOrbitalCd(On.RoR2.TeleportOutController.orig_AddTPOutEffect orig, CharacterModel characterModel, float beginAlpha, float endAlpha, float duration)
         {
-            TryRestoringOrbitalCd();
+            try
+            {
+                TryRestoringOrbitalCd();
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex);
+            }
 
             orig(characterModel, beginAlpha, endAlpha, duration);
         }
@@ -87,7 +109,7 @@ namespace BadAssEngi.Skills.Secondary.OrbitalStrike
                 if (nu)
                 {
                     var body = nu.GetCurrentBody();
-                    if (body && body.baseNameToken.ToLower().Contains("engi"))
+                    if (body && body.bodyIndex == BadAssEngi.EngiBodyIndex)
                     {
                         var skillLocator = body.GetComponent<SkillLocator>();
                         var orbitalGenericSkill = skillLocator.secondary;

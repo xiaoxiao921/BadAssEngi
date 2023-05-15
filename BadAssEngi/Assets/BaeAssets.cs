@@ -20,6 +20,7 @@ using RoR2.Projectile;
 using RoR2.UI;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.Rendering;
 
 namespace BadAssEngi.Assets
 {
@@ -74,14 +75,13 @@ namespace BadAssEngi.Assets
         public static GameObject PrefabEngiRocketCrosshair { get; private set; }
 
         internal static Material RailGunTrailMaterial { get; set; }
-        internal static Color OrigRebarColor { get; set; }
-        internal static Color EngiRebarColor { get; set; }
+        internal static Color[] EngiRebarColor { get; set; }
         internal static GameObject RailGunPrefab { get; private set; }
         internal static GameObject MiniGunPrefab { get; private set; }
 
         public static GameObject PrefabOrbitalStrike { get; private set; }
 
-        
+
         public static GameObject PrefabEngiClusterMineVisual { get; private set; }
         public static GameObject PrefabEngiClusterMineVisualBounce { get; private set; }
         public static readonly List<Color> OriginalClusterMineVisual = new List<Color>();
@@ -96,6 +96,8 @@ namespace BadAssEngi.Assets
         public static readonly List<string> EngiAnimations = new List<string>();
 
         public static GameObject PrefabEmoteWindow;
+        private static List<Transform> _rebarEffects;
+
         internal static GameObject MainMenuButtonPrefab { get; private set; }
         internal static GameObject PauseMenuPrefab { get; private set; }
 
@@ -210,16 +212,66 @@ namespace BadAssEngi.Assets
 
         private static void InitRebarPrefabs()
         {
-            MiniGunPrefab = Resources.Load<GameObject>("prefabs/effects/tracers/tracercommandoboost");
-            RailGunPrefab = Resources.Load<GameObject>("prefabs/effects/tracers/tracertoolbotrebar");
+            MiniGunPrefab = Resources.Load<GameObject>("prefabs/effects/tracers/tracercommandoboost").InstantiateClone("BAEMiniGunTracerPrefab", false);
+            RailGunPrefab = Resources.Load<GameObject>("prefabs/effects/tracers/tracertoolbotrebar").InstantiateClone("BAERailGunTracerPrefab", false);
 
-            RailGunTrailMaterial = RailGunPrefab.transform.Find("BeamObject").GetComponentInChildren<ParticleSystemRenderer>().trailMaterial;
-            OrigRebarColor = RailGunTrailMaterial.GetColor(152);
-            EngiRebarColor = new Color(7.5f, 7.5f, 375f);
-            RailGunTrailMaterial.SetColor(152, EngiRebarColor);
+            ContentAddition.AddEffect(MiniGunPrefab);
+            ContentAddition.AddEffect(RailGunPrefab);
 
-            Object.DontDestroyOnLoad(MiniGunPrefab);
-            Object.DontDestroyOnLoad(RailGunPrefab);
+            var stickEffectTransform = RailGunPrefab.transform.Find("StickEffect");
+
+            _rebarEffects = new List<Transform>();
+
+            var rebarEffect = stickEffectTransform.Find("FlickeringPointLight");
+            rebarEffect.transform.parent = null;
+            _rebarEffects.Add(rebarEffect);
+
+            rebarEffect = stickEffectTransform.Find("Flash");
+            rebarEffect.transform.parent = null;
+            _rebarEffects.Add(rebarEffect);
+
+            rebarEffect = stickEffectTransform.Find("Dust");
+            rebarEffect.transform.parent = null;
+            _rebarEffects.Add(rebarEffect);
+
+            rebarEffect = stickEffectTransform.Find("Dust, Directional");
+            rebarEffect.transform.parent = null;
+            _rebarEffects.Add(rebarEffect);
+
+            rebarEffect = stickEffectTransform.Find("Debris");
+            rebarEffect.transform.parent = null;
+            _rebarEffects.Add(rebarEffect);
+
+            rebarEffect = stickEffectTransform.Find("RebarMesh");
+            rebarEffect.transform.parent = null;
+            _rebarEffects.Add(rebarEffect);
+
+            var railGunParticleSystemRenderer = RailGunPrefab.transform.Find("BeamObject").GetComponentInChildren<ParticleSystemRenderer>();
+            RailGunTrailMaterial = GameObject.Instantiate(railGunParticleSystemRenderer.trailMaterial);
+            RailGunTrailMaterial.name = "BAERailGunTrailMaterial";
+            railGunParticleSystemRenderer.trailMaterial = RailGunTrailMaterial;
+
+            const int MaxMaterialPropertyCount = 1000;
+            EngiRebarColor = new Color[MaxMaterialPropertyCount];
+
+            /*OrigRebarColor = new Color[MaxMaterialPropertyCount];
+            for (int i = 0; i < MaxMaterialPropertyCount; i++)
+            {
+                if (RailGunTrailMaterial.HasProperty(i) && RailGunTrailMaterial.shader.GetPropertyType(i) == ShaderPropertyType.Color)
+                {
+                    OrigRebarColor[i] = RailGunTrailMaterial.GetColor(i);
+                }
+            }*/
+
+            for (int i = 0; i < MaxMaterialPropertyCount; i++)
+            {
+                if (RailGunTrailMaterial.HasProperty(i))
+                {
+                    var c = new Color(7.5f, 7.5f, 375f);
+                    EngiRebarColor[i] = c;
+                    RailGunTrailMaterial.SetColor(i, c);
+                }
+            }
         }
 
         private static void AddPrefabsToGame()
@@ -394,7 +446,7 @@ namespace BadAssEngi.Assets
 
                 PrefabEmoteWindow = PrefabEmoteWindow.InstantiateClone("PrefabEmoteWindow", false);
                 PrefabEngiCustomAnimation = PrefabEngiCustomAnimation.InstantiateClone("PrefabEngiCustomAnimation", false);
-                
+
                 var layerKey = PauseMenuPrefab.GetComponent<UILayerKey>();
 
                 var window = PrefabEmoteWindow.transform.GetChild(0).gameObject;

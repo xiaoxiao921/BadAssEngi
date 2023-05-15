@@ -38,17 +38,19 @@ namespace BadAssEngi
     {
         public const string ModGuid = "iDeathHD." + ModName;
         private const string ModName = "BadAssEngi";
-        private const string ModVer = "1.3.6";
+        private const string ModVer = "1.3.7";
 
         internal static BodyIndex EngiBodyIndex;
         private const string EngiBodyPrefabName = "EngiBody";
+
         internal static Texture2D OrigEngiTexture, OrigAltEngiTexture, OrigTurretTexture;
-        private static readonly Transform[] CachedRebarEffects = new Transform[6];
 
         internal static BadAssEngi Instance { get; private set; }
 
         public void Awake()
         {
+            Log.Init(Logger);
+
             Configuration.Init(Config);
             BaeAssets.Init();
             SoundHelper.AddSoundBank();
@@ -73,7 +75,6 @@ namespace BadAssEngi
             NetworkingAPI.RegisterMessageType<AnimMsg>();
             NetworkingAPI.RegisterMessageType<DetonateMsg>();
             NetworkingAPI.RegisterMessageType<EngiColorMsg>();
-            NetworkingAPI.RegisterMessageType<RebarColorMsg>();
             NetworkingAPI.RegisterMessageType<PlaySoundMsg>();
             NetworkingAPI.RegisterMessageType<PlaySoundAndDestroyMsg>();
             NetworkingAPI.RegisterMessageType<StopAnimMsg>();
@@ -85,21 +86,16 @@ namespace BadAssEngi
 
         private static void InitHooks()
         {
-            //DebugHelper.Init();
-
             CommandHelper.AddToConsoleWhenReady();
 
             RoR2Application.onLoad += () => { EngiBodyIndex = BodyCatalog.FindBodyIndex(EngiBodyPrefabName); };
-
-            On.RoR2.Run.Start += RemoveRebarEffects;
-            On.RoR2.Run.OnDestroy += RestoreRebarEffects;
 
             IL.RoR2.Stage.RespawnLocalPlayers += ChangeEngiColorAndAddMissileTrackerOnRespawn;
 
             IL.RoR2.BlastAttack.HandleHits += BlastAttackMultiplySelfMineDamage;
 
             ModCompatibilities();
-            
+
             EmotesHooks.Init();
             OrbitalHooks.Init();
             TurretHooks.Init();
@@ -140,51 +136,11 @@ namespace BadAssEngi
             cursor.GotoNext(
                 i => i.MatchLdloc(out _),
                 i => i.MatchLdstr(""),
-                i => i.MatchCallvirt<CharacterMaster>("CallCmdRespawn")
+                i => i.MatchCallvirt<CharacterMaster>(nameof(CharacterMaster.CallCmdRespawn))
             );
             cursor.Index++;
-            
+
             cursor.EmitDelegate<Action>(() => { Instance.StartCoroutine(DelayedEngiColorChangeAndUpdateGrenadeType(1f)); });
-        }
-
-        // big code smell here
-        private static void RemoveRebarEffects(On.RoR2.Run.orig_Start orig, Run self)
-        {
-            orig(self);
-
-            var stickEffectTransform = BaeAssets.RailGunPrefab.transform.Find("StickEffect");
-
-            CachedRebarEffects[0] = stickEffectTransform.Find("FlickeringPointLight");
-            CachedRebarEffects[0].transform.parent = null;
-
-            CachedRebarEffects[1] = stickEffectTransform.Find("Flash");
-            CachedRebarEffects[1].transform.parent = null;
-
-            CachedRebarEffects[2] = stickEffectTransform.Find("Dust");
-            CachedRebarEffects[2].transform.parent = null;
-
-            CachedRebarEffects[3] = stickEffectTransform.Find("Dust, Directional");
-            CachedRebarEffects[3].transform.parent = null;
-
-            CachedRebarEffects[4] = stickEffectTransform.Find("Debris");
-            CachedRebarEffects[4].transform.parent = null;
-
-            CachedRebarEffects[5] = stickEffectTransform.Find("RebarMesh");
-            CachedRebarEffects[5].transform.parent = null;
-        }
-
-        private static void RestoreRebarEffects(On.RoR2.Run.orig_OnDestroy orig, Run self)
-        {
-            var stickEffectTransform = BaeAssets.RailGunPrefab.transform.Find("StickEffect");
-
-            CachedRebarEffects[0].transform.parent = stickEffectTransform;
-            CachedRebarEffects[1].transform.parent = stickEffectTransform;
-            CachedRebarEffects[2].transform.parent = stickEffectTransform;
-            CachedRebarEffects[3].transform.parent = stickEffectTransform;
-            CachedRebarEffects[4].transform.parent = stickEffectTransform;
-            CachedRebarEffects[5].transform.parent = stickEffectTransform;
-
-            orig(self);
         }
 
         private static void BlastAttackMultiplySelfMineDamage(ILContext il)
@@ -194,8 +150,8 @@ namespace BadAssEngi
             var targetLoc = 0;
 
             cursor.GotoNext(
-                i => i.MatchLdfld<BlastAttack.HitPoint>("hurtBox"),
-                i => i.MatchLdfld<HurtBox>("healthComponent"),
+                i => i.MatchLdfld<BlastAttack.HitPoint>(nameof(BlastAttack.HitPoint.hurtBox)),
+                i => i.MatchLdfld<HurtBox>(nameof(HurtBox.healthComponent)),
                 i => i.MatchStloc(out targetLoc)
             );
 
@@ -249,8 +205,8 @@ namespace BadAssEngi
 
             cursor.GotoNext(
                 i => i.MatchLdarg(0),
-                i => i.MatchCallOrCallvirt<CharacterMaster>("get_bodyInstanceObject"),
-                i => i.MatchCallOrCallvirt<GameObject>("GetComponent")
+                i => i.MatchCallOrCallvirt<CharacterMaster>("get_" + nameof(CharacterMaster.bodyInstanceObject)),
+                i => i.MatchCallOrCallvirt<GameObject>(nameof(GameObject.GetComponent))
             );
             cursor.RemoveRange(5);
             cursor.Emit(OpCodes.Ldc_I4, 10000);
@@ -269,7 +225,7 @@ namespace BadAssEngi
                     if (currentCharacterBody)
                     {
                         var bodyIndex = currentCharacterBody.bodyIndex;
-                        
+
                         if (bodyIndex == EngiBodyIndex)
                         {
                             var grenadeSkillVariant =
