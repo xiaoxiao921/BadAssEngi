@@ -108,7 +108,8 @@ namespace BadAssEngi.Skills
         private static void SeekerMissile()
         {
             ChargeSeekerMissileSkillDef = ScriptableObject.CreateInstance<SkillDef>();
-            ChargeSeekerMissileSkillDef.skillName = "SeekerSwarm";
+            ((ScriptableObject)ChargeSeekerMissileSkillDef).name = "BAESeekerSwarm";
+            ChargeSeekerMissileSkillDef.skillName = "BAESeekerSwarm";
             ChargeSeekerMissileSkillDef.skillNameToken = "Seeker Swarm";
 
             ChargeSeekerMissileSkillDef.skillDescriptionToken =
@@ -135,7 +136,8 @@ namespace BadAssEngi.Skills
         private static void SwappableGrenade()
         {
             ChargeSwappableGrenadesSkillDef = ScriptableObject.CreateInstance<SkillDef>();
-            ChargeSwappableGrenadesSkillDef.skillName = "SwappableGrenade";
+            ((ScriptableObject)ChargeSwappableGrenadesSkillDef).name = "BAESwappableGrenade";
+            ChargeSwappableGrenadesSkillDef.skillName = "BAESwappableGrenade";
             ChargeSwappableGrenadesSkillDef.skillNameToken = "Bouncing Grenades and Seeker Swarm";
 
             ChargeSwappableGrenadesSkillDef.skillDescriptionToken =
@@ -164,11 +166,12 @@ namespace BadAssEngi.Skills
         private static void SwappableMine()
         {
             SwappableMineSkillDef = ScriptableObject.CreateInstance<SkillDef>();
+            ((ScriptableObject)SwappableMineSkillDef).name = "BAESwappableMine";
             SwappableMineSkillDef.rechargeStock = 1;
             SwappableMineSkillDef.requiredStock = 1;
             SwappableMineSkillDef.stockToConsume = 1;
             SwappableMineSkillDef.fullRestockOnAssign = false;
-            SwappableMineSkillDef.skillName = "SwappableMine";
+            SwappableMineSkillDef.skillName = "BAESwappableMine";
 
             SwappableMineSkillDef.skillNameToken = "Cluster and Satchel Pressured Mines";
             SwappableMineSkillDef.skillDescriptionToken =
@@ -206,7 +209,8 @@ namespace BadAssEngi.Skills
             SatchelMineSkillDef.requiredStock = 1;
             SatchelMineSkillDef.stockToConsume = 1;
             SatchelMineSkillDef.fullRestockOnAssign = false;
-            SatchelMineSkillDef.skillName = "SatchelPressuredMine";
+            ((ScriptableObject)SatchelMineSkillDef).name = "BAESatchelPressuredMine";
+            SatchelMineSkillDef.skillName = "BAESatchelPressuredMine";
 
             SatchelMineSkillDef.skillNameToken = "Satchel Pressured Mines";
             SatchelMineSkillDef.skillDescriptionToken =
@@ -240,7 +244,8 @@ namespace BadAssEngi.Skills
             OrbitalStrikeSkillDef.requiredStock = Configuration.OrbitalStrikeRequiredStock.Value;
             OrbitalStrikeSkillDef.stockToConsume = Configuration.OrbitalStrikeRequiredStock.Value;
             OrbitalStrikeSkillDef.fullRestockOnAssign = false;
-            OrbitalStrikeSkillDef.skillName = "OrbitalMine";
+            ((ScriptableObject)OrbitalStrikeSkillDef).name = "BAEOrbitalMine";
+            OrbitalStrikeSkillDef.skillName = "BAEOrbitalMine";
             OrbitalStrikeSkillDef.skillNameToken = "Orbital Strike";
 
             OrbitalStrikeSkillDef.skillDescriptionToken =
@@ -263,7 +268,8 @@ namespace BadAssEngi.Skills
         private static void SwappableTurret()
         {
             SwappableTurretSkillDef = ScriptableObject.CreateInstance<SkillDef>();
-            SwappableTurretSkillDef.skillName = "SwappableTurret";
+            ((ScriptableObject)SwappableTurretSkillDef).name = "BAESwappableTurret";
+            SwappableTurretSkillDef.skillName = "BAESwappableTurret";
             SwappableTurretSkillDef.skillNameToken = "TR69 MultiFunctional Auto-Turret";
 
             SwappableTurretSkillDef.skillDescriptionToken =

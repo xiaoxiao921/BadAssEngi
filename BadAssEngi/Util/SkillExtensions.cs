@@ -12,8 +12,7 @@ namespace BadAssEngi.Util
         internal static SkillFamily AddSkillFamily(string skillFamilyName, params SkillDef[] skills)
         {
             var family = ScriptableObject.CreateInstance<SkillFamily>();
-            var familySO = (ScriptableObject)family;
-            familySO.name = skillFamilyName;
+            ((ScriptableObject)family).name = skillFamilyName;
             family.variants = new SkillFamily.Variant[skills.Length];
 
             for (var i = 0; i < skills.Length; ++i)
