@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using BadAssEngi.Assets;
 using BadAssEngi.Assets.Sound;
 using BadAssEngi.Networking;
@@ -8,6 +9,7 @@ using EntityStates.EngiTurret.EngiTurretWeapon;
 using EntityStates.Toolbot;
 using Mono.Cecil.Cil;
 using MonoMod.Cil;
+using MonoMod.RuntimeDetour;
 using R2API.Networking;
 using R2API.Networking.Interfaces;
 using R2API.Utils;
@@ -22,9 +24,26 @@ namespace BadAssEngi.Skills.Special
 {
     internal static class TurretHooks
     {
+        private static void BaseStateOnEnterCaller(FireGauss self)
+        {
+        }
+
+        private static void BaseStateOnEnterCallerModifier(ILContext il)
+        {
+            var cursor = new ILCursor(il);
+            cursor.Emit(OpCodes.Ldarg_0);
+            cursor.Emit(OpCodes.Call, typeof(BaseState).GetMethod(nameof(BaseState.OnEnter), (BindingFlags)(-1)));
+        }
+
         internal static void Init()
         {
+            new ILHook(
+                typeof(TurretHooks).GetMethod(nameof(BaseStateOnEnterCaller), (BindingFlags)(-1)),
+                BaseStateOnEnterCallerModifier
+            );
+
             IL.EntityStates.EngiTurret.EngiTurretWeapon.FireGauss.OnEnter += TurretFiringHook;
+
             On.EntityStates.EngiTurret.EngiTurretWeapon.FireGauss.OnEnter += TurretFiringRocket;
 
             On.EntityStates.Engi.EngiWeapon.PlaceTurret.FixedUpdate += OnPlaceTurretSendTurretType;
@@ -55,7 +74,7 @@ namespace BadAssEngi.Skills.Special
                 currentTurret = characterMaster.GetComponent<BadAssTurret>();
                 if (currentTurret != null)
                 {
-                    new StopSoundMsg {soundPlayId = currentTurret.SoundGunId}.Send(NetworkDestination.Clients);
+                    new StopSoundMsg { soundPlayId = currentTurret.SoundGunId }.Send(NetworkDestination.Clients);
                     index = currentTurret.Index;
                 }
 
@@ -66,7 +85,7 @@ namespace BadAssEngi.Skills.Special
             );
             cursor.Remove();
 
-            cursor.EmitDelegate<Func<string>>( () =>
+            cursor.EmitDelegate<Func<string>>(() =>
             {
                 if (index == TurretType.Minigun)
                 {
@@ -125,7 +144,7 @@ namespace BadAssEngi.Skills.Special
             cursor.Index++;
 
             cursor.Emit(OpCodes.Ldarg_0);
-            cursor.EmitDelegate<Func<GameObject, FireGauss, GameObject >>((tracerEffectPrefab, fireGaussInstance) =>
+            cursor.EmitDelegate<Func<GameObject, FireGauss, GameObject>>((tracerEffectPrefab, fireGaussInstance) =>
             {
                 if (index == TurretType.Minigun)
                 {
@@ -261,9 +280,7 @@ namespace BadAssEngi.Skills.Special
                 return;
             }
 
-            var ptr = typeof(BaseState).GetMethod(nameof(BaseState.OnEnter)).MethodHandle.GetFunctionPointer();
-            var baseOnEnter = (Action)Activator.CreateInstance(typeof(Action), self, ptr);
-            baseOnEnter();
+            BaseStateOnEnterCaller(self);
 
             self.duration = 1f / Configuration.ShotgunTurretAttackSpeed.Value;
             RoR2.Util.PlaySound(SoundHelper.RocketTurretShot, self.outer.gameObject);
@@ -430,7 +447,7 @@ namespace BadAssEngi.Skills.Special
                                 if (turretSkillVariant == 0)
                                     TurretTypeController.CurrentTurretType = TurretType.Default;
 
-                                new TurretTypeMsgToServer {TurretTypeId = (byte)TurretTypeController.CurrentTurretType}
+                                new TurretTypeMsgToServer { TurretTypeId = (byte)TurretTypeController.CurrentTurretType }
                                     .Send(NetworkDestination.Server);
                             }
                         }
