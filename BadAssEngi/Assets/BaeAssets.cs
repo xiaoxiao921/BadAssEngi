@@ -249,10 +249,10 @@ namespace BadAssEngi.Assets
             }
 
             PrefabEngiTurretGhostRocket.AddComponent<ProjectileGhostController>();
-            PrefabEngiTurretGhostRocket.AddComponent<RocketSmokeController>();
+            PrefabEngiTurretGhostRocket.AddComponent<VFXAttributes>().DoNotPool = true;
 
             PrefabEngiSwarmGhostRocket.AddComponent<ProjectileGhostController>();
-            PrefabEngiSwarmGhostRocket.AddComponent<RocketSmokeController>();
+            PrefabEngiSwarmGhostRocket.AddComponent<VFXAttributes>().DoNotPool = true;
 
             var omniExplo = Resources.Load<GameObject>("prefabs/effects/omnieffect/OmniExplosionVFXToolbotQuick");
             var omniEffectComponent = omniExplo.GetComponent<EffectComponent>();
@@ -260,10 +260,12 @@ namespace BadAssEngi.Assets
             var turretExploEffectComponent = PrefabEngiTurretExplosionEffect.AddComponent<EffectComponent>();
             turretExploEffectComponent.effectData = omniEffectComponent.effectData;
             var turretExploVFXAttributes = PrefabEngiTurretExplosionEffect.AddComponent<VFXAttributes>();
+            turretExploVFXAttributes.DoNotPool = true;
 
             var swarmExploEffectComponent = PrefabEngiSwarmExplosionEffect.AddComponent<EffectComponent>();
             swarmExploEffectComponent.effectData = omniEffectComponent.effectData;
             var swarmExploVFXAttributes = PrefabEngiSwarmExplosionEffect.AddComponent<VFXAttributes>();
+            swarmExploVFXAttributes.DoNotPool = true;
             ContentAddition.AddEffect(PrefabEngiTurretExplosionEffect);
             ContentAddition.AddEffect(PrefabEngiSwarmExplosionEffect);
 
@@ -274,6 +276,7 @@ namespace BadAssEngi.Assets
 
             var pcEngiTurret = PrefabEngiTurretRocket.GetComponent<ProjectileController>();
             pcEngiTurret.ghostPrefab = PrefabEngiTurretGhostRocket;
+            PrefabEngiTurretRocket.AddComponent<RocketSmokeControllerGearboxEdition>();
             pcEngiTurret.allowPrediction = false;
 
             var pieTurret = PrefabEngiTurretRocket.GetComponent<ProjectileSingleTargetImpact>();
@@ -293,6 +296,7 @@ namespace BadAssEngi.Assets
 
             var pcEngiSwarm = PrefabEngiSwarmRocket.GetComponent<ProjectileController>();
             pcEngiSwarm.ghostPrefab = PrefabEngiSwarmGhostRocket;
+            PrefabEngiSwarmRocket.AddComponent<RocketSmokeControllerGearboxEdition>();
             pcEngiSwarm.allowPrediction = false;
 
             var pieSwarm = PrefabEngiSwarmRocket.GetComponent<ProjectileSingleTargetImpact>();
