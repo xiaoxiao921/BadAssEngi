@@ -33,7 +33,8 @@ namespace BadAssEngi.Util
         internal static IEnumerator DelayedDestroy(GameObject gameObject, float seconds)
         {
             yield return new WaitForSeconds(seconds);
-            Object.DestroyImmediate(gameObject);
+
+            Object.Destroy(gameObject);
         }
     }
 }

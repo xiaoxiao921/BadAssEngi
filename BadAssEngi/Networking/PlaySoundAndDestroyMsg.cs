@@ -37,7 +37,7 @@ namespace BadAssEngi.Networking
                 stopSoundEventOnDestroy.SoundId = AkSoundEngine.PostEvent(SoundName, soundEmitter);
                 if (DelayInSecondDestroy == 0)
                 {
-                    Object.DestroyImmediate(soundEmitter);
+                    Object.Destroy(soundEmitter);
                 }
                 else
                 {

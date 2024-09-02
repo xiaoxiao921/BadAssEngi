@@ -245,7 +245,7 @@ namespace BadAssEngi
                                 var missileTracker = currentCharacterBody.GetComponent<MissileTracker>();
                                 if (missileTracker)
                                 {
-                                    DestroyImmediate(missileTracker);
+                                    Destroy(missileTracker);
                                 }
                             }
 

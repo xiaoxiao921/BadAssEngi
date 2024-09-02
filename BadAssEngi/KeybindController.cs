@@ -92,7 +92,7 @@ namespace BadAssEngi
                                     {
                                         if (missileTracker)
                                         {
-                                            Object.DestroyImmediate(missileTracker);
+                                            Object.Destroy(missileTracker);
                                         }
                                     }
 

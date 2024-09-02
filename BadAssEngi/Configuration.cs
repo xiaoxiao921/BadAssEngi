@@ -455,7 +455,7 @@ namespace BadAssEngi
                             var missileTracker = body.GetComponent<MissileTracker>();
                             if (missileTracker)
                             {
-                                Object.DestroyImmediate(missileTracker);
+                                Object.Destroy(missileTracker);
                                 body.gameObject.AddComponent<MissileTracker>();
                             }
                         }

@@ -45,7 +45,7 @@ namespace BadAssEngi.Skills.Special
         {
             if (gameObject == null)
             {
-                DestroyImmediate(this);
+                Destroy(this);
                 return;
             }
 
@@ -93,7 +93,7 @@ namespace BadAssEngi.Skills.Special
 
             if (gameObject == null)
             {
-                DestroyImmediate(this);
+                Destroy(this);
                 return;
             }
 
@@ -189,7 +189,7 @@ namespace BadAssEngi.Skills.Special
             On.RoR2.CharacterBody.UpdateBuffs -= CharacterBodyOnUpdateBuffs;
             AkSoundEngine.StopPlayingID(SoundGunId);
 
-            DestroyImmediate(this);
+            Destroy(this);
         }
     }
 }
