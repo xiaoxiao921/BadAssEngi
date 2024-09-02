@@ -22,11 +22,12 @@ namespace BadAssEngi.Util
         internal static IEnumerator DelayedSound(string soundName, GameObject soundEmitter, float seconds)
         {
             yield return new WaitForSeconds(seconds);
+
             var atkspd = soundEmitter.GetComponent<CharacterMaster>().GetBodyObject().GetComponent<CharacterBody>()
                 .attackSpeed;
             soundEmitter.GetComponent<BadAssTurret>().SoundGunId = RoR2.Util.PlaySound(soundName, soundEmitter,
                 SoundHelper.TurretRTPCAttackSpeed, atkspd);
-            Debug.Log("Railgun Turret Attack Speed : "+ atkspd);
+            Log.Debug("Railgun Turret Attack Speed : " + atkspd);
 
         }
 

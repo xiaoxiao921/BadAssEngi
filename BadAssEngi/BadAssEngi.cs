@@ -28,7 +28,11 @@ using UnityEngine.Networking;
 
 namespace BadAssEngi
 {
-    [BepInDependency(R2API.R2API.PluginGUID)]
+    [BepInDependency(NetworkingAPI.PluginGUID)]
+    [BepInDependency(PrefabAPI.PluginGUID)]
+    [BepInDependency(CommandHelper.PluginGUID)]
+    [BepInDependency(SoundAPI.PluginGUID)]
+    [BepInDependency(LoadoutAPI.PluginGUID)]
     [BepInDependency("at.aster.charactercustomizer", BepInDependency.DependencyFlags.SoftDependency)]
     [R2APISubmoduleDependency(nameof(CommandHelper), nameof(SoundAPI), nameof(LoadoutAPI),
         nameof(PrefabAPI), nameof(NetworkingAPI))]
@@ -38,7 +42,7 @@ namespace BadAssEngi
     {
         public const string ModGuid = "iDeathHD." + ModName;
         private const string ModName = "BadAssEngi";
-        private const string ModVer = "1.3.8";
+        private const string ModVer = "1.3.9";
 
         internal static BodyIndex EngiBodyIndex;
         private const string EngiBodyPrefabName = "EngiBody";
