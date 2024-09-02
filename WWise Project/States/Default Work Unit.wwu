@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{22C77550-B1DF-4072-A57A-E160C09FA753}" SchemaVersion="119">
+	<States>
+		<WorkUnit Name="Default Work Unit" ID="{22C77550-B1DF-4072-A57A-E160C09FA753}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="Boss_Health" ID="{C1D88A2A-CB5A-40A3-9E6D-19F8DA15AA58}">
+					<ChildrenList>
+						<State Name="None" ID="{B7D13571-4CCD-4156-BD56-FC194EE1833B}"/>
+						<State Name="Low" ID="{2429E286-31D3-4F44-BB4D-CCD7E6E58251}"/>
+						<State Name="High" ID="{4A0C82C6-7EED-4C8D-8372-CD1032BD1ADE}"/>
+					</ChildrenList>
+					<TransitionList>
+						<Transition>
+							<StartState Name="High" ID="{4A0C82C6-7EED-4C8D-8372-CD1032BD1ADE}"/>
+							<EndState Name="Low" ID="{2429E286-31D3-4F44-BB4D-CCD7E6E58251}"/>
+							<Time>1</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+					</TransitionList>
+				</StateGroup>
+				<StateGroup Name="The_Box" ID="{F201A1CC-7FFD-486A-9B83-0D93756DFF8C}">
+					<ChildrenList>
+						<State Name="None" ID="{40702F2D-7093-4ACC-A0DC-D1E3396994F3}"/>
+						<State Name="The_Wok" ID="{CF47B161-3661-4493-90C7-25B80248AD2E}"/>
+						<State Name="The_Box" ID="{E1843FE9-C653-44FF-98DC-DD5BFA9B1AFD}"/>
+						<State Name="Dick_in_BOx" ID="{862099AF-A3BA-4888-9F96-025564657F50}"/>
+						<State Name="Indian_Box" ID="{26BAC83B-63A0-4E61-B369-A079E53521B0}"/>
+					</ChildrenList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
+	</States>
+</WwiseDocument>

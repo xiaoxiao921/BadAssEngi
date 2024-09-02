@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{3BC36539-5C0A-40FD-B340-A45502E3F36D}" SchemaVersion="89">
+	<Events>
+		<WorkUnit Name="Music Work Unit" ID="{3BC36539-5C0A-40FD-B340-A45502E3F36D}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Main_Menu_Play_69" ID="{06EA486C-0FCE-48C0-88AB-97C0FBA464FC}">
+					<ChildrenList>
+						<Action Name="" ID="{83F0BB86-95C4-49DB-AC3A-A11BC5DD2398}" ShortID="790411493">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Rise to Fall" ID="{2FC5D807-CF54-4C26-95EE-61A418630703}" WorkUnitID="{14991457-27DF-4866-B0FB-077A46979AB1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Folder Name="Theme Infinite" ID="{35FF9EDE-C7D6-494A-AB73-B66761BCB28D}" ShortID="658768438"/>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
