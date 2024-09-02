@@ -14,7 +14,6 @@ using R2API.Networking;
 using R2API.Networking.Interfaces;
 using R2API.Utils;
 using RoR2;
-using RoR2.CharacterAI;
 using RoR2.Projectile;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -55,7 +54,7 @@ namespace BadAssEngi.Skills.Special
 
             On.RoR2.CharacterMaster.AddDeployable += AddBATComponentOnAddDeployableHook;
 
-            On.RoR2.CharacterAI.BaseAI.FixedUpdate += ChangeTurretTypeOnPing;
+            On.RoR2.PingerController.SetCurrentPing += ChangeTurretTypeOnPing;
         }
 
         private static void TurretFiringHook(ILContext il)
@@ -120,7 +119,11 @@ namespace BadAssEngi.Skills.Special
                 i => i.MatchCall(typeof(RoR2.Util).GetMethodCached("PlaySound", new[] { typeof(string), typeof(GameObject) }))
             );
             cursor.Remove();
-            cursor.Emit(OpCodes.Call, typeof(RoR2.Util).GetMethodCached("PlaySound", new[] { typeof(string), typeof(GameObject), typeof(string), typeof(float) }));
+            cursor.Emit(OpCodes.Call, typeof(RoR2.Util).GetMethodCached(
+                    "PlaySound",
+                    new[] { typeof(string), typeof(GameObject), typeof(string), typeof(float) }
+                )
+            );
 
             cursor.GotoNext(
                 i => i.MatchLdfld<FireGauss>(nameof(FireGauss.duration))
@@ -297,7 +300,8 @@ namespace BadAssEngi.Skills.Special
                 int i = 0;
                 while (i < bulletCount)
                 {
-                    float x = Random.Range(0f, Configuration.ShotgunTurretSpreadCoefficient.Value); // right parameter dictate maxbloom angle / spread coefficient basically
+                    // right parameter dictate maxbloom angle / spread coefficient basically
+                    float x = Random.Range(0f, Configuration.ShotgunTurretSpreadCoefficient.Value);
                     float z = Random.Range(0f, 360f);
                     Vector3 vector = Quaternion.Euler(0f, 0f, z) * (Quaternion.Euler(x, 0f, 0f) * Vector3.forward);
                     float y = vector.y;
@@ -320,64 +324,62 @@ namespace BadAssEngi.Skills.Special
             }
         }
 
-
-        // Morris original code - Customised for updating already placed Turret Type
-        // This isnt clean, will need to redo that at some point, probably hooking SetCurrentPing or something
-        private static void ChangeTurretTypeOnPing(On.RoR2.CharacterAI.BaseAI.orig_FixedUpdate orig, BaseAI self)
+        private static void ChangeTurretTypeOnPing(On.RoR2.PingerController.orig_SetCurrentPing orig,
+            PingerController self, PingerController.PingInfo newPingInfo)
         {
-            if (!self) return;
-            if (self.leader.characterBody != null)
+            orig(self, newPingInfo);
+
+            if (self &&
+                self.currentPing.targetNetworkIdentity &&
+                self.currentPing.targetNetworkIdentity.gameObject.name.Equals("EngiTurretBody(Clone)"))
             {
-                var leader = self.leader;
+                var turret = self.currentPing.targetNetworkIdentity.gameObject;
 
-                if (leader.characterBody.isPlayerControlled)
+                var turretBody = turret.GetComponent<CharacterBody>();
+                if (!turretBody || !turretBody.master)
                 {
-                    PingerController pingerController = null;
-                    foreach (var playerCharacterMasterController in PlayerCharacterMasterController.instances)
-                    {
-                        if (playerCharacterMasterController.master.hasBody)
-                        {
-                            var cb = leader.characterBody;
-                            var cm = cb.master;
-                            var turretSkillVariant = cm.loadout.bodyLoadoutManager.GetSkillVariant(cb.bodyIndex, 3);
-                            if (playerCharacterMasterController.master.GetBody().netId.Value == leader.characterBody.netId.Value &&
-                                turretSkillVariant == SkillLoader.SwappableTurretSkillVariant)
-                            {
-                                pingerController = playerCharacterMasterController.pingerController;
-                            }
-                        }
-                    }
-
-                    if (pingerController)
-                    {
-                        // ReSharper disable once PossibleNullReferenceException
-                        if (pingerController.gameObject && pingerController.pingIndicator)
-                        {
-                            if (pingerController.currentPing.targetNetworkIdentity)
-                            {
-                                if (pingerController.currentPing.targetNetworkIdentity.gameObject != null)
-                                {
-                                    if (pingerController.currentPing.targetNetworkIdentity.gameObject.name.Equals("EngiTurretBody(Clone)"))
-                                    {
-                                        TurretTypeController.SetCurrentTurretType(
-                                            TurretTypeController.GiveNextTurretTypeExternalToInternal(pingerController
-                                                .currentPing.targetNetworkIdentity
-                                                .gameObject.GetComponent<CharacterBody>().baseNameToken),
-                                            pingerController.currentPing.targetNetworkIdentity.gameObject,
-                                            pingerController.currentPing.targetNetworkIdentity.gameObject
-                                                .GetComponent<CharacterBody>().master.gameObject);
-
-                                        pingerController.pingIndicator.fixedTimer = 0f;
-                                        pingerController.currentPing = new PingerController.PingInfo();
-                                    }
-                                }
-                            }
-                        }
-                    }
+                    return;
                 }
+
+                var nextTurretType = TurretTypeController.GiveNextTurretTypeExternalToInternal(turretBody.baseNameToken);
+
+                TurretTypeController.SetCurrentTurretType(
+                    nextTurretType,
+                    turret,
+                    turretBody.master.gameObject
+                );
+
+                self.pingIndicator.fixedTimer = 0f;
+                self.currentPing = new PingerController.PingInfo();
+
+                new SendRecalcStat { NetId = turretBody.GetComponent<NetworkIdentity>().netId }.Send(NetworkDestination.Server);
+            }
+        }
+
+        internal struct SendRecalcStat : INetMessage
+        {
+            internal NetworkInstanceId NetId;
+
+            public void Serialize(NetworkWriter writer)
+            {
+                writer.Write(NetId);
             }
 
-            orig(self);
+            public void Deserialize(NetworkReader reader)
+            {
+                NetId = reader.ReadNetworkId();
+            }
+
+            public void OnReceived()
+            {
+                // Destination Server
+
+                var body = NetworkServer.FindLocalObject(NetId);
+                if (body)
+                {
+                    body.GetComponent<CharacterBody>().RecalculateStats();
+                }
+            }
         }
 
         private static void TurretAddOwnerAndCustomColorHookAndTurretTypeHandler(ILContext il)
@@ -387,7 +389,7 @@ namespace BadAssEngi.Skills.Special
 
             cursor.GotoNext(
                 i => i.MatchLdarg(0),
-                i => i.MatchCallvirt<NetworkMessage>("ReadMessage"),
+                i => i.MatchCallvirt<NetworkMessage>(nameof(NetworkMessage.ReadMessage)),
                 i => i.MatchStloc(out ctmLoc)
             );
             cursor.Index += 3;
@@ -410,10 +412,11 @@ namespace BadAssEngi.Skills.Special
                 TurretTypeController.SetTurretType(turretType);
             });
 
+            // TODO: ??? safe to remove ?
+            cursor.GotoNext(i => i.MatchStloc(2));
 
-            cursor.GotoNext(i => i.MatchStloc(2)); // TODO: ??? safe to remove ?
-
-            cursor.GotoNext(i => i.MatchStloc(4)); // TODO: clean this stloc
+            // TODO: clean this stloc
+            cursor.GotoNext(i => i.MatchStloc(4));
             cursor.EmitDelegate<Func<Deployable, Deployable>>(turret =>
             {
                 var ai = turret.GetComponent<CharacterMaster>().GetBody().GetComponent<NetworkIdentity>().netId;
@@ -467,7 +470,9 @@ namespace BadAssEngi.Skills.Special
                 if (NetworkClient.active)
                 {
                     var rgb = Configuration.TurretColor.Value.Split(',');
-                    var color = Configuration.CustomTurretColor.Value ? new Color(float.Parse(rgb[0]), float.Parse(rgb[1]), float.Parse(rgb[2])) : new Color(-1, -1, -1);
+                    var color = Configuration.CustomTurretColor.Value ?
+                        new Color(float.Parse(rgb[0]), float.Parse(rgb[1]), float.Parse(rgb[2])) :
+                        new Color(-1, -1, -1);
 
                     new TurretColorDelayedMsgToServer { Color = color }.Send(NetworkDestination.Server);
                 }
@@ -508,7 +513,8 @@ namespace BadAssEngi.Skills.Special
             }
         }
 
-        private static void AddBATComponentOnAddDeployableHook(On.RoR2.CharacterMaster.orig_AddDeployable orig, CharacterMaster self, Deployable deployable, DeployableSlot slot)
+        private static void AddBATComponentOnAddDeployableHook(On.RoR2.CharacterMaster.orig_AddDeployable orig,
+            CharacterMaster self, Deployable deployable, DeployableSlot slot)
         {
             orig(self, deployable, slot);
 
