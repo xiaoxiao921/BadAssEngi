@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{E44C39AB-0580-4B7C-ABF1-ABE459BD08E6}" SchemaVersion="97">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{E44C39AB-0580-4B7C-ABF1-ABE459BD08E6}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="BadAssEngi" ID="{CA409755-24DF-4119-89F1-D7B43B6EC33C}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Infectious" ID="{38253F4D-2B00-4002-9A87-501673BB6F34}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Dabstand" ID="{1BEA85A6-FEDE-4046-8A70-7C9F39581A7F}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Floss" ID="{C12B1411-0468-4055-8A3A-7923EA1943FA}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Orbital_Laser_Play_69" ID="{29C08582-7EE1-40F2-80A7-D72F8F86CCB4}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Intensity" ID="{A19EA1BC-8E37-40F3-8469-1674FBCEC6B3}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="DanceTherapy" ID="{A9AB1CBC-00A7-412C-94A0-E5E15E1B1745}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Satchel_Explosion_Play_69" ID="{13B16141-7F19-417E-A091-0F4419A86E9F}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="HOW" ID="{8FD1604E-9A9A-41EB-86CF-833B932F487C}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PawsAndClaws" ID="{DC82249D-9BCF-424A-8E77-6D0826FC500E}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="FancyFeet" ID="{78890414-FA69-42BC-8E35-DE010D1267AB}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Rocket_Turret_Shot_Play" ID="{3DA01CE7-717B-43AF-A8FF-304B9971B196}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Rocket_Turret_Explosion_Play_69" ID="{09F8B056-51BC-4407-8CAC-44ED2E110D83}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PopLock" ID="{DD83C3E6-91B6-441C-9260-14ADFD454D30}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Scenario" ID="{379FC9DD-2297-448C-9A50-6E57065D4872}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="SquatKick" ID="{BC8385B0-D3CB-44E1-A382-BEDC64EC28EA}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Breakin" ID="{C505E5EF-B32C-44F1-AB32-0A4C1C9E0242}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Overdrive" ID="{29A47019-CC97-4501-BBC3-4BE70ECE9876}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Droop" ID="{63D51EAB-788C-455E-90D7-58C0207E3A3B}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Seekers_Explosion_Play_69" ID="{8274EAB8-5E05-45CB-86B0-AB6EBF6B74A9}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Minigun_Turret_Shot_Play_69" ID="{DC70CC0A-01BA-462B-8243-B8FBF919CACF}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="NeverGonna" ID="{BA7AD81D-36A1-466E-979D-D97808B8EDE9}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Flamenco" ID="{4285D862-268F-467D-9870-34808F1A1598}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="OldSchool" ID="{E75598AC-39D9-469A-B9BC-950FEA56EC34}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Breakneck" ID="{F84A0F9E-5674-4702-8DA4-CA777E4C4E93}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Railgun_Turret_Shot_Play_69" ID="{0161FA44-239D-473E-8F94-ED2E902A8C62}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Rocket_Turret_Single_Reload_Play_69" ID="{7E14A0F4-A7FD-4776-BE7D-A6DA837F11B0}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="TakeOnMe" ID="{D450FA90-6B48-4801-AD12-3A82DE98466C}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Turret_Alive_Play_69" ID="{DB2E8AD8-B7F4-497A-BF73-BB60D9E400BB}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Cluster_Explosion_Play_69" ID="{FEA63811-A00F-4A5F-9AE5-AD4307227209}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Railgun_Turret_Targeting_Play_69" ID="{4FE1DE3E-2709-4A98-BF20-2B2C7F44F371}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="InfiniteDab" ID="{64A287FC-3AD4-4AB4-8CDE-EE691056AB22}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="NinjaStyle" ID="{B49D7E53-2FDE-4AEB-9FD3-326798F2C393}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="SpringLoaded" ID="{95EBFAD9-5FA0-4B40-8478-7E60332DEC0C}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="DanceMoves" ID="{2679E971-23A9-4B89-9E3E-606FBB449506}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PhoneItIn" ID="{AAEC3D29-697F-4BF8-A7B8-0A43FCA35CF8}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Fresh" ID="{5882BF52-9D91-4C08-B294-36B37CC56D4C}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="OrangeJustice" ID="{9D32821B-D815-4C1A-B027-98D9A25FA041}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Hype" ID="{DC13D277-853C-4C6E-8488-68720CB4C7AA}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Seekers_Firing_Play_69" ID="{F3C30924-9FD7-4D94-90C0-4BE73961BE29}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="ElectroSwing" ID="{2EC518FD-DDF2-4E4F-B061-27AAEF9F1E42}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Crabby" ID="{B4CDA0A1-8321-4EB1-9CF1-5FC3D0BA0767}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Springy" ID="{613D28D7-CDBD-4EBD-9D46-332806BCF8D9}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Extraterrestial" ID="{E7BF796E-897D-4FEB-8456-FCC027228282}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+				<SoundBank Name="BadAssEmotes" ID="{09F12DB0-2F2E-4525-A238-BE62D8DA5AC9}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Play_PopLock" ID="{E7B178B2-3D1E-40A0-9F77-4C99AA57DAC9}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_Breakneck" ID="{FC3C70F1-D9EF-40B5-9ACF-3409BF4E67DE}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Dabstand" ID="{11C01A7A-521F-40DF-86E8-5E1939393DD9}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Springy" ID="{C8D3543A-5EAF-41F5-B68C-9D38BD15D2ED}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_IntensityIntro" ID="{C5E37E8C-810E-421D-99F2-6FA68F40EAA6}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Extraterrestrial" ID="{276860C1-CC2F-4230-B4D6-E0BC7734755E}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_Flamenco" ID="{B556B7D9-1AB5-425E-A30A-812356F58D36}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_OrangeJustice" ID="{6AD8F20B-F46D-435B-8360-3613BD29308D}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_DanceMoves" ID="{66E78D64-F0E1-4371-917B-BEF788D962A9}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_Scenario" ID="{9D05E1A7-6D3A-439C-8399-AF8D5B4D7EC3}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Infectious" ID="{9C867B86-4ACA-43A8-89AD-11CF68E63757}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_SpringLoaded" ID="{F6D78AFA-FB30-4434-A7DB-F49A624D90D4}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_Breakin_" ID="{F8E9960C-BA51-446E-889D-B64473C45DCE}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Flamenco" ID="{99E8831C-41F4-44C2-98DD-2DC6043CB1F1}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_HOW" ID="{7ECB2885-F18D-44FC-90BB-21E6D9523EA9}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_OldSchool" ID="{42090B90-9DB3-4508-8323-F3926BCB8127}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_NinjaStyle" ID="{50E9EAA6-3E1D-456F-A566-116CBC17D1F4}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Breakin_" ID="{FD04B0D4-0044-4588-A47E-CC60F1220ACE}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_ElectroSwing" ID="{D4B294E2-BEFF-45DF-B3B6-D2337B2C8930}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_Infectious" ID="{01C8546C-9B83-4617-AAD7-D6D13CE423DE}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_InfinidabIntro" ID="{85FD9736-97E2-46C1-8388-8CF92616E4AF}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_HOW" ID="{457523B0-F72E-46C1-8D43-1A164709412F}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_Crabby" ID="{9D27B66E-C1B1-4705-9E16-EA0A368EAF35}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_SquatKick" ID="{0651E03E-BA8D-472B-AB57-33136C823D20}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_Droop" ID="{F33618B2-F557-4731-A7E4-C31E4DB5716B}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SquatKick" ID="{C58BFFAC-9EE4-475F-BC6E-FDDC9B7E9B44}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Breakneck" ID="{4E924469-4400-47A3-9CC6-9A95DB985C5C}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_PhoneItIn" ID="{BB87A503-F534-47AF-A331-9D8EF01C1D30}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_OldSchool" ID="{4372B02D-0B2F-480A-A8D2-EC27FF9D8CB9}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_NinjaStyle" ID="{3A8D3C5E-DD6D-4858-B49A-860AA8312915}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_DanceMoves" ID="{AF5DF60C-327B-4886-9B5F-F5A156730967}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Crabby" ID="{3681032D-6525-48E3-8704-C81E9ED3EE3A}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Paws_Claws" ID="{C05F8CBC-EC90-493B-8474-28FECFCB8A4E}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Droop" ID="{227861A2-80CD-493D-8BE8-74D2013AF7C0}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_Hype" ID="{5B114399-4063-4967-93DF-8972C18057E4}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Floss" ID="{0F3F8ECB-BD60-4992-8B98-C6C874260E54}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SpringLoaded" ID="{4B8EBB8E-8309-49B2-9452-D78813AAC1E8}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_Overdrive" ID="{6967588A-2DC6-4A6D-B53B-9CD8EAFD87DA}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Overdrive" ID="{60499BCC-B3A6-4A80-8F7F-C773666E450B}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_InfinidabIntro" ID="{1703F07F-0992-4A96-A9C2-A59552EAF5AB}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_ElectroSwing" ID="{3DED9C87-DC5D-4B1E-B0EC-EB5B99E7128D}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_OrangeJustice" ID="{875812F4-254F-4B32-B978-C992D6F498BC}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_Extraterrestrial" ID="{58B7408D-F11A-4B36-9295-419659878ED3}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_PhoneItIn" ID="{5353BC40-C940-4B6E-B821-29B330E8CCF5}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_NeverGonna" ID="{0167CDDA-B4BE-4B88-B0A9-C344C68FBF44}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_DanceTherapyIntro" ID="{71271121-1BF2-4BDB-9AAE-B0C3466FB6C9}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_DanceTherapyIntro" ID="{90BD9A7E-F945-4C16-868D-1EAB9E49FE38}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Fresh" ID="{79A69BB4-8CD7-4C67-AD8A-D336419B7278}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_Dabstand" ID="{30F467C0-A057-4D14-B4C2-3CA73E989AD1}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_NeverGonna" ID="{AA071B59-2213-4D40-B134-572E5786C3A0}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_TakeOnMe" ID="{224FA725-360B-4D74-876D-C0A4C97E363A}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_TakeOnMe" ID="{C0E7609E-3E7D-4D7C-8710-B454F6AAE996}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_Floss" ID="{1328BF50-C819-4DB2-8C81-EC4118A3F252}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_FancyFeet" ID="{877F9CCB-5285-4E1F-9AF0-0B34B69D5E94}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_Fresh" ID="{69260081-B7A8-4E4B-8118-0B55B4BAED51}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_FancyFeet" ID="{84D8797D-940C-4E63-9165-845989CC11C4}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_PopLock" ID="{692FB6DB-D007-4E6A-B341-F07694088446}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_IntensityIntro" ID="{48BA0D2B-DE38-4EA9-8599-20A2BFD41551}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_Springy" ID="{8F9F9596-3FB2-4EFC-A8BD-123110BF2798}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_Paws_Claws" ID="{D5D8C522-067F-4F39-B2B6-A230E7764685}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Hype" ID="{D7C7C628-CBC8-4F44-AD0B-D6F834977E98}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Scenario" ID="{60D1C5A8-0998-4FE4-94A7-79433A212E6B}" WorkUnitID="{B9E477AF-2A72-4FB0-B537-0632DD27694C}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

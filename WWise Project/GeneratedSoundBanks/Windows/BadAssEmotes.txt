@@ -1,0 +1,106 @@
+Event	ID	Name			Wwise Object Path	Notes
+	29792155	Stop_Flamenco			\Default Work Unit\Emotes\Stop_Flamenco	
+	196555151	Play_Crabby			\Default Work Unit\Emotes\Play_Crabby	
+	246143008	Play_Paws_Claws			\Default Work Unit\Emotes\Play_Paws_Claws	
+	380518866	Play_InfinidabIntro			\Default Work Unit\Emotes\Play_InfinidabIntro	
+	393452856	Stop_Droop			\Default Work Unit\Emotes\Stop_Droop	
+	400787722	Stop_HOW			\Default Work Unit\Emotes\Stop_HOW	
+	656988036	Stop_InfinidabIntro			\Default Work Unit\Emotes\Stop_InfinidabIntro	
+	716723742	Stop_DanceTherapyIntro			\Default Work Unit\Emotes\Stop_DanceTherapyIntro	
+	726991772	Play_Overdrive			\Default Work Unit\Emotes\Play_Overdrive	
+	926917861	Stop_OrangeJustice			\Default Work Unit\Emotes\Stop_OrangeJustice	
+	1073155275	Play_DanceMoves			\Default Work Unit\Emotes\Play_DanceMoves	
+	1096907951	Play_Extraterrestrial			\Default Work Unit\Emotes\Play_Extraterrestrial	
+	1117427782	Stop_Paws_Claws			\Default Work Unit\Emotes\Stop_Paws_Claws	
+	1240779373	Stop_NeverGonna			\Default Work Unit\Emotes\Stop_NeverGonna	
+	1337364286	Stop_PhoneItIn			\Default Work Unit\Emotes\Stop_PhoneItIn	
+	1413951596	Play_ElectroSwing			\Default Work Unit\Emotes\Play_ElectroSwing	
+	1538240022	Play_Fresh			\Default Work Unit\Emotes\Play_Fresh	
+	1540665125	Play_Floss			\Default Work Unit\Emotes\Play_Floss	
+	1672912446	Play_Breakneck			\Default Work Unit\Emotes\Play_Breakneck	
+	1683230540	Play_DanceTherapyIntro			\Default Work Unit\Emotes\Play_DanceTherapyIntro	
+	1791795284	Play_Scenario			\Default Work Unit\Emotes\Play_Scenario	
+	1937403564	Stop_Springy			\Default Work Unit\Emotes\Stop_Springy	
+	1985354438	Play_PopLock			\Default Work Unit\Emotes\Play_PopLock	
+	2002994874	Play_Springy			\Default Work Unit\Emotes\Play_Springy	
+	2113712877	Stop_Crabby			\Default Work Unit\Emotes\Stop_Crabby	
+	2244413701	Play_Infectious			\Default Work Unit\Emotes\Play_Infectious	
+	2258123542	Stop_Scenario			\Default Work Unit\Emotes\Stop_Scenario	
+	2323178122	Play_SquatKick			\Default Work Unit\Emotes\Play_SquatKick	
+	2339110651	Stop_OldSchool			\Default Work Unit\Emotes\Stop_OldSchool	
+	2343795684	Stop_Fresh			\Default Work Unit\Emotes\Stop_Fresh	
+	2464076727	Stop_IntensityIntro			\Default Work Unit\Emotes\Stop_IntensityIntro	
+	2595956965	Stop_DanceMoves			\Default Work Unit\Emotes\Stop_DanceMoves	
+	2597828886	Play_SpringLoaded			\Default Work Unit\Emotes\Play_SpringLoaded	
+	2637240459	Stop_NinjaStyle			\Default Work Unit\Emotes\Stop_NinjaStyle	
+	2677493185	Play_IntensityIntro			\Default Work Unit\Emotes\Play_IntensityIntro	
+	2688619661	Play_Flamenco			\Default Work Unit\Emotes\Play_Flamenco	
+	2732782146	Stop_Overdrive			\Default Work Unit\Emotes\Stop_Overdrive	
+	2756333940	Stop_Hype			\Default Work Unit\Emotes\Stop_Hype	
+	2785512014	Play_Hype			\Default Work Unit\Emotes\Play_Hype	
+	2817487683	Stop_FancyFeet			\Default Work Unit\Emotes\Stop_FancyFeet	
+	2839619656	Play_PhoneItIn			\Default Work Unit\Emotes\Play_PhoneItIn	
+	2882547615	Stop_Infectious			\Default Work Unit\Emotes\Stop_Infectious	
+	2939172889	Play_FancyFeet			\Default Work Unit\Emotes\Play_FancyFeet	
+	2985177453	Play_OldSchool			\Default Work Unit\Emotes\Play_OldSchool	
+	2994221240	Play_HOW			\Default Work Unit\Emotes\Play_HOW	
+	3191328536	Stop_PopLock			\Default Work Unit\Emotes\Stop_PopLock	
+	3248328889	Stop_Extraterrestrial			\Default Work Unit\Emotes\Stop_Extraterrestrial	
+	3268630155	Play_NeverGonna			\Default Work Unit\Emotes\Play_NeverGonna	
+	3295654239	Play_OrangeJustice			\Default Work Unit\Emotes\Play_OrangeJustice	
+	3467103731	Stop_Breakin_			\Default Work Unit\Emotes\Stop_Breakin_	
+	3480225049	Play_Breakin_			\Default Work Unit\Emotes\Play_Breakin_	
+	3669736410	Play_TakeOnMe			\Default Work Unit\Emotes\Play_TakeOnMe	
+	3743729291	Stop_Dabstand			\Default Work Unit\Emotes\Stop_Dabstand	
+	3768260481	Play_Dabstand			\Default Work Unit\Emotes\Play_Dabstand	
+	3772203892	Stop_TakeOnMe			\Default Work Unit\Emotes\Stop_TakeOnMe	
+	3807099887	Stop_Floss			\Default Work Unit\Emotes\Stop_Floss	
+	3907188806	Stop_ElectroSwing			\Default Work Unit\Emotes\Stop_ElectroSwing	
+	3985412508	Stop_SquatKick			\Default Work Unit\Emotes\Stop_SquatKick	
+	4025363538	Play_Droop			\Default Work Unit\Emotes\Play_Droop	
+	4122890544	Stop_SpringLoaded			\Default Work Unit\Emotes\Stop_SpringLoaded	
+	4162817568	Stop_Breakneck			\Default Work Unit\Emotes\Stop_Breakneck	
+	4289548637	Play_NinjaStyle			\Default Work Unit\Emotes\Play_NinjaStyle	
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	396176897	Volume_Emotes			\Default Work Unit\Volume_Emotes	
+	3673881719	Volume_SFX			\Default Work Unit\Volume_SFX	
+	4093208326	Volume_Emote			\Default Work Unit\Volume_Emote	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	12129637	Overdrive	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Overdrive_103FC04A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Overdrive		560746
+	12546256	OrangeJustice	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Orange Justice_103FC04A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\OrangeJustice		384176
+	64685271	FancyFeet	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\FancyFeet_103FC04A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\FancyFeet		355404
+	75608193	PhoneItIn	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Phone It In_103FC04A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\PhoneItIn		372549
+	76517305	Fresh	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Fresh_103FC04A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Fresh		82621
+	112449013	Dabstand	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Dabstand_103FC04A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Dabstand		55278
+	125893133	OldSchool	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Old SChool_103FC04A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\OldSchool		619393
+	165986897	NinjaStyle	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\NinjaStyle_103FC04A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\NinjaStyle		229517
+	170501791	DanceTherapyLoop	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Dance Therapy Loop_103FC04A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\DanceTherapyIntro\DanceTherapyLoop		507560
+	189773840	DanceTherapyIntro	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Dance Therapy Intro_540BB510.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\DanceTherapyIntro\DanceTherapyIntro		61995
+	243257580	Breakneck	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Breakneck_103FC04A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Breakneck		737455
+	295247226	DanceMoves	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Fortnite default dance sound_103FC04A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\DanceMoves		131404
+	354952072	NeverGonna	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Never Gonna Give you Up_103FC04A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\NeverGonna		615393
+	355825110	SpringLoaded	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\SpringLoaded_103FC04A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\SpringLoaded		151694
+	384232368	Scenario	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Scenario_103FC04A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Scenario		622692
+	386888135	HOW	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\HOW_103FC04A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\HOW		147186
+	435441904	Crabby	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Crabby_103FC04A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Crabby		851649
+	458462877	ElectroSwing	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\ElectroSwing_103FC04A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\ElectroSwing		291221
+	468613330	Infectious	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Infectious_103FC04A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Infectious		1685968
+	488071590	IntensityIntro	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\IntesityIntro_540BB510.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\IntensityIntro\IntensityIntro		120611
+	629287077	Springy	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Springy_103FC04A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Springy		228570
+	649209562	InfinidabIntro	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\InfinidabIntro_540BB510.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\InfinidabIntro\InfinidabIntro		8395
+	660207138	InfinidabLoop	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\InfinidabLoop_103FC04A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\InfinidabIntro\InfinidabLoop		300255
+	705670967	IntensityLoop	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\IntensityLoop_103FC04A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\IntensityIntro\IntensityLoop		487010
+	709739555	Floss	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Floss_103FC04A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Floss		153212
+	717448784	Breakin'	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Breakin'_103FC04A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Breakin'		152123
+	729080069	Extraterrestrial	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Extraterestrial_103FC04A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Extraterrestrial		526256
+	740070459	Hype	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Hype_103FC04A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Hype		283227
+	812834241	SquatKick	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\SquatKick_103FC04A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\SquatKick		267795
+	814703023	TakeOnMe	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\TakeOnMe_540BB510.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\TakeOnMe		316236
+	934386800	PopLock	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\PopLock_103FC04A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\PopLock		155684
+	1008402205	Paws&Claws	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Im A Cat_103FC04A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Paws&Claws		3903052
+	1011009135	Flamenco	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Flamenco_540BB510.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Flamenco\Flamenco		13352
+	1025696309	FlamencoLoop	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\FlamencoLoop_103FC04A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Flamenco\FlamencoLoop		518386
+	1036514100	Droop	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Droop_103FC04A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Droop		1058047
+

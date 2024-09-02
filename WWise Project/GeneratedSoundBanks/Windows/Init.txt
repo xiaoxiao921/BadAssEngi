@@ -1,0 +1,21 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	936716544	The_Box			\Default Work Unit\The_Box	
+	1523918159	Boss_Health			\Default Work Unit\Boss_Health	
+
+State	ID	Name	State Group			Notes
+	356023598	Dick_in_BOx	The_Box			
+	748895195	None	The_Box			
+	936716544	The_Box	The_Box			
+	1470201886	The_Wok	The_Box			
+	1674063806	Indian_Box	The_Box			
+	545371365	Low	Boss_Health			
+	748895195	None	Boss_Health			
+	3550808449	High	Boss_Health			
+
+Audio Bus	ID	Name			Wwise Object Path	Notes
+	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+
+Audio Devices	ID	Name	Type				Notes
+	2317455096	No_Output	No Output			
+	3859886410	System	System			
+

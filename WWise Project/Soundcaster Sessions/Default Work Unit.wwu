@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{03157EFD-C902-4E95-B19D-37219E784FB0}" SchemaVersion="119">
+	<SoundcasterSessions>
+		<WorkUnit Name="Default Work Unit" ID="{03157EFD-C902-4E95-B19D-37219E784FB0}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="best" ID="{FDFD5056-9308-41BC-995E-5DD5D57BDB82}">
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="enemyValue" ID="{6DB4AE40-CB5D-42E2-8FEF-7EE9815EAD99}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="Playback_Rate" ID="{28387EE3-C13A-4316-B9C3-DB5C521624AF}"/>
+							<Value>1</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="BossHealth" ID="{BE544D32-6B0C-4374-A470-15C26DDD187F}"/>
+							<Value>37</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RPM" ID="{9112AA05-F577-44FD-9F4E-4424158129E6}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="Volume_Emotes" ID="{1EC492E5-C5D7-46ED-AFA7-640647A200A6}"/>
+							<Value>53</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="Volume_SFX" ID="{47268364-583C-47E4-8B06-30D13253233A}"/>
+							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="Boss_Health" ID="{EFEFBAE7-BFEC-49C3-A393-D908A28993B9}"/>
+							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="playerHealth" ID="{703733EF-A908-4CD2-85FC-9C3E91670DEE}"/>
+							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="Volume_Emote" ID="{29F5853C-30FB-4DCD-8C66-78B98C11B190}"/>
+							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="Turret_Attack_Speed" ID="{DFD4D82F-FA6B-4DEC-A631-C51EFEF52F9D}"/>
+							<Value>1</Value>
+						</RTPCValue>
+					</RTPCValueList>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="Low" ID="{2429E286-31D3-4F44-BB4D-CCD7E6E58251}"/>
+						<CurrentStateRef Name="Indian_Box" ID="{26BAC83B-63A0-4E61-B369-A079E53521B0}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundcasterSessions>
+</WwiseDocument>

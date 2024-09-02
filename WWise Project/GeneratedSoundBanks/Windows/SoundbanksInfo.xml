@@ -1,0 +1,882 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="150">
+	<RootPaths>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Windows</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{7B10674D-ADDC-1D95-97B3-B4EED8717FEB}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" GUID="{2C605E8A-41BE-464D-A0ED-0C33EF58BB70}" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" GUID="{0438292F-D3BF-4B58-B2A0-EC4AE40F70C3}" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="3803692087" Name="Master Audio Bus" GUID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"/>
+			</Busses>
+			<GameParameters>
+				<GameParameter Id="131068444" Name="BossHealth" GUID="{BE544D32-6B0C-4374-A470-15C26DDD187F}"/>
+				<GameParameter Id="151362964" Name="playerHealth" GUID="{703733EF-A908-4CD2-85FC-9C3E91670DEE}"/>
+				<GameParameter Id="396176897" Name="Volume_Emotes" GUID="{1EC492E5-C5D7-46ED-AFA7-640647A200A6}"/>
+				<GameParameter Id="536422634" Name="Turret_Attack_Speed" GUID="{DFD4D82F-FA6B-4DEC-A631-C51EFEF52F9D}"/>
+				<GameParameter Id="796049864" Name="RPM" GUID="{9112AA05-F577-44FD-9F4E-4424158129E6}"/>
+				<GameParameter Id="1523918159" Name="Boss_Health" GUID="{EFEFBAE7-BFEC-49C3-A393-D908A28993B9}"/>
+				<GameParameter Id="1524500807" Name="Playback_Rate" GUID="{28387EE3-C13A-4316-B9C3-DB5C521624AF}"/>
+				<GameParameter Id="3673881719" Name="Volume_SFX" GUID="{47268364-583C-47E4-8B06-30D13253233A}"/>
+				<GameParameter Id="3737037590" Name="enemyValue" GUID="{6DB4AE40-CB5D-42E2-8FEF-7EE9815EAD99}"/>
+				<GameParameter Id="4093208326" Name="Volume_Emote" GUID="{29F5853C-30FB-4DCD-8C66-78B98C11B190}"/>
+			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="936716544" Name="The_Box" GUID="{F201A1CC-7FFD-486A-9B83-0D93756DFF8C}">
+					<States>
+						<State Id="356023598" Name="Dick_in_BOx" GUID="{862099AF-A3BA-4888-9F96-025564657F50}"/>
+						<State Id="748895195" Name="None" GUID="{40702F2D-7093-4ACC-A0DC-D1E3396994F3}"/>
+						<State Id="936716544" Name="The_Box" GUID="{E1843FE9-C653-44FF-98DC-DD5BFA9B1AFD}"/>
+						<State Id="1470201886" Name="The_Wok" GUID="{CF47B161-3661-4493-90C7-25B80248AD2E}"/>
+						<State Id="1674063806" Name="Indian_Box" GUID="{26BAC83B-63A0-4E61-B369-A079E53521B0}"/>
+					</States>
+				</StateGroup>
+				<StateGroup Id="1523918159" Name="Boss_Health" GUID="{C1D88A2A-CB5A-40A3-9E6D-19F8DA15AA58}">
+					<States>
+						<State Id="545371365" Name="Low" GUID="{2429E286-31D3-4F44-BB4D-CCD7E6E58251}"/>
+						<State Id="748895195" Name="None" GUID="{B7D13571-4CCD-4156-BD56-FC194EE1833B}"/>
+						<State Id="3550808449" Name="High" GUID="{4A0C82C6-7EED-4C8D-8372-CD1032BD1ADE}"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
+		</SoundBank>
+		<SoundBank Id="1706815252" Type="User" GUID="{CA409755-24DF-4119-89F1-D7B43B6EC33C}" Language="SFX" Hash="{0993FE44-374B-6B3B-4494-CBDCD0AB8A6C}">
+			<ShortName>BadAssEngi</ShortName>
+			<Path>BadAssEngi.bnk</Path>
+			<Media>
+				<File Id="12129637" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Overdrive.wav</ShortName>
+					<CachePath>SFX/Emotes/Overdrive_103FC04A.wem</CachePath>
+				</File>
+				<File Id="12546256" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Orange Justice.wav</ShortName>
+					<CachePath>SFX/Emotes/Orange Justice_103FC04A.wem</CachePath>
+				</File>
+				<File Id="35246558" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Orbital Laser.wav</ShortName>
+					<CachePath>SFX/Orbital Laser_D82F5B22.wem</CachePath>
+				</File>
+				<File Id="64685271" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\FancyFeet.wav</ShortName>
+					<CachePath>SFX/Emotes/FancyFeet_103FC04A.wem</CachePath>
+				</File>
+				<File Id="75608193" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Phone It In.wav</ShortName>
+					<CachePath>SFX/Emotes/Phone It In_103FC04A.wem</CachePath>
+				</File>
+				<File Id="76517305" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Fresh.wav</ShortName>
+					<CachePath>SFX/Emotes/Fresh_103FC04A.wem</CachePath>
+				</File>
+				<File Id="112449013" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Dabstand.wav</ShortName>
+					<CachePath>SFX/Emotes/Dabstand_103FC04A.wem</CachePath>
+				</File>
+				<File Id="121638003" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Rocket Turret Reload Loop 3.wav</ShortName>
+					<CachePath>SFX/Rocket Turret Reload Loop 3_D82F5B22.wem</CachePath>
+				</File>
+				<File Id="125893133" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Old SChool.wav</ShortName>
+					<CachePath>SFX/Emotes/Old SChool_103FC04A.wem</CachePath>
+				</File>
+				<File Id="134919718" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Rocket Turret Reload Loop 4.wav</ShortName>
+					<CachePath>SFX/Rocket Turret Reload Loop 4_D82F5B22.wem</CachePath>
+				</File>
+				<File Id="140643252" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Countdown Timer ( v 212 ) 10 sec with Sound effects and Voice HD.wav</ShortName>
+					<CachePath>SFX/Countdown Timer ( v 212 ) 10 sec with Sound effects and Voice HD_D82F5B22.wem</CachePath>
+				</File>
+				<File Id="165101374" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>KF2 Grenade.wav</ShortName>
+					<CachePath>SFX/KF2 Grenade_DB294A2D.wem</CachePath>
+				</File>
+				<File Id="165986897" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\NinjaStyle.wav</ShortName>
+					<CachePath>SFX/Emotes/NinjaStyle_103FC04A.wem</CachePath>
+				</File>
+				<File Id="170501791" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Dance Therapy Loop.wav</ShortName>
+					<CachePath>SFX/Emotes/Dance Therapy Loop_103FC04A.wem</CachePath>
+				</File>
+				<File Id="189773840" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Dance Therapy Intro.wav</ShortName>
+					<CachePath>SFX/Emotes/Dance Therapy Intro_540BB510.wem</CachePath>
+				</File>
+				<File Id="243257580" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Breakneck.wav</ShortName>
+					<CachePath>SFX/Emotes/Breakneck_103FC04A.wem</CachePath>
+				</File>
+				<File Id="265662062" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Rocket Turret Reload Start.wav</ShortName>
+					<CachePath>SFX/Rocket Turret Reload Start_D82F5B22.wem</CachePath>
+				</File>
+				<File Id="295247226" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Fortnite default dance sound.wav</ShortName>
+					<CachePath>SFX/Emotes/Fortnite default dance sound_103FC04A.wem</CachePath>
+				</File>
+				<File Id="311145993" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Titanfall 2 Spitfire shot.wav</ShortName>
+					<CachePath>SFX/Titanfall 2 Spitfire shot_DB294A2D.wem</CachePath>
+				</File>
+				<File Id="354952072" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Never Gonna Give you Up.wav</ShortName>
+					<CachePath>SFX/Emotes/Never Gonna Give you Up_103FC04A.wem</CachePath>
+				</File>
+				<File Id="355825110" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\SpringLoaded.wav</ShortName>
+					<CachePath>SFX/Emotes/SpringLoaded_103FC04A.wem</CachePath>
+				</File>
+				<File Id="384232368" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Scenario.wav</ShortName>
+					<CachePath>SFX/Emotes/Scenario_103FC04A.wem</CachePath>
+				</File>
+				<File Id="386888135" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\HOW.wav</ShortName>
+					<CachePath>SFX/Emotes/HOW_103FC04A.wem</CachePath>
+				</File>
+				<File Id="435441904" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Crabby.wav</ShortName>
+					<CachePath>SFX/Emotes/Crabby_103FC04A.wem</CachePath>
+				</File>
+				<File Id="458462877" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\ElectroSwing.wav</ShortName>
+					<CachePath>SFX/Emotes/ElectroSwing_103FC04A.wem</CachePath>
+				</File>
+				<File Id="468613330" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Infectious.wav</ShortName>
+					<CachePath>SFX/Emotes/Infectious_103FC04A.wem</CachePath>
+				</File>
+				<File Id="471982027" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>UT Sound Design Rocket Launcher Primary and Secondary Fire.wav</ShortName>
+					<CachePath>SFX/UT Sound Design Rocket Launcher Primary and Secondary Fire_D82F5B22.wem</CachePath>
+				</File>
+				<File Id="488071590" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\IntesityIntro.wav</ShortName>
+					<CachePath>SFX/Emotes/IntesityIntro_540BB510.wem</CachePath>
+				</File>
+				<File Id="519731543" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MGL Explosion.wav</ShortName>
+					<CachePath>SFX/MGL Explosion_DB294A2D.wem</CachePath>
+				</File>
+				<File Id="524679349" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Dearly beloved 2017.wav</ShortName>
+					<CachePath>SFX/Dearly beloved 2017_4ED487BD.wem</CachePath>
+				</File>
+				<File Id="549958535" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Rocket Turret Reload End.wav</ShortName>
+					<CachePath>SFX/Rocket Turret Reload End_D82F5B22.wem</CachePath>
+				</File>
+				<File Id="624385349" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>ROR2 Rise To Fall Main Menu.wav</ShortName>
+					<CachePath>SFX/ROR2 Rise To Fall Main Menu_2104450B.wem</CachePath>
+				</File>
+				<File Id="629287077" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Springy.wav</ShortName>
+					<CachePath>SFX/Emotes/Springy_103FC04A.wem</CachePath>
+				</File>
+				<File Id="649209562" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\InfinidabIntro.wav</ShortName>
+					<CachePath>SFX/Emotes/InfinidabIntro_540BB510.wem</CachePath>
+				</File>
+				<File Id="660207138" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\InfinidabLoop.wav</ShortName>
+					<CachePath>SFX/Emotes/InfinidabLoop_103FC04A.wem</CachePath>
+				</File>
+				<File Id="705670967" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\IntensityLoop.wav</ShortName>
+					<CachePath>SFX/Emotes/IntensityLoop_103FC04A.wem</CachePath>
+				</File>
+				<File Id="709739555" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Floss.wav</ShortName>
+					<CachePath>SFX/Emotes/Floss_103FC04A.wem</CachePath>
+				</File>
+				<File Id="717448784" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Breakin'.wav</ShortName>
+					<CachePath>SFX/Emotes/Breakin'_103FC04A.wem</CachePath>
+				</File>
+				<File Id="729080069" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Extraterestrial.wav</ShortName>
+					<CachePath>SFX/Emotes/Extraterestrial_103FC04A.wem</CachePath>
+				</File>
+				<File Id="740070459" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Hype.wav</ShortName>
+					<CachePath>SFX/Emotes/Hype_103FC04A.wem</CachePath>
+				</File>
+				<File Id="745477065" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>rocket Turret Explosion.wav</ShortName>
+					<CachePath>SFX/rocket Turret Explosion_D82F5B22.wem</CachePath>
+				</File>
+				<File Id="779779493" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>TAZ 2.0 Gauss Rifle 62_01.wav</ShortName>
+					<CachePath>SFX/TAZ 2.0 Gauss Rifle 62_01_DB294A2D.wem</CachePath>
+				</File>
+				<File Id="812834241" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\SquatKick.wav</ShortName>
+					<CachePath>SFX/Emotes/SquatKick_103FC04A.wem</CachePath>
+				</File>
+				<File Id="814703023" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\TakeOnMe.wav</ShortName>
+					<CachePath>SFX/Emotes/TakeOnMe_540BB510.wem</CachePath>
+				</File>
+				<File Id="858566635" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Rocket Turret Reload Loop 2.wav</ShortName>
+					<CachePath>SFX/Rocket Turret Reload Loop 2_D82F5B22.wem</CachePath>
+				</File>
+				<File Id="872153662" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Rocket Turret Reload Loop 1.wav</ShortName>
+					<CachePath>SFX/Rocket Turret Reload Loop 1_D82F5B22.wem</CachePath>
+				</File>
+				<File Id="925333506" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>P E A C E  A N D  T R A N Q U I L I T Y.wav</ShortName>
+					<CachePath>SFX/P E A C E  A N D  T R A N Q U I L I T Y_2104450B.wem</CachePath>
+				</File>
+				<File Id="934386800" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\PopLock.wav</ShortName>
+					<CachePath>SFX/Emotes/PopLock_103FC04A.wem</CachePath>
+				</File>
+				<File Id="976341326" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Titanfall 2 Railgun Charging.wav</ShortName>
+					<CachePath>SFX/Titanfall 2 Railgun Charging_DB294A2D.wem</CachePath>
+				</File>
+				<File Id="989520641" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Muted Bouncing Explosion.wav</ShortName>
+					<CachePath>SFX/Muted Bouncing Explosion_DB294A2D.wem</CachePath>
+				</File>
+				<File Id="997986163" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Bullet Shell Falling.wav</ShortName>
+					<CachePath>SFX/Bullet Shell Falling_D82F5B22.wem</CachePath>
+				</File>
+				<File Id="1003931063" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Rocket Turret Shot Sound.wav</ShortName>
+					<CachePath>SFX/Rocket Turret Shot Sound_D82F5B22.wem</CachePath>
+				</File>
+				<File Id="1008402205" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Im A Cat.wav</ShortName>
+					<CachePath>SFX/Emotes/Im A Cat_103FC04A.wem</CachePath>
+				</File>
+				<File Id="1011009135" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Flamenco.wav</ShortName>
+					<CachePath>SFX/Emotes/Flamenco_540BB510.wem</CachePath>
+				</File>
+				<File Id="1025696309" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\FlamencoLoop.wav</ShortName>
+					<CachePath>SFX/Emotes/FlamencoLoop_103FC04A.wem</CachePath>
+				</File>
+				<File Id="1036514100" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Droop.wav</ShortName>
+					<CachePath>SFX/Emotes/Droop_103FC04A.wem</CachePath>
+				</File>
+			</Media>
+			<Plugins>
+				<Custom>
+					<Plugin Id="550694185" Name="Wwise Time Stretch (Custom)" GUID="{110405AC-1A09-4C28-92A5-D79B19FC6C96}" LibName="Wwise Time Stretch" LibId="8519683"/>
+				</Custom>
+			</Plugins>
+			<Events>
+				<Event Id="270396623" Name="Breakin" GUID="{C505E5EF-B32C-44F1-AB32-0A4C1C9E0242}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="717448784"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2289822667" Name="Breakneck" GUID="{F84A0F9E-5674-4702-8DA4-CA777E4C4E93}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="243257580"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1465391682" Name="Cluster_Explosion_Play_69" GUID="{FEA63811-A00F-4A5F-9AE5-AD4307227209}" MaxAttenuation="200" DurationType="OneShot" DurationMin="1.082566" DurationMax="1.2507457">
+					<MediaRefs>
+						<MediaRef Id="165101374"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1466630640" Name="Crabby" GUID="{B4CDA0A1-8321-4EB1-9CF1-5FC3D0BA0767}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="435441904"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="199318254" Name="Dabstand" GUID="{1BEA85A6-FEDE-4046-8A70-7C9F39581A7F}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="112449013"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4069594228" Name="DanceMoves" GUID="{2679E971-23A9-4B89-9E3E-606FBB449506}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="295247226"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2246715273" Name="DanceTherapy" GUID="{A9AB1CBC-00A7-412C-94A0-E5E15E1B1745}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="170501791"/>
+						<MediaRef Id="189773840"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2756616215" Name="Droop" GUID="{63D51EAB-788C-455E-90D7-58C0207E3A3B}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="1036514100"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="639825031" Name="ElectroSwing" GUID="{2EC518FD-DDF2-4E4F-B061-27AAEF9F1E42}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="458462877"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2027873358" Name="Extraterrestial" GUID="{E7BF796E-897D-4FEB-8456-FCC027228282}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="729080069"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1337098116" Name="FancyFeet" GUID="{78890414-FA69-42BC-8E35-DE010D1267AB}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="64685271"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3312475546" Name="Flamenco" GUID="{4285D862-268F-467D-9870-34808F1A1598}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="1011009135"/>
+						<MediaRef Id="1025696309"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1557982612" Name="Floss" GUID="{C12B1411-0468-4055-8A3A-7923EA1943FA}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="709739555"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1614399059" Name="Fresh" GUID="{5882BF52-9D91-4C08-B294-36B37CC56D4C}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="76517305"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1082843449" Name="HOW" GUID="{8FD1604E-9A9A-41EB-86CF-833B932F487C}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="386888135"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3296584377" Name="Hype" GUID="{DC13D277-853C-4C6E-8488-68720CB4C7AA}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="740070459"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1691248994" Name="Infectious" GUID="{38253F4D-2B00-4002-9A87-501673BB6F34}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="468613330"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1378916966" Name="InfiniteDab" GUID="{64A287FC-3AD4-4AB4-8CDE-EE691056AB22}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="649209562"/>
+						<MediaRef Id="660207138"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2470328564" Name="Intensity" GUID="{A19EA1BC-8E37-40F3-8469-1674FBCEC6B3}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="488071590"/>
+						<MediaRef Id="705670967"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3368384665" Name="Minigun_Turret_Shot_Play_69" GUID="{DC70CC0A-01BA-462B-8243-B8FBF919CACF}" MaxAttenuation="200" DurationType="OneShot" DurationMin="1.2126763" DurationMax="1.4498999">
+					<MediaRefs>
+						<MediaRef Id="311145993"/>
+						<MediaRef Id="997986163"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2508478120" Name="NeverGonna" GUID="{BA7AD81D-36A1-466E-979D-D97808B8EDE9}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="354952072"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3112214314" Name="NinjaStyle" GUID="{B49D7E53-2FDE-4AEB-9FD3-326798F2C393}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="165986897"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="518528820" Name="OldSchool" GUID="{E75598AC-39D9-469A-B9BC-950FEA56EC34}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="125893133"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="829504566" Name="OrangeJustice" GUID="{9D32821B-D815-4C1A-B027-98D9A25FA041}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="12546256"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2755457783" Name="Orbital_Laser_Play_69" GUID="{29C08582-7EE1-40F2-80A7-D72F8F86CCB4}" MaxAttenuation="1500" DurationType="OneShot" DurationMin="35.000206" DurationMax="35.000206">
+					<MediaRefs>
+						<MediaRef Id="35246558"/>
+						<MediaRef Id="140643252"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2988571309" Name="Overdrive" GUID="{29A47019-CC97-4501-BBC3-4BE70ECE9876}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="12129637"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1137762271" Name="PawsAndClaws" GUID="{DC82249D-9BCF-424A-8E77-6D0826FC500E}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="1008402205"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3544378829" Name="PhoneItIn" GUID="{AAEC3D29-697F-4BF8-A7B8-0A43FCA35CF8}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="75608193"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2727078031" Name="PopLock" GUID="{DD83C3E6-91B6-441C-9260-14ADFD454D30}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="934386800"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1854630310" Name="Railgun_Turret_Shot_Play_69" GUID="{0161FA44-239D-473E-8F94-ED2E902A8C62}" MaxAttenuation="500" DurationType="OneShot" DurationMin="4.8055553" DurationMax="4.8055553">
+					<MediaRefs>
+						<MediaRef Id="779779493"/>
+						<MediaRef Id="976341326"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="550694185"/>
+						</Custom>
+					</PluginRefs>
+				</Event>
+				<Event Id="2733523497" Name="Railgun_Turret_Targeting_Play_69" GUID="{4FE1DE3E-2709-4A98-BF20-2B2C7F44F371}" MaxAttenuation="75" DurationType="OneShot" DurationMin="4.8065553" DurationMax="4.8065553">
+					<MediaRefs>
+						<MediaRef Id="976341326"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="550694185"/>
+						</Custom>
+					</PluginRefs>
+				</Event>
+				<Event Id="4007368269" Name="Rocket_Turret_Explosion_Play_69" GUID="{09F8B056-51BC-4407-8CAC-44ED2E110D83}" MaxAttenuation="200" DurationType="OneShot" DurationMin="1.2074376" DurationMax="1.2074376">
+					<MediaRefs>
+						<MediaRef Id="745477065"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3961844726" Name="Rocket_Turret_Shot_Play" GUID="{3DA01CE7-717B-43AF-A8FF-304B9971B196}" MaxAttenuation="200" DurationType="OneShot" DurationMin="3.0214965" DurationMax="3.0214965">
+					<MediaRefs>
+						<MediaRef Id="265662062"/>
+						<MediaRef Id="549958535"/>
+						<MediaRef Id="1003931063"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="174589936" Name="Rocket_Turret_Single_Reload_Play_69" GUID="{7E14A0F4-A7FD-4776-BE7D-A6DA837F11B0}" MaxAttenuation="75" DurationType="OneShot" DurationMin="0.33422995" DurationMax="0.48586357">
+					<MediaRefs>
+						<MediaRef Id="121638003"/>
+						<MediaRef Id="134919718"/>
+						<MediaRef Id="858566635"/>
+						<MediaRef Id="872153662"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="957702446" Name="Satchel_Explosion_Play_69" GUID="{13B16141-7F19-417E-A091-0F4419A86E9F}" MaxAttenuation="200" DurationType="OneShot" DurationMin="2.7239869" DurationMax="3.1471658">
+					<MediaRefs>
+						<MediaRef Id="989520641"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3930550719" Name="Scenario" GUID="{379FC9DD-2297-448C-9A50-6E57065D4872}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="384232368"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4270838368" Name="Seekers_Explosion_Play_69" GUID="{8274EAB8-5E05-45CB-86B0-AB6EBF6B74A9}" MaxAttenuation="200" DurationType="OneShot" DurationMin="1.0887729" DurationMax="1.2221063">
+					<MediaRefs>
+						<MediaRef Id="519731543"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3166227828" Name="Seekers_Firing_Play_69" GUID="{F3C30924-9FD7-4D94-90C0-4BE73961BE29}" MaxAttenuation="250" DurationType="OneShot" DurationMin="0.7379075" DurationMax="0.90323836">
+					<MediaRefs>
+						<MediaRef Id="471982027"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3510343821" Name="SpringLoaded" GUID="{95EBFAD9-5FA0-4B40-8478-7E60332DEC0C}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="355825110"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2012643055" Name="Springy" GUID="{613D28D7-CDBD-4EBD-9D46-332806BCF8D9}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="629287077"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3286222963" Name="SquatKick" GUID="{BC8385B0-D3CB-44E1-A382-BEDC64EC28EA}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="812834241"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2390980205" Name="TakeOnMe" GUID="{D450FA90-6B48-4801-AD12-3A82DE98466C}" MaxAttenuation="200" DurationType="OneShot" DurationMin="14.544263" DurationMax="14.544263">
+					<MediaRefs>
+						<MediaRef Id="814703023"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2008690894" Name="Turret_Alive_Play_69" GUID="{DB2E8AD8-B7F4-497A-BF73-BB60D9E400BB}" MaxAttenuation="5" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="524679349"/>
+						<MediaRef Id="624385349"/>
+						<MediaRef Id="925333506"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+			<GameParameters>
+				<GameParameter Id="396176897" Name="Volume_Emotes" GUID="{1EC492E5-C5D7-46ED-AFA7-640647A200A6}"/>
+				<GameParameter Id="536422634" Name="Turret_Attack_Speed" GUID="{DFD4D82F-FA6B-4DEC-A631-C51EFEF52F9D}"/>
+				<GameParameter Id="3673881719" Name="Volume_SFX" GUID="{47268364-583C-47E4-8B06-30D13253233A}"/>
+				<GameParameter Id="4093208326" Name="Volume_Emote" GUID="{29F5853C-30FB-4DCD-8C66-78B98C11B190}"/>
+			</GameParameters>
+		</SoundBank>
+		<SoundBank Id="4059541694" Type="User" GUID="{09F12DB0-2F2E-4525-A238-BE62D8DA5AC9}" Language="SFX" Hash="{FD50D25A-FA83-791D-3B74-76685FD0DDC7}">
+			<ShortName>BadAssEmotes</ShortName>
+			<Path>BadAssEmotes.bnk</Path>
+			<Media>
+				<File Id="12129637" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Overdrive.wav</ShortName>
+					<CachePath>SFX/Emotes/Overdrive_103FC04A.wem</CachePath>
+				</File>
+				<File Id="12546256" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Orange Justice.wav</ShortName>
+					<CachePath>SFX/Emotes/Orange Justice_103FC04A.wem</CachePath>
+				</File>
+				<File Id="64685271" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\FancyFeet.wav</ShortName>
+					<CachePath>SFX/Emotes/FancyFeet_103FC04A.wem</CachePath>
+				</File>
+				<File Id="75608193" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Phone It In.wav</ShortName>
+					<CachePath>SFX/Emotes/Phone It In_103FC04A.wem</CachePath>
+				</File>
+				<File Id="76517305" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Fresh.wav</ShortName>
+					<CachePath>SFX/Emotes/Fresh_103FC04A.wem</CachePath>
+				</File>
+				<File Id="112449013" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Dabstand.wav</ShortName>
+					<CachePath>SFX/Emotes/Dabstand_103FC04A.wem</CachePath>
+				</File>
+				<File Id="125893133" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Old SChool.wav</ShortName>
+					<CachePath>SFX/Emotes/Old SChool_103FC04A.wem</CachePath>
+				</File>
+				<File Id="165986897" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\NinjaStyle.wav</ShortName>
+					<CachePath>SFX/Emotes/NinjaStyle_103FC04A.wem</CachePath>
+				</File>
+				<File Id="170501791" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Dance Therapy Loop.wav</ShortName>
+					<CachePath>SFX/Emotes/Dance Therapy Loop_103FC04A.wem</CachePath>
+				</File>
+				<File Id="189773840" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Dance Therapy Intro.wav</ShortName>
+					<CachePath>SFX/Emotes/Dance Therapy Intro_540BB510.wem</CachePath>
+				</File>
+				<File Id="243257580" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Breakneck.wav</ShortName>
+					<CachePath>SFX/Emotes/Breakneck_103FC04A.wem</CachePath>
+				</File>
+				<File Id="295247226" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Fortnite default dance sound.wav</ShortName>
+					<CachePath>SFX/Emotes/Fortnite default dance sound_103FC04A.wem</CachePath>
+				</File>
+				<File Id="354952072" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Never Gonna Give you Up.wav</ShortName>
+					<CachePath>SFX/Emotes/Never Gonna Give you Up_103FC04A.wem</CachePath>
+				</File>
+				<File Id="355825110" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\SpringLoaded.wav</ShortName>
+					<CachePath>SFX/Emotes/SpringLoaded_103FC04A.wem</CachePath>
+				</File>
+				<File Id="384232368" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Scenario.wav</ShortName>
+					<CachePath>SFX/Emotes/Scenario_103FC04A.wem</CachePath>
+				</File>
+				<File Id="386888135" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\HOW.wav</ShortName>
+					<CachePath>SFX/Emotes/HOW_103FC04A.wem</CachePath>
+				</File>
+				<File Id="435441904" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Crabby.wav</ShortName>
+					<CachePath>SFX/Emotes/Crabby_103FC04A.wem</CachePath>
+				</File>
+				<File Id="458462877" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\ElectroSwing.wav</ShortName>
+					<CachePath>SFX/Emotes/ElectroSwing_103FC04A.wem</CachePath>
+				</File>
+				<File Id="468613330" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Infectious.wav</ShortName>
+					<CachePath>SFX/Emotes/Infectious_103FC04A.wem</CachePath>
+				</File>
+				<File Id="488071590" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\IntesityIntro.wav</ShortName>
+					<CachePath>SFX/Emotes/IntesityIntro_540BB510.wem</CachePath>
+				</File>
+				<File Id="629287077" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Springy.wav</ShortName>
+					<CachePath>SFX/Emotes/Springy_103FC04A.wem</CachePath>
+				</File>
+				<File Id="649209562" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\InfinidabIntro.wav</ShortName>
+					<CachePath>SFX/Emotes/InfinidabIntro_540BB510.wem</CachePath>
+				</File>
+				<File Id="660207138" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\InfinidabLoop.wav</ShortName>
+					<CachePath>SFX/Emotes/InfinidabLoop_103FC04A.wem</CachePath>
+				</File>
+				<File Id="705670967" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\IntensityLoop.wav</ShortName>
+					<CachePath>SFX/Emotes/IntensityLoop_103FC04A.wem</CachePath>
+				</File>
+				<File Id="709739555" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Floss.wav</ShortName>
+					<CachePath>SFX/Emotes/Floss_103FC04A.wem</CachePath>
+				</File>
+				<File Id="717448784" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Breakin'.wav</ShortName>
+					<CachePath>SFX/Emotes/Breakin'_103FC04A.wem</CachePath>
+				</File>
+				<File Id="729080069" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Extraterestrial.wav</ShortName>
+					<CachePath>SFX/Emotes/Extraterestrial_103FC04A.wem</CachePath>
+				</File>
+				<File Id="740070459" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Hype.wav</ShortName>
+					<CachePath>SFX/Emotes/Hype_103FC04A.wem</CachePath>
+				</File>
+				<File Id="812834241" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\SquatKick.wav</ShortName>
+					<CachePath>SFX/Emotes/SquatKick_103FC04A.wem</CachePath>
+				</File>
+				<File Id="814703023" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\TakeOnMe.wav</ShortName>
+					<CachePath>SFX/Emotes/TakeOnMe_540BB510.wem</CachePath>
+				</File>
+				<File Id="934386800" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\PopLock.wav</ShortName>
+					<CachePath>SFX/Emotes/PopLock_103FC04A.wem</CachePath>
+				</File>
+				<File Id="1008402205" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Im A Cat.wav</ShortName>
+					<CachePath>SFX/Emotes/Im A Cat_103FC04A.wem</CachePath>
+				</File>
+				<File Id="1011009135" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Flamenco.wav</ShortName>
+					<CachePath>SFX/Emotes/Flamenco_540BB510.wem</CachePath>
+				</File>
+				<File Id="1025696309" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\FlamencoLoop.wav</ShortName>
+					<CachePath>SFX/Emotes/FlamencoLoop_103FC04A.wem</CachePath>
+				</File>
+				<File Id="1036514100" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Emotes\Droop.wav</ShortName>
+					<CachePath>SFX/Emotes/Droop_103FC04A.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="3480225049" Name="Play_Breakin_" GUID="{FD04B0D4-0044-4588-A47E-CC60F1220ACE}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="717448784"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1672912446" Name="Play_Breakneck" GUID="{4E924469-4400-47A3-9CC6-9A95DB985C5C}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="243257580"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="196555151" Name="Play_Crabby" GUID="{3681032D-6525-48E3-8704-C81E9ED3EE3A}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="435441904"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3768260481" Name="Play_Dabstand" GUID="{11C01A7A-521F-40DF-86E8-5E1939393DD9}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="112449013"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1073155275" Name="Play_DanceMoves" GUID="{66E78D64-F0E1-4371-917B-BEF788D962A9}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="295247226"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1683230540" Name="Play_DanceTherapyIntro" GUID="{71271121-1BF2-4BDB-9AAE-B0C3466FB6C9}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="170501791"/>
+						<MediaRef Id="189773840"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4025363538" Name="Play_Droop" GUID="{227861A2-80CD-493D-8BE8-74D2013AF7C0}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="1036514100"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1413951596" Name="Play_ElectroSwing" GUID="{3DED9C87-DC5D-4B1E-B0EC-EB5B99E7128D}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="458462877"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1096907951" Name="Play_Extraterrestrial" GUID="{276860C1-CC2F-4230-B4D6-E0BC7734755E}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="729080069"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2939172889" Name="Play_FancyFeet" GUID="{877F9CCB-5285-4E1F-9AF0-0B34B69D5E94}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="64685271"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2688619661" Name="Play_Flamenco" GUID="{99E8831C-41F4-44C2-98DD-2DC6043CB1F1}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="1011009135"/>
+						<MediaRef Id="1025696309"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1540665125" Name="Play_Floss" GUID="{0F3F8ECB-BD60-4992-8B98-C6C874260E54}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="709739555"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1538240022" Name="Play_Fresh" GUID="{79A69BB4-8CD7-4C67-AD8A-D336419B7278}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="76517305"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2994221240" Name="Play_HOW" GUID="{7ECB2885-F18D-44FC-90BB-21E6D9523EA9}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="386888135"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2785512014" Name="Play_Hype" GUID="{D7C7C628-CBC8-4F44-AD0B-D6F834977E98}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="740070459"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2244413701" Name="Play_Infectious" GUID="{9C867B86-4ACA-43A8-89AD-11CF68E63757}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="468613330"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="380518866" Name="Play_InfinidabIntro" GUID="{85FD9736-97E2-46C1-8388-8CF92616E4AF}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="649209562"/>
+						<MediaRef Id="660207138"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2677493185" Name="Play_IntensityIntro" GUID="{48BA0D2B-DE38-4EA9-8599-20A2BFD41551}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="488071590"/>
+						<MediaRef Id="705670967"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3268630155" Name="Play_NeverGonna" GUID="{0167CDDA-B4BE-4B88-B0A9-C344C68FBF44}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="354952072"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4289548637" Name="Play_NinjaStyle" GUID="{3A8D3C5E-DD6D-4858-B49A-860AA8312915}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="165986897"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2985177453" Name="Play_OldSchool" GUID="{42090B90-9DB3-4508-8323-F3926BCB8127}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="125893133"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3295654239" Name="Play_OrangeJustice" GUID="{875812F4-254F-4B32-B978-C992D6F498BC}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="12546256"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="726991772" Name="Play_Overdrive" GUID="{60499BCC-B3A6-4A80-8F7F-C773666E450B}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="12129637"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="246143008" Name="Play_Paws_Claws" GUID="{C05F8CBC-EC90-493B-8474-28FECFCB8A4E}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="1008402205"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2839619656" Name="Play_PhoneItIn" GUID="{BB87A503-F534-47AF-A331-9D8EF01C1D30}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="75608193"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1985354438" Name="Play_PopLock" GUID="{E7B178B2-3D1E-40A0-9F77-4C99AA57DAC9}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="934386800"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1791795284" Name="Play_Scenario" GUID="{60D1C5A8-0998-4FE4-94A7-79433A212E6B}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="384232368"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2597828886" Name="Play_SpringLoaded" GUID="{4B8EBB8E-8309-49B2-9452-D78813AAC1E8}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="355825110"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2002994874" Name="Play_Springy" GUID="{C8D3543A-5EAF-41F5-B68C-9D38BD15D2ED}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="629287077"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2323178122" Name="Play_SquatKick" GUID="{C58BFFAC-9EE4-475F-BC6E-FDDC9B7E9B44}" MaxAttenuation="200" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="812834241"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3669736410" Name="Play_TakeOnMe" GUID="{224FA725-360B-4D74-876D-C0A4C97E363A}" MaxAttenuation="200" DurationType="OneShot" DurationMin="14.544263" DurationMax="14.544263">
+					<MediaRefs>
+						<MediaRef Id="814703023"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3467103731" Name="Stop_Breakin_" GUID="{F8E9960C-BA51-446E-889D-B64473C45DCE}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="4162817568" Name="Stop_Breakneck" GUID="{FC3C70F1-D9EF-40B5-9ACF-3409BF4E67DE}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2113712877" Name="Stop_Crabby" GUID="{9D27B66E-C1B1-4705-9E16-EA0A368EAF35}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3743729291" Name="Stop_Dabstand" GUID="{30F467C0-A057-4D14-B4C2-3CA73E989AD1}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2595956965" Name="Stop_DanceMoves" GUID="{AF5DF60C-327B-4886-9B5F-F5A156730967}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="716723742" Name="Stop_DanceTherapyIntro" GUID="{90BD9A7E-F945-4C16-868D-1EAB9E49FE38}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="393452856" Name="Stop_Droop" GUID="{F33618B2-F557-4731-A7E4-C31E4DB5716B}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3907188806" Name="Stop_ElectroSwing" GUID="{D4B294E2-BEFF-45DF-B3B6-D2337B2C8930}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3248328889" Name="Stop_Extraterrestrial" GUID="{58B7408D-F11A-4B36-9295-419659878ED3}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2817487683" Name="Stop_FancyFeet" GUID="{84D8797D-940C-4E63-9165-845989CC11C4}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="29792155" Name="Stop_Flamenco" GUID="{B556B7D9-1AB5-425E-A30A-812356F58D36}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3807099887" Name="Stop_Floss" GUID="{1328BF50-C819-4DB2-8C81-EC4118A3F252}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2343795684" Name="Stop_Fresh" GUID="{69260081-B7A8-4E4B-8118-0B55B4BAED51}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="400787722" Name="Stop_HOW" GUID="{457523B0-F72E-46C1-8D43-1A164709412F}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2756333940" Name="Stop_Hype" GUID="{5B114399-4063-4967-93DF-8972C18057E4}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2882547615" Name="Stop_Infectious" GUID="{01C8546C-9B83-4617-AAD7-D6D13CE423DE}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="656988036" Name="Stop_InfinidabIntro" GUID="{1703F07F-0992-4A96-A9C2-A59552EAF5AB}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2464076727" Name="Stop_IntensityIntro" GUID="{C5E37E8C-810E-421D-99F2-6FA68F40EAA6}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1240779373" Name="Stop_NeverGonna" GUID="{AA071B59-2213-4D40-B134-572E5786C3A0}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2637240459" Name="Stop_NinjaStyle" GUID="{50E9EAA6-3E1D-456F-A566-116CBC17D1F4}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2339110651" Name="Stop_OldSchool" GUID="{4372B02D-0B2F-480A-A8D2-EC27FF9D8CB9}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="926917861" Name="Stop_OrangeJustice" GUID="{6AD8F20B-F46D-435B-8360-3613BD29308D}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2732782146" Name="Stop_Overdrive" GUID="{6967588A-2DC6-4A6D-B53B-9CD8EAFD87DA}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1117427782" Name="Stop_Paws_Claws" GUID="{D5D8C522-067F-4F39-B2B6-A230E7764685}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1337364286" Name="Stop_PhoneItIn" GUID="{5353BC40-C940-4B6E-B821-29B330E8CCF5}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3191328536" Name="Stop_PopLock" GUID="{692FB6DB-D007-4E6A-B341-F07694088446}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2258123542" Name="Stop_Scenario" GUID="{9D05E1A7-6D3A-439C-8399-AF8D5B4D7EC3}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="4122890544" Name="Stop_SpringLoaded" GUID="{F6D78AFA-FB30-4434-A7DB-F49A624D90D4}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1937403564" Name="Stop_Springy" GUID="{8F9F9596-3FB2-4EFC-A8BD-123110BF2798}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3985412508" Name="Stop_SquatKick" GUID="{0651E03E-BA8D-472B-AB57-33136C823D20}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3772203892" Name="Stop_TakeOnMe" GUID="{C0E7609E-3E7D-4D7C-8710-B454F6AAE996}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+			</Events>
+			<GameParameters>
+				<GameParameter Id="396176897" Name="Volume_Emotes" GUID="{1EC492E5-C5D7-46ED-AFA7-640647A200A6}"/>
+				<GameParameter Id="3673881719" Name="Volume_SFX" GUID="{47268364-583C-47E4-8B06-30D13253233A}"/>
+				<GameParameter Id="4093208326" Name="Volume_Emote" GUID="{29F5853C-30FB-4DCD-8C66-78B98C11B190}"/>
+			</GameParameters>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{F888E5B7-D807-97C3-1E26-7E1AF0522781}</FileHash>
+</SoundBanksInfo>
