@@ -21,7 +21,7 @@ namespace BadAssEngi.Animations
     {
         internal static void Init()
         {
-            On.RoR2.CameraRigController.Update += AddUIOnCameraRig;
+            On.RoR2.CameraRigController.EarlyUpdate += AddUIOnCameraRig;
 
             On.RoR2.PlayerCharacterMasterController.CanSendBodyInput += FixBodyInputLossWhenHoveringEmoteButton;
             On.RoR2.CameraRigController.GenerateCameraModeContext += FixCameraWorkLossWhenHoveringEmoteButton;
@@ -31,7 +31,7 @@ namespace BadAssEngi.Animations
             IL.RoR2.MusicController.LateUpdate += EmotesDisableGameMusic;
         }
 
-        private static void AddUIOnCameraRig(On.RoR2.CameraRigController.orig_Update orig, CameraRigController self)
+        private static void AddUIOnCameraRig(On.RoR2.CameraRigController.orig_EarlyUpdate orig, CameraRigController self)
         {
             orig(self);
             if (!self || !self.hud)
@@ -42,7 +42,7 @@ namespace BadAssEngi.Animations
                 Object.Destroy(BaeAssets.MainMenuButtonPrefab);
                 return;
             }
-                
+
             if (EngiEmoteController.EmoteButton && EngiEmoteController.EmoteWindow)
                 return;
 
@@ -50,15 +50,15 @@ namespace BadAssEngi.Animations
             var isLocal = false;
             foreach (var localUser in LocalUserManager.readOnlyLocalUsersList)
             {
-                if (self.hud.localUserViewer != null && 
+                if (self.hud.localUserViewer != null &&
                     localUser == self.hud.localUserViewer)
                     isLocal = true;
             }
             if (!isLocal)
                 return;
 
-            if (self.hud.localUserViewer == null || 
-                !self.hud.localUserViewer.cachedBody || 
+            if (self.hud.localUserViewer == null ||
+                !self.hud.localUserViewer.cachedBody ||
                 self.hud.localUserViewer.cachedBody.bodyIndex != BadAssEngi.EngiBodyIndex)
             {
                 if (EngiEmoteController.EmoteWindow)
@@ -88,6 +88,7 @@ namespace BadAssEngi.Animations
             scaler.scaleFactor = 1.0f;
             scaler.uiScaleMode = CanvasScaler.ScaleMode.ConstantPixelSize;
 
+            canvas.GetComponent<GraphicRaycaster>().enabled = true;
 
             EngiEmoteController.EmoteWindow = Object.Instantiate(BaeAssets.PrefabEmoteWindow);
 
@@ -186,10 +187,11 @@ namespace BadAssEngi.Animations
         }
 
         private static bool FixBodyInputLossWhenHoveringEmoteButton(
-            On.RoR2.PlayerCharacterMasterController.orig_CanSendBodyInput orig, NetworkUser networkUser,
-            out LocalUser localUser, out Player inputPlayer, out CameraRigController cameraRigController)
+            On.RoR2.PlayerCharacterMasterController.orig_CanSendBodyInput orig,
+            NetworkUser networkUser,
+            out LocalUser localUser, out Player inputPlayer, out CameraRigController cameraRigController, out bool onlyAllowMovement)
         {
-            var res = orig(networkUser, out localUser, out inputPlayer, out cameraRigController);
+            var res = orig(networkUser, out localUser, out inputPlayer, out cameraRigController, out onlyAllowMovement);
 
             if (localUser?.eventSystem?.currentSelectedGameObject &&
                 localUser?.eventSystem?.currentSelectedGameObject == EngiEmoteController.EmoteButton)
