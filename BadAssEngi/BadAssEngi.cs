@@ -21,6 +21,7 @@ using R2API.Utils;
 using RoR2;
 using UnityEngine;
 using UnityEngine.Networking;
+using static BadAssEngi.Skills.Special.TurretHooks;
 
 // ReSharper disable MemberCanBePrivate.Global
 // ReSharper disable ClassNeverInstantiated.Global
@@ -34,8 +35,6 @@ namespace BadAssEngi
     [BepInDependency(SoundAPI.PluginGUID)]
     [BepInDependency(LoadoutAPI.PluginGUID)]
     [BepInDependency("at.aster.charactercustomizer", BepInDependency.DependencyFlags.SoftDependency)]
-    [R2APISubmoduleDependency(nameof(CommandHelper), nameof(SoundAPI), nameof(LoadoutAPI),
-        nameof(PrefabAPI), nameof(NetworkingAPI))]
     [BepInPlugin(ModGuid, ModName, ModVer)]
     [NetworkCompatibility]
     public class BadAssEngi : BaseUnityPlugin
@@ -81,6 +80,7 @@ namespace BadAssEngi
             NetworkingAPI.RegisterMessageType<EngiColorMsg>();
             NetworkingAPI.RegisterMessageType<PlaySoundMsg>();
             NetworkingAPI.RegisterMessageType<PlaySoundAndDestroyMsg>();
+            NetworkingAPI.RegisterMessageType<SendRecalcStat>();
             NetworkingAPI.RegisterMessageType<StopAnimMsg>();
             NetworkingAPI.RegisterMessageType<StopSoundMsg>();
             NetworkingAPI.RegisterMessageType<TurretColorDelayedMsgToServer>();
