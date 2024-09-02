@@ -71,10 +71,10 @@ namespace BadAssEngi
         internal static ConfigEntry<float> OrbitalStrikeBaseDamage { get; private set; }
         internal static ConfigEntry<float> OrbitalStrikeCooldown { get; private set; }
         internal static ConfigEntry<int> OrbitalStrikeRequiredStock { get; private set; }
-        
+
         internal static ConfigEntry<Vector3> EmoteWindowPosition { get; private set; }
         internal static ConfigEntry<Vector3> EmoteWindowSize { get; private set; }
-        
+
         internal static ConfigEntry<int> EmoteButtonUIPosX { get; private set; }
         internal static ConfigEntry<int> EmoteButtonUIPosY { get; private set; }
 
@@ -91,7 +91,7 @@ namespace BadAssEngi
                 "What keybind should be used for changing the type of turret. List of possible keybind at the end of this page : https://docs.unity3d.com/Manual/ConventionalGameInput.html");
 
             const string defaultGrenadeTypeKeyBind = "f3";
-            GrenadeTypeKeyBind = _file.Bind("Keybinds", "GrenadeType", defaultGrenadeTypeKeyBind, 
+            GrenadeTypeKeyBind = _file.Bind("Keybinds", "GrenadeType", defaultGrenadeTypeKeyBind,
                 "What keybind should be used for changing the type of grenades.");
 
             const string defaultMineTypeKeyBind = "f4";
@@ -99,12 +99,12 @@ namespace BadAssEngi
                 "What keybind should be used for changing the type of mines.");
 
             const string defaultSatchelManualDetonateKeyBind = "c";
-            SatchelManualDetonateKeyBind = _file.Bind("Keybinds", "Satchel Manual Detonate", defaultSatchelManualDetonateKeyBind, 
+            SatchelManualDetonateKeyBind = _file.Bind("Keybinds", "Satchel Manual Detonate", defaultSatchelManualDetonateKeyBind,
                 "What keybind should be used for manually detonating satchel mines.");
 
 
             const bool defaultEnableEngiColor = false;
-            CustomEngiColor = _file.Bind("Colors", "Enable Custom Engi Color", defaultEnableEngiColor, 
+            CustomEngiColor = _file.Bind("Colors", "Enable Custom Engi Color", defaultEnableEngiColor,
                 "Should the Engi have his custom colors activated ?");
 
             const bool defaultEnableTurretColor = false;
@@ -123,14 +123,14 @@ namespace BadAssEngi
             {
                 1f, 5f, 1f
             });
-            EngiColor = _file.Bind("Colors", "Engineer", defaultEngiColor, 
+            EngiColor = _file.Bind("Colors", "Engineer", defaultEngiColor,
                 "What color should the Engineer be. Example : 7.5 8 18.6");
 
             string defaultTurretColor = string.Join(",", new[]
             {
                 0f, 80f, 0f
             });
-            TurretColor = _file.Bind("Colors", "Turret", defaultTurretColor, 
+            TurretColor = _file.Bind("Colors", "Turret", defaultTurretColor,
                 "What color should the Turrets be.");
 
             string defaultTrackerIndicatorColor = string.Join(",", new[]
@@ -161,7 +161,7 @@ namespace BadAssEngi
                 31,
                 33
             });
-            SharedBuffsWithTurret = _file.Bind("Shared", "Buffs", defaultSharedBuffsWithTurret, 
+            SharedBuffsWithTurret = _file.Bind("Shared", "Buffs", defaultSharedBuffsWithTurret,
                     "What buffs should be shared between the Engineer and its turrets. https://pastebin.com/EsYMneGY");
 
 
@@ -191,20 +191,20 @@ namespace BadAssEngi
                 "How much attack speed should the Minigun Turret have.");
 
             const float defaultMinigunTurretDamagePerLevel = 3.8f;
-            MinigunTurretDamagePerLevel = _file.Bind("Minigun Turret", "Base Damage per Level", defaultMinigunTurretDamagePerLevel, 
+            MinigunTurretDamagePerLevel = _file.Bind("Minigun Turret", "Base Damage per Level", defaultMinigunTurretDamagePerLevel,
                 "How much base damage should the Minigun Turret get per level.");
 
             const float defaultMinigunTurretMaxDistanceTargeting = 50f;
-            MinigunTurretMaxDistanceTargeting = _file.Bind("Minigun Turret", "Max Distance Targeting", defaultMinigunTurretMaxDistanceTargeting, 
+            MinigunTurretMaxDistanceTargeting = _file.Bind("Minigun Turret", "Max Distance Targeting", defaultMinigunTurretMaxDistanceTargeting,
                 "How far should the Minigun Turret target monsters.");
 
             const float defaultMinigunTurretProcCoefficient = 0.5f;
-            MinigunTurretProcCoefficient = _file.Bind("Minigun Turret", "Proc Coefficient", defaultMinigunTurretProcCoefficient, 
+            MinigunTurretProcCoefficient = _file.Bind("Minigun Turret", "Proc Coefficient", defaultMinigunTurretProcCoefficient,
                 "Defines how strong or frequent procs happen on an on-hit basis (0 to 1).");
 
 
             const float defaultRailgunTurretDamageCoefficient = 7.25f;
-            RailgunTurretDamageCoefficient = _file.Bind("Railgun Turret", "Damage Coefficient", defaultRailgunTurretDamageCoefficient, 
+            RailgunTurretDamageCoefficient = _file.Bind("Railgun Turret", "Damage Coefficient", defaultRailgunTurretDamageCoefficient,
                 "What should be the damage coefficient for the Railgun Turret.");
 
             const float defaultRailgunTurretAttackSpeed = 0.1f;
@@ -253,7 +253,7 @@ namespace BadAssEngi
                 "How many missiles can you fire at max charge.");
 
             const float defaultClusterMineDamageCoefficient = 0.0355f;
-            ClusterMineDamageCoefficient = _file.Bind("Cluster Mine", "Damage Coefficient", defaultClusterMineDamageCoefficient, 
+            ClusterMineDamageCoefficient = _file.Bind("Cluster Mine", "Damage Coefficient", defaultClusterMineDamageCoefficient,
                 "By how much the damage should be multiplied by.");
 
             const int defaultClusterMineBaseMaxStock = 3;
@@ -333,7 +333,7 @@ namespace BadAssEngi
                 if (args[0].ToLower().Equals("disable"))
                 {
                     CustomEngiColor.Value = false;
-                } 
+                }
                 else if (args[0].ToLower().Equals("enable"))
                 {
                     CustomEngiColor.Value = true;
@@ -357,7 +357,7 @@ namespace BadAssEngi
                         Color = new Color(float.Parse(rgb[0]), float.Parse(rgb[1]), float.Parse(rgb[2])),
                         NetId = currentCharacterBody.GetComponent<NetworkIdentity>().netId
                     };
-                    
+
                     colorMsg.Send(NetworkDestination.Clients);
 
                     return;
@@ -504,8 +504,8 @@ namespace BadAssEngi
                 var i = 0;
                 foreach (var material in mats)
                 {
-                    material.color = CustomClusterMineColor.Value ? 
-                        color : 
+                    material.color = CustomClusterMineColor.Value ?
+                        color :
                         BaeAssets.OriginalClusterMineVisual[i];
 
                     i++;
