@@ -239,7 +239,7 @@ namespace BadAssEngi.Assets
 
         private static void InitRocketPrefabs()
         {
-            //set layers for crosshair
+            // Set layers for crosshair
             PrefabEngiRocketCrosshair.layer = 5;
             var childCount = PrefabEngiRocketCrosshair.transform.childCount;
             for (var i = 0; i < childCount; i++)
@@ -391,8 +391,7 @@ namespace BadAssEngi.Assets
         {
             if (!MainMenuButtonPrefab)
             {
-                PauseMenuPrefab = Resources.Load<GameObject>("prefabs/ui/PauseScreen");
-                PauseMenuPrefab = Object.Instantiate(PauseMenuPrefab);
+                InitPauseMenuPrefab();
 
                 InitMainMenuButtonPrefab();
 
@@ -419,20 +418,34 @@ namespace BadAssEngi.Assets
             }
         }
 
-        internal static void InitMainMenuButtonPrefab()
+        private static void InitPauseMenuPrefab()
         {
             if (!PauseMenuPrefab)
             {
                 PauseMenuPrefab = Resources.Load<GameObject>("prefabs/ui/PauseScreen");
-                PauseMenuPrefab = Object.Instantiate(PauseMenuPrefab);
+                PauseMenuPrefab = PauseMenuPrefab.InstantiateClone("PauseScreenPrefabCloneBAE", false);
+            }
+        }
+
+        internal static void InitMainMenuButtonPrefab()
+        {
+            if (MainMenuButtonPrefab)
+            {
+                return;
             }
 
-            var menuButtonFromScene = GameObject.Find("GenericMenuButton (Settings)");
+            InitPauseMenuPrefab();
+
+            var hgButtons = Resources.FindObjectsOfTypeAll<HGButton>();
+
+            var menuButtonFromScene = hgButtons.FirstOrDefault(button => button.name == "GenericMenuButton (Settings)");
 
             if (!menuButtonFromScene)
+            {
                 return;
+            }
 
-            MainMenuButtonPrefab = menuButtonFromScene.InstantiateClone("MainMenuButtonPrefab", false);
+            MainMenuButtonPrefab = menuButtonFromScene.gameObject.InstantiateClone("MainMenuButtonPrefab", false);
 
             if (!MainMenuButtonPrefab)
             {
