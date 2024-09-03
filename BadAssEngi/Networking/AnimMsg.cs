@@ -11,20 +11,17 @@ namespace BadAssEngi.Networking
     {
         public int AnimId;
         public NetworkInstanceId EngiNetId;
-        public NetworkInstanceId TempNetId;
 
         public void Serialize(NetworkWriter writer)
         {
             writer.Write(AnimId);
             writer.Write(EngiNetId);
-            writer.Write(TempNetId);
         }
 
         public void Deserialize(NetworkReader reader)
         {
             AnimId = reader.ReadInt32();
             EngiNetId = reader.ReadNetworkId();
-            TempNetId = reader.ReadNetworkId();
         }
 
         public void OnReceived()
