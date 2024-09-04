@@ -197,11 +197,6 @@
 										</ModifierInfo>
 									</ModifierList>
 								</Property>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>7</Value>
-									</ValueList>
-								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -818,17 +813,27 @@
 																<PointList>
 																	<Point>
 																		<XPos>0</XPos>
-																		<YPos>0</YPos>
+																		<YPos>4</YPos>
 																		<Flags>5</Flags>
 																	</Point>
 																	<Point>
 																		<XPos>0.999</XPos>
-																		<YPos>0</YPos>
+																		<YPos>2</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>1</XPos>
+																		<YPos>-0</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>1.001</XPos>
+																		<YPos>2</YPos>
 																		<Flags>0</Flags>
 																	</Point>
 																	<Point>
 																		<XPos>4</XPos>
-																		<YPos>0</YPos>
+																		<YPos>4</YPos>
 																		<Flags>37</Flags>
 																	</Point>
 																</PointList>

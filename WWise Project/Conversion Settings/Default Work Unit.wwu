@@ -33,12 +33,9 @@
 					</PropertyList>
 					<ConversionPluginInfoList>
 						<ConversionPluginInfo Platform="Windows">
-							<ConversionPlugin Name="" ID="{A3478523-F357-478B-A425-1493ED8A6A55}" PluginName="Vorbis" CompanyID="0" PluginID="4">
+							<ConversionPlugin Name="" ID="{278BA4CA-4E9F-4581-8BE8-B5668E535FB4}" PluginName="WEM Opus" CompanyID="0" PluginID="20">
 								<PropertyList>
-									<Property Name="AverageBitrate" Type="Real32" Value="128"/>
-									<Property Name="BitrateManagmentMode" Type="int32" Value="1"/>
-									<Property Name="MinimumBitrate" Type="Real32" Value="60"/>
-									<Property Name="QualityFactor" Type="Real32" Value="8.2"/>
+									<Property Name="Quality" Type="int32" Value="100"/>
 								</PropertyList>
 							</ConversionPlugin>
 						</ConversionPluginInfo>
@@ -74,10 +71,9 @@
 					</PropertyList>
 					<ConversionPluginInfoList>
 						<ConversionPluginInfo Platform="Windows">
-							<ConversionPlugin Name="" ID="{B1DCBAC2-CD76-47CB-B5DC-82362F667E3D}" PluginName="Vorbis" CompanyID="0" PluginID="4">
+							<ConversionPlugin Name="" ID="{F3D7B8F2-8B08-447B-B8DD-A6B006BABE1E}" PluginName="WEM Opus" CompanyID="0" PluginID="20">
 								<PropertyList>
-									<Property Name="AverageBitrate" Type="Real32" Value="32"/>
-									<Property Name="BitrateManagmentMode" Type="int32" Value="1"/>
+									<Property Name="Quality" Type="int32" Value="100"/>
 								</PropertyList>
 							</ConversionPlugin>
 						</ConversionPluginInfo>
@@ -113,10 +109,9 @@
 					</PropertyList>
 					<ConversionPluginInfoList>
 						<ConversionPluginInfo Platform="Windows">
-							<ConversionPlugin Name="" ID="{D87EE543-365A-4D8C-A559-A3D81C1D5A0B}" PluginName="Vorbis" CompanyID="0" PluginID="4">
+							<ConversionPlugin Name="" ID="{7404031E-52D3-4E31-B481-7BD77892D986}" PluginName="WEM Opus" CompanyID="0" PluginID="20">
 								<PropertyList>
-									<Property Name="AverageBitrate" Type="Real32" Value="79"/>
-									<Property Name="QualityFactor" Type="Real32" Value="5"/>
+									<Property Name="Quality" Type="int32" Value="100"/>
 								</PropertyList>
 							</ConversionPlugin>
 						</ConversionPluginInfo>
