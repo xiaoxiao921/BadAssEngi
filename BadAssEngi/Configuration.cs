@@ -534,6 +534,13 @@ namespace BadAssEngi
                 Debug.Log("Current emote volume value is " + EmoteVolume.Value);
                 Debug.Log(BaeEmoteVolumeUsage);
             }
+
+            if (AkSoundEngine.IsInitialized())
+            {
+                SetEmoteVolumeRTPC();
+            }
         }
+
+        internal static void SetEmoteVolumeRTPC() => AkSoundEngine.SetRTPCValue("Volume_Emote", Configuration.EmoteVolume.Value);
     }
 }

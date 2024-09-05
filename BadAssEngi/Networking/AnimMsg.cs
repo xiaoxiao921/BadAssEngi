@@ -40,10 +40,10 @@ namespace BadAssEngi.Networking
             var animator = engiAnimated.GetComponent<Animator>();
             animator.Play(animId);
 
+            Configuration.SetEmoteVolumeRTPC();
+
             EngiEmoteController.EngiNetIdToTempGO[EngiNetId] = engiAnimated;
             EngiEmoteController.EngiNetIdToSoundEvent[EngiNetId] = AkSoundEngine.PostEvent(animId, engiAnimated);
-
-            AkSoundEngine.SetRTPCValue("Volume_Emote", Configuration.EmoteVolume.Value, engiAnimated);
 
             EngiEmoteController.NumberOfEmotePlaying++;
         }
