@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{7B10674D-ADDC-1D95-97B3-B4EED8717FEB}">
+		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{0B920F6A-145F-FE8D-9E1B-F334778FB735}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -24,7 +24,6 @@
 			<GameParameters>
 				<GameParameter Id="131068444" Name="BossHealth" GUID="{BE544D32-6B0C-4374-A470-15C26DDD187F}"/>
 				<GameParameter Id="151362964" Name="playerHealth" GUID="{703733EF-A908-4CD2-85FC-9C3E91670DEE}"/>
-				<GameParameter Id="396176897" Name="Volume_Emotes" GUID="{1EC492E5-C5D7-46ED-AFA7-640647A200A6}"/>
 				<GameParameter Id="536422634" Name="Turret_Attack_Speed" GUID="{DFD4D82F-FA6B-4DEC-A631-C51EFEF52F9D}"/>
 				<GameParameter Id="796049864" Name="RPM" GUID="{9112AA05-F577-44FD-9F4E-4424158129E6}"/>
 				<GameParameter Id="1523918159" Name="Boss_Health" GUID="{EFEFBAE7-BFEC-49C3-A393-D908A28993B9}"/>
@@ -52,7 +51,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="1706815252" Type="User" GUID="{CA409755-24DF-4119-89F1-D7B43B6EC33C}" Language="SFX" Hash="{12585C5F-B800-05FD-BC0F-242CDBCCC108}">
+		<SoundBank Id="1706815252" Type="User" GUID="{CA409755-24DF-4119-89F1-D7B43B6EC33C}" Language="SFX" Hash="{09440555-AD7D-9595-AECB-7823ADE0224B}">
 			<ShortName>BadAssEngi</ShortName>
 			<Path>BadAssEngi.bnk</Path>
 			<Media>
@@ -528,7 +527,6 @@
 				</Event>
 			</Events>
 			<GameParameters>
-				<GameParameter Id="396176897" Name="Volume_Emotes" GUID="{1EC492E5-C5D7-46ED-AFA7-640647A200A6}"/>
 				<GameParameter Id="536422634" Name="Turret_Attack_Speed" GUID="{DFD4D82F-FA6B-4DEC-A631-C51EFEF52F9D}"/>
 				<GameParameter Id="3673881719" Name="Volume_SFX" GUID="{47268364-583C-47E4-8B06-30D13253233A}"/>
 				<GameParameter Id="4093208326" Name="Volume_Emote" GUID="{29F5853C-30FB-4DCD-8C66-78B98C11B190}"/>
@@ -539,5 +537,5 @@
 			<Path>BadAssEmotes.bnk</Path>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{AF7CDED1-304A-3C20-089E-E0D125F562AE}</FileHash>
+	<FileHash>{ED10C70A-D691-E094-1435-2EA9A5C943EF}</FileHash>
 </SoundBanksInfo>

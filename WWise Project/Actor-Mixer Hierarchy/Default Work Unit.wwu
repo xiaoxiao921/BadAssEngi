@@ -823,7 +823,7 @@
 																	</Point>
 																	<Point>
 																		<XPos>1</XPos>
-																		<YPos>-0</YPos>
+																		<YPos>0</YPos>
 																		<Flags>0</Flags>
 																	</Point>
 																	<Point>
@@ -3389,41 +3389,6 @@
 											<Reference Name="Curve">
 												<Custom>
 													<Curve Name="" ID="{99EFF558-0226-46AC-9644-6B2D4781CDE7}">
-														<PropertyList>
-															<Property Name="Flags" Type="int32" Value="3"/>
-														</PropertyList>
-														<PointList>
-															<Point>
-																<XPos>0</XPos>
-																<YPos>-200</YPos>
-																<Flags>5</Flags>
-															</Point>
-															<Point>
-																<XPos>100</XPos>
-																<YPos>0</YPos>
-																<Flags>37</Flags>
-															</Point>
-														</PointList>
-													</Curve>
-												</Custom>
-											</Reference>
-										</ReferenceList>
-									</RTPC>
-								</Local>
-							</Reference>
-							<Reference>
-								<Local>
-									<RTPC Name="" ID="{6895D6D1-E3E2-4301-8E0D-374A8112FB4C}" ShortID="305906097">
-										<PropertyList>
-											<Property Name="PropertyName" Type="string" Value="Volume"/>
-										</PropertyList>
-										<ReferenceList>
-											<Reference Name="ControlInput">
-												<ObjectRef Name="Volume_Emotes" ID="{1EC492E5-C5D7-46ED-AFA7-640647A200A6}" WorkUnitID="{517A70E6-7032-417D-A9BD-4B8A5B126A8E}"/>
-											</Reference>
-											<Reference Name="Curve">
-												<Custom>
-													<Curve Name="" ID="{8DC4ED43-9D82-4DEB-B71E-87136E9E2E21}">
 														<PropertyList>
 															<Property Name="Flags" Type="int32" Value="3"/>
 														</PropertyList>

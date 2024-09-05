@@ -44,7 +44,6 @@ Event	ID	Name			Wwise Object Path	Notes
 	4270838368	Seekers_Explosion_Play_69			\Default Work Unit\Grenades Seekers\Seekers_Explosion_Play_69	
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
-	396176897	Volume_Emotes			\Default Work Unit\Volume_Emotes	
 	536422634	Turret_Attack_Speed			\Default Work Unit\Turret_Attack_Speed	
 	3673881719	Volume_SFX			\Default Work Unit\Volume_SFX	
 	4093208326	Volume_Emote			\Default Work Unit\Volume_Emote	
@@ -53,60 +52,60 @@ Effect plug-ins	ID	Name	Type				Notes
 	550694185	Wwise Time Stretch (Custom)	Wwise Time Stretch			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	12129637	Overdrive	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Overdrive_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Overdrive		684864
-	12546256	OrangeJustice	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Orange Justice_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\OrangeJustice		483259
-	35246558	Orbital Laser	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Orbital Laser_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Orbital Laser\Orbital Laser		542085
-	64685271	FancyFeet	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\FancyFeet_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\FancyFeet		422101
-	75608193	PhoneItIn	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Phone It In_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\PhoneItIn		391294
-	76517305	Fresh	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Fresh_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Fresh		139160
-	112449013	Dabstand	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Dabstand_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Dabstand		78006
-	121638003	Rocket Turret Reload Loop 3	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Rocket Turret Reload Loop 3_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turret\Rocket Turret\Rocket Turret Reload\Rocket Turret Reload Loop\Rocket Turret Reload Loop 3		11409
-	125893133	OldSchool	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Old SChool_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\OldSchool		818043
-	134919718	Rocket Turret Reload Loop 4	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Rocket Turret Reload Loop 4_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turret\Rocket Turret\Rocket Turret Reload\Rocket Turret Reload Loop\Rocket Turret Reload Loop 4		8780
-	140643252	Countdown Laser	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Countdown Timer ( v 212 ) 10 sec with Sound effects and Voice HD_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Orbital Laser\Countdown Laser		345764
-	165101374	Cluster Explosion	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\KF2 Grenade_DA0A04E8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Mine\Cluster Explosion		24648
-	165986897	NinjaStyle	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\NinjaStyle_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\NinjaStyle		194602
-	170501791	DanceTherapyLoop	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Dance Therapy Loop_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\DanceTherapyIntro\DanceTherapyLoop		687771
-	189773840	DanceTherapyIntro	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Dance Therapy Intro_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\DanceTherapyIntro\DanceTherapyIntro		89329
-	243257580	Breakneck	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Breakneck_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Breakneck		946593
-	265662062	Rocket Turret Start Reload	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Rocket Turret Reload Start_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turret\Rocket Turret\Rocket Turret Reload\Rocket Turret Start Reload		25332
-	295247226	DanceMoves	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Fortnite default dance sound_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\DanceMoves		202046
-	311145993	Minigun Turret Shot	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Titanfall 2 Spitfire shot_DA0A04E8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turret\Minigun Turret Shot		11830
-	354952072	NeverGonna	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Never Gonna Give you Up_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\NeverGonna		780668
-	355825110	SpringLoaded	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\SpringLoaded_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\SpringLoaded		214201
-	384232368	Scenario	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Scenario_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Scenario		880636
-	386888135	HOW	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\HOW_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\HOW		253380
-	435441904	Crabby	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Crabby_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Crabby		764221
-	458462877	ElectroSwing	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\ElectroSwing_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\ElectroSwing		391347
-	468613330	Infectious	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Infectious_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Infectious		1567537
-	471982027	Seeker Firing	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\UT Sound Design Rocket Launcher Primary and Secondary Fire_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Grenades Seekers\Seeker Firing		16406
-	488071590	IntensityIntro	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\IntesityIntro_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\IntensityIntro\IntensityIntro		177402
-	519731543	Seeker Explosion	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\MGL Explosion_DA0A04E8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Grenades Seekers\Seeker Explosion		27254
-	524679349	Dearly Beloved 2017 my remix	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Dearly beloved 2017_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turret\Random Turret Song\Dearly Beloved 2017 my remix		11007428
-	549958535	Rocket Turret End Reload	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Rocket Turret Reload End_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turret\Rocket Turret\Rocket Turret Reload\Rocket Turret End Reload		13021
-	624385349	Rise to Fall	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\ROR2 Rise To Fall Main Menu_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turret\Random Turret Song\Rise to Fall		5508555
-	629287077	Springy	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Springy_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Springy		309684
-	649209562	InfinidabIntro	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\InfinidabIntro_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\InfinidabIntro\InfinidabIntro		12814
-	660207138	InfinidabLoop	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\InfinidabLoop_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\InfinidabIntro\InfinidabLoop		407330
-	705670967	IntensityLoop	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\IntensityLoop_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\IntensityIntro\IntensityLoop		654799
-	709739555	Floss	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Floss_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Floss		187381
-	717448784	Breakin'	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Breakin'_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Breakin'		241801
-	729080069	Extraterrestrial	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Extraterestrial_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Extraterrestrial		753016
-	740070459	Hype	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Hype_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Hype		356009
-	745477065	Rocket Turret Explosion	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\rocket Turret Explosion_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turret\Rocket Turret\Rocket Turret Explosion		25437
-	779779493	Railgun Turret Shot	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\TAZ 2.0 Gauss Rifle 62_01_DA0A04E8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turret\Railgun Turret Shot		32315
-	812834241	SquatKick	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\SquatKick_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\SquatKick		398652
-	814703023	TakeOnMe	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\TakeOnMe_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\TakeOnMe		377794
-	858566635	Rocket Turret Reload Loop 2	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Rocket Turret Reload Loop 2_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turret\Rocket Turret\Rocket Turret Reload\Rocket Turret Reload Loop\Rocket Turret Reload Loop 2		9363
-	872153662	Rocket Turret Reload Loop 1	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Rocket Turret Reload Loop 1_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turret\Rocket Turret\Rocket Turret Reload\Rocket Turret Reload Loop\Rocket Turret Reload Loop 1		10614
-	925333506	Any Turret Alive Song	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\P E A C E  A N D  T R A N Q U I L I T Y_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turret\Random Turret Song\Any Turret Alive Song		7545194
-	934386800	PopLock	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\PopLock_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\PopLock		204712
-	976341326	Railgun Turret Targeting	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Titanfall 2 Railgun Charging_DA0A04E8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turret\Railgun Turret Targeting		100334
-	989520641	Satchel Explosion	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Muted Bouncing Explosion_DA0A04E8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Mine\Satchel Explosion		64994
-	997986163	Minigun Bullet Shell Flying	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Bullet Shell Falling_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turret\Minigun Bullet Shell Flying		29665
-	1003931063	Rocket Turret Shot	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Rocket Turret Shot Sound_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turret\Rocket Turret\Rocket Turret Shot		39073
-	1008402205	Paws&Claws	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Im A Cat_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Paws&Claws		3508443
-	1011009135	Flamenco	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Flamenco_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Flamenco\Flamenco		20021
-	1025696309	FlamencoLoop	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\FlamencoLoop_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Flamenco\FlamencoLoop		684289
-	1036514100	Droop	E:\Backup\WwiseProjects\ROR 2 BadAssEngi\.cache\Windows\SFX\Emotes\Droop_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Droop		1271310
+	12129637	Overdrive	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\Overdrive_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Overdrive		684864
+	12546256	OrangeJustice	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\Orange Justice_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\OrangeJustice		483259
+	35246558	Orbital Laser	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Orbital Laser_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Orbital Laser\Orbital Laser		542085
+	64685271	FancyFeet	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\FancyFeet_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\FancyFeet		422101
+	75608193	PhoneItIn	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\Phone It In_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\PhoneItIn		391294
+	76517305	Fresh	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\Fresh_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Fresh		139160
+	112449013	Dabstand	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\Dabstand_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Dabstand		78006
+	121638003	Rocket Turret Reload Loop 3	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Rocket Turret Reload Loop 3_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turret\Rocket Turret\Rocket Turret Reload\Rocket Turret Reload Loop\Rocket Turret Reload Loop 3		11409
+	125893133	OldSchool	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\Old SChool_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\OldSchool		818043
+	134919718	Rocket Turret Reload Loop 4	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Rocket Turret Reload Loop 4_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turret\Rocket Turret\Rocket Turret Reload\Rocket Turret Reload Loop\Rocket Turret Reload Loop 4		8780
+	140643252	Countdown Laser	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Countdown Timer ( v 212 ) 10 sec with Sound effects and Voice HD_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Orbital Laser\Countdown Laser		345764
+	165101374	Cluster Explosion	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\KF2 Grenade_DA0A04E8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Mine\Cluster Explosion		24648
+	165986897	NinjaStyle	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\NinjaStyle_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\NinjaStyle		194602
+	170501791	DanceTherapyLoop	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\Dance Therapy Loop_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\DanceTherapyIntro\DanceTherapyLoop		687771
+	189773840	DanceTherapyIntro	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\Dance Therapy Intro_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\DanceTherapyIntro\DanceTherapyIntro		89329
+	243257580	Breakneck	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\Breakneck_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Breakneck		946593
+	265662062	Rocket Turret Start Reload	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Rocket Turret Reload Start_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turret\Rocket Turret\Rocket Turret Reload\Rocket Turret Start Reload		25332
+	295247226	DanceMoves	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\Fortnite default dance sound_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\DanceMoves		202046
+	311145993	Minigun Turret Shot	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Titanfall 2 Spitfire shot_DA0A04E8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turret\Minigun Turret Shot		11830
+	354952072	NeverGonna	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\Never Gonna Give you Up_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\NeverGonna		780668
+	355825110	SpringLoaded	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\SpringLoaded_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\SpringLoaded		214201
+	384232368	Scenario	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\Scenario_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Scenario		880636
+	386888135	HOW	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\HOW_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\HOW		253380
+	435441904	Crabby	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\Crabby_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Crabby		764221
+	458462877	ElectroSwing	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\ElectroSwing_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\ElectroSwing		391347
+	468613330	Infectious	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\Infectious_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Infectious		1567537
+	471982027	Seeker Firing	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\UT Sound Design Rocket Launcher Primary and Secondary Fire_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Grenades Seekers\Seeker Firing		16406
+	488071590	IntensityIntro	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\IntesityIntro_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\IntensityIntro\IntensityIntro		177402
+	519731543	Seeker Explosion	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\MGL Explosion_DA0A04E8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Grenades Seekers\Seeker Explosion		27254
+	524679349	Dearly Beloved 2017 my remix	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Dearly beloved 2017_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turret\Random Turret Song\Dearly Beloved 2017 my remix		11007428
+	549958535	Rocket Turret End Reload	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Rocket Turret Reload End_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turret\Rocket Turret\Rocket Turret Reload\Rocket Turret End Reload		13021
+	624385349	Rise to Fall	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\ROR2 Rise To Fall Main Menu_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turret\Random Turret Song\Rise to Fall		5508555
+	629287077	Springy	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\Springy_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Springy		309684
+	649209562	InfinidabIntro	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\InfinidabIntro_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\InfinidabIntro\InfinidabIntro		12814
+	660207138	InfinidabLoop	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\InfinidabLoop_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\InfinidabIntro\InfinidabLoop		407330
+	705670967	IntensityLoop	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\IntensityLoop_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\IntensityIntro\IntensityLoop		654799
+	709739555	Floss	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\Floss_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Floss		187381
+	717448784	Breakin'	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\Breakin'_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Breakin'		241801
+	729080069	Extraterrestrial	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\Extraterestrial_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Extraterrestrial		753016
+	740070459	Hype	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\Hype_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Hype		356009
+	745477065	Rocket Turret Explosion	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\rocket Turret Explosion_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turret\Rocket Turret\Rocket Turret Explosion		25437
+	779779493	Railgun Turret Shot	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\TAZ 2.0 Gauss Rifle 62_01_DA0A04E8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turret\Railgun Turret Shot		32315
+	812834241	SquatKick	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\SquatKick_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\SquatKick		398652
+	814703023	TakeOnMe	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\TakeOnMe_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\TakeOnMe		377794
+	858566635	Rocket Turret Reload Loop 2	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Rocket Turret Reload Loop 2_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turret\Rocket Turret\Rocket Turret Reload\Rocket Turret Reload Loop\Rocket Turret Reload Loop 2		9363
+	872153662	Rocket Turret Reload Loop 1	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Rocket Turret Reload Loop 1_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turret\Rocket Turret\Rocket Turret Reload\Rocket Turret Reload Loop\Rocket Turret Reload Loop 1		10614
+	925333506	Any Turret Alive Song	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\P E A C E  A N D  T R A N Q U I L I T Y_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turret\Random Turret Song\Any Turret Alive Song		7545194
+	934386800	PopLock	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\PopLock_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\PopLock		204712
+	976341326	Railgun Turret Targeting	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Titanfall 2 Railgun Charging_DA0A04E8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turret\Railgun Turret Targeting		100334
+	989520641	Satchel Explosion	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Muted Bouncing Explosion_DA0A04E8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Mine\Satchel Explosion		64994
+	997986163	Minigun Bullet Shell Flying	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Bullet Shell Falling_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turret\Minigun Bullet Shell Flying		29665
+	1003931063	Rocket Turret Shot	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Rocket Turret Shot Sound_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Turret\Rocket Turret\Rocket Turret Shot		39073
+	1008402205	Paws&Claws	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\Im A Cat_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Paws&Claws		3508443
+	1011009135	Flamenco	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\Flamenco_AC37D373.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Flamenco\Flamenco		20021
+	1025696309	FlamencoLoop	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\FlamencoLoop_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Flamenco\FlamencoLoop		684289
+	1036514100	Droop	C:\Users\lucky\Documents\GitHub\BadAssEngi\WWise Project\.cache\Windows\SFX\Emotes\Droop_03C6F441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emotes\Droop		1271310
 

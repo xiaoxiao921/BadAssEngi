@@ -49,7 +49,6 @@
 						<Property Name="RTPCRamping" Type="int16" Value="1"/>
 					</PropertyList>
 				</GameParameter>
-				<GameParameter Name="Volume_Emotes" ID="{1EC492E5-C5D7-46ED-AFA7-640647A200A6}"/>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>

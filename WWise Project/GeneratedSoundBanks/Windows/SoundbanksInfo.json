@@ -18,7 +18,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{7B10674D-ADDC-1D95-97B3-B4EED8717FEB}",
+    "Hash": "{0B920F6A-145F-FE8D-9E1B-F334778FB735}",
     "ShortName": "Init",
     "Path": "Init.bnk",
     "Plugins": {
@@ -56,11 +56,6 @@
       "Id": "151362964",
       "Name": "playerHealth",
       "GUID": "{703733EF-A908-4CD2-85FC-9C3E91670DEE}"
-     },
-     {
-      "Id": "396176897",
-      "Name": "Volume_Emotes",
-      "GUID": "{1EC492E5-C5D7-46ED-AFA7-640647A200A6}"
      },
      {
       "Id": "536422634",
@@ -160,7 +155,7 @@
     "Type": "User",
     "GUID": "{CA409755-24DF-4119-89F1-D7B43B6EC33C}",
     "Language": "SFX",
-    "Hash": "{12585C5F-B800-05FD-BC0F-242CDBCCC108}",
+    "Hash": "{09440555-AD7D-9595-AECB-7823ADE0224B}",
     "ShortName": "BadAssEngi",
     "Path": "BadAssEngi.bnk",
     "Media": [
@@ -1224,11 +1219,6 @@
     ],
     "GameParameters": [
      {
-      "Id": "396176897",
-      "Name": "Volume_Emotes",
-      "GUID": "{1EC492E5-C5D7-46ED-AFA7-640647A200A6}"
-     },
-     {
       "Id": "536422634",
       "Name": "Turret_Attack_Speed",
       "GUID": "{DFD4D82F-FA6B-4DEC-A631-C51EFEF52F9D}"
@@ -1255,6 +1245,6 @@
     "Path": "BadAssEmotes.bnk"
    }
   ],
-  "FileHash": "{0CA4B5B1-8073-A0DA-40EC-8D71D2DA699E}"
+  "FileHash": "{F52FC7CA-8368-CFDD-385F-01BA0ED47263}"
  }
 }

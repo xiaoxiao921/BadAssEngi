@@ -22,10 +22,6 @@
 							<Value>0</Value>
 						</RTPCValue>
 						<RTPCValue>
-							<GameParameterRef Name="Volume_Emotes" ID="{1EC492E5-C5D7-46ED-AFA7-640647A200A6}"/>
-							<Value>53</Value>
-						</RTPCValue>
-						<RTPCValue>
 							<GameParameterRef Name="Volume_SFX" ID="{47268364-583C-47E4-8B06-30D13253233A}"/>
 							<Value>100</Value>
 						</RTPCValue>
