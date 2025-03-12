@@ -40,7 +40,7 @@ namespace BadAssEngi.Skills.Secondary.OrbitalStrike.EngiStates
                 EffectManager.SimpleMuzzleFlash(_effectPrefab, gameObject, muzzleName, false);
             }
             if (isAuthority)
-                1           {
+            {
                 FireProjectileInfo fireProjectileInfo = default;
                 fireProjectileInfo.projectilePrefab = BaeAssets.EngiOrbitalMinePrefab;
                 fireProjectileInfo.position = aimRay.origin;
