@@ -315,10 +315,17 @@ namespace BadAssEngi.Skills.Special
                 i = 0;
                 while (i < bulletCount)
                 {
-                    ProjectileManager.instance.FireProjectile(BaeAssets.PrefabEngiTurretRocket, aimRay.origin,
-                        RoR2.Util.QuaternionSafeLookRotation(trajArray[i]), self.outer.gameObject,
-                        self.damageStat, 0f,
-                        RoR2.Util.CheckRoll(self.critStat, self.characterBody.master));
+                    FireProjectileInfo fireProjectileInfo = default;
+                    fireProjectileInfo.projectilePrefab = BaeAssets.PrefabEngiTurretRocket;
+                    fireProjectileInfo.position = aimRay.origin;
+                    fireProjectileInfo.rotation = RoR2.Util.QuaternionSafeLookRotation(trajArray[i]);
+                    fireProjectileInfo.owner = self.outer.gameObject;
+                    fireProjectileInfo.damage = self.damageStat;
+                    fireProjectileInfo.force = 0f;
+                    fireProjectileInfo.crit = RoR2.Util.CheckRoll(self.critStat, self.characterBody.master);
+                    fireProjectileInfo.damageTypeOverride = new DamageTypeCombo?(DamageTypeCombo.GenericPrimary);
+                    ProjectileManager.instance.FireProjectile(fireProjectileInfo);
+
                     i++;
                 }
             }

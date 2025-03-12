@@ -10,7 +10,7 @@ namespace BadAssEngi.Skills.Secondary.OrbitalStrike
         public float StartTime;
 
         public const int TotalTime = 37;
-        
+
         public const float DamageRate = 0.5f;
         public float NextDamageTime;
 
@@ -136,7 +136,7 @@ namespace BadAssEngi.Skills.Secondary.OrbitalStrike
                             crit = false,
                             attacker = Owner,
                             inflictor = gameObject,
-                            damageType = DamageType.Generic,
+                            damageType = DamageTypeCombo.GenericSecondary,
                             procCoefficient = 0f,
                             procChainMask = default
                         };

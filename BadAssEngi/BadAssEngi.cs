@@ -41,7 +41,7 @@ namespace BadAssEngi
     {
         public const string ModGuid = "iDeathHD." + ModName;
         private const string ModName = "BadAssEngi";
-        private const string ModVer = "1.3.9";
+        private const string ModVer = "1.3.10";
 
         internal static BodyIndex EngiBodyIndex;
         private const string EngiBodyPrefabName = "EngiBody";

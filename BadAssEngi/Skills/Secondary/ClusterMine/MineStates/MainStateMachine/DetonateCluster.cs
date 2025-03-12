@@ -10,21 +10,21 @@ using UnityEngine.Networking;
 namespace BadAssEngi.Skills.Secondary.ClusterMine.MineStates.MainStateMachine
 {
     public class DetonateCluster : BaseMineState
-	{
+    {
         private ProjectileDamage _projectileDamage;
         public override bool shouldStick => false;
 
         public override bool shouldRevertToWaitForStickOnSurfaceLost => false;
 
         public override void OnEnter()
-		{
+        {
             CheckInitState();
 
-			base.OnEnter();
+            base.OnEnter();
 
-			if (NetworkServer.active)
-			{
-				var currentRecursiveMine = gameObject.GetComponent<RecursiveMine>();
+            if (NetworkServer.active)
+            {
+                var currentRecursiveMine = gameObject.GetComponent<RecursiveMine>();
 
                 _projectileDamage = GetComponent<ProjectileDamage>();
 
@@ -34,7 +34,7 @@ namespace BadAssEngi.Skills.Secondary.ClusterMine.MineStates.MainStateMachine
                     {
                         var ownerCharacterBody = projectileController.owner.GetComponent<CharacterBody>();
 
-                        var aimDirection =  ownerCharacterBody.inputBank.aimDirection;
+                        var aimDirection = ownerCharacterBody.inputBank.aimDirection;
                         var z = Random.Range(0f, 360f);
                         var z2 = Random.Range(0f, 360f);
                         var angVecLeft = Quaternion.Euler(-20, -90, z) * new Vector3(aimDirection.x, aimDirection.y, aimDirection.z).normalized;
@@ -44,29 +44,33 @@ namespace BadAssEngi.Skills.Secondary.ClusterMine.MineStates.MainStateMachine
                             ? BaeAssets.EngiClusterMineDepthOnePrefab
                             : BaeAssets.EngiClusterMineDepthTwoPrefab;
 
-                        ProjectileManager.instance.FireProjectile(minePrefab, transform.position,
-                            RoR2.Util.QuaternionSafeLookRotation(angVecLeft), projectileController.owner,
-                            ownerCharacterBody.damage * Configuration.ClusterMineDamageCoefficient.Value, _projectileDamage.force,
-                            RoR2.Util.CheckRoll(ownerCharacterBody.crit, ownerCharacterBody.master), DamageColorIndex.Default, null, 18f);
+                        FireProjectileInfo fireProjectileInfo = default;
+                        fireProjectileInfo.projectilePrefab = minePrefab;
+                        fireProjectileInfo.position = transform.position;
+                        fireProjectileInfo.owner = projectileController.owner;
+                        fireProjectileInfo.damage = ownerCharacterBody.damage * Configuration.ClusterMineDamageCoefficient.Value;
+                        fireProjectileInfo.force = _projectileDamage.force;
+                        fireProjectileInfo.crit = RoR2.Util.CheckRoll(ownerCharacterBody.crit, ownerCharacterBody.master);
+                        fireProjectileInfo.speedOverride = 18f;
+                        fireProjectileInfo.damageTypeOverride = new DamageTypeCombo?(DamageTypeCombo.GenericSecondary);
 
-                        ProjectileManager.instance.FireProjectile(minePrefab, transform.position,
-                            RoR2.Util.QuaternionSafeLookRotation(Vector3.up), projectileController.owner,
-                            ownerCharacterBody.damage * Configuration.ClusterMineDamageCoefficient.Value, _projectileDamage.force,
-                            RoR2.Util.CheckRoll(ownerCharacterBody.crit, ownerCharacterBody.master), DamageColorIndex.Default, null, 18f);
+                        fireProjectileInfo.rotation = RoR2.Util.QuaternionSafeLookRotation(angVecLeft);
+                        ProjectileManager.instance.FireProjectile(fireProjectileInfo);
 
-                        ProjectileManager.instance.FireProjectile(minePrefab, transform.position,
-                            RoR2.Util.QuaternionSafeLookRotation(angVecRight), projectileController.owner,
-                            ownerCharacterBody.damage * Configuration.ClusterMineDamageCoefficient.Value, _projectileDamage.force,
-                            RoR2.Util.CheckRoll(ownerCharacterBody.crit, ownerCharacterBody.master), DamageColorIndex.Default, null, 18f);
+                        fireProjectileInfo.rotation = RoR2.Util.QuaternionSafeLookRotation(Vector3.up);
+                        ProjectileManager.instance.FireProjectile(fireProjectileInfo);
+
+                        fireProjectileInfo.rotation = RoR2.Util.QuaternionSafeLookRotation(angVecRight);
+                        ProjectileManager.instance.FireProjectile(fireProjectileInfo);
                     }
                 }
 
-				Explode();
-			}
+                Explode();
+            }
 
             AkSoundEngine.PostEvent(SoundHelper.ClusterMineExplosion, outer.gameObject);
             Destroy(gameObject);
-		}
+        }
 
         private void CheckInitState()
         {
@@ -77,12 +81,12 @@ namespace BadAssEngi.Skills.Secondary.ClusterMine.MineStates.MainStateMachine
             }
         }
 
-		private void Explode()
-		{
+        private void Explode()
+        {
             var baseMineArmingState = (BaseMineArmingState)armingStateMachine.state;
 
             //if (armingStateMachine. == 0) // why it happens ?
-              //  baseMineArmingState.damageScale = 1f;
+            //  baseMineArmingState.damageScale = 1f;
 
             new BlastAttack
             {
@@ -93,6 +97,7 @@ namespace BadAssEngi.Skills.Secondary.ClusterMine.MineStates.MainStateMachine
                 teamIndex = projectileController.teamFilter.teamIndex,
                 attackerFiltering = AttackerFiltering.AlwaysHit,
                 baseDamage = _projectileDamage.damage * 10f * baseMineArmingState.damageScale,
+                damageType = DamageTypeCombo.GenericSecondary,
                 baseForce = 0.1f,
                 falloffModel = BlastAttack.FalloffModel.None,
                 crit = _projectileDamage.crit,
@@ -146,7 +151,7 @@ namespace BadAssEngi.Skills.Secondary.ClusterMine.MineStates.MainStateMachine
                 bulletCount = 1u,
                 damage = _projectileDamage.damage * baseMineArmingState.damageScale,
                 damageColorIndex = DamageColorIndex.Default,
-                damageType = DamageType.Generic,
+                damageType = DamageTypeCombo.GenericSecondary,
                 falloffModel = BulletAttack.FalloffModel.None,
                 force = 0.1f,
                 HitEffectNormal = false,

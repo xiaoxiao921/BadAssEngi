@@ -34,7 +34,7 @@ namespace BadAssEngi.Skills.Secondary.ClusterMine
             if (Time.time > _startTime + _totalTime)
                 Destroy(gameObject);
         }
-        
+
         private void OnParticleCollision(GameObject other)
         {
             if (!Configuration.ClusterMineVisualBouncing.Value)
@@ -43,9 +43,9 @@ namespace BadAssEngi.Skills.Secondary.ClusterMine
             if (!NetworkServer.active)
                 return;
 
-            var r = (int) Random.Range(0, 2.99f);
-            var g = (int) Random.Range(0, 2.99f);
-            var b = (int) Random.Range(0, 2.99f);
+            var r = (int)Random.Range(0, 2.99f);
+            var g = (int)Random.Range(0, 2.99f);
+            var b = (int)Random.Range(0, 2.99f);
 
             if (r == 2)
             {
@@ -103,7 +103,7 @@ namespace BadAssEngi.Skills.Secondary.ClusterMine
                     crit = false,
                     attacker = Owner,
                     inflictor = gameObject,
-                    damageType = DamageType.Generic,
+                    damageType = DamageTypeCombo.GenericSecondary,
                     procCoefficient = 0f,
                     procChainMask = default
                 };

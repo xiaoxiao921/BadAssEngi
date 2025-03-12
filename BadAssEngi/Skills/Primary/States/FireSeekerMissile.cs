@@ -71,32 +71,32 @@ namespace BadAssEngi.Skills.Primary.States
             }
         }
 
-		private void FireMissile(string targetMuzzle)
-		{
-			_projectileRay = GetAimRay();
+        private void FireMissile(string targetMuzzle)
+        {
+            _projectileRay = GetAimRay();
 
-			if (_modelTransform)
-			{
-				var component = _modelTransform.GetComponent<ChildLocator>();
-				if (component)
-				{
-					var childMuzzleTransform = component.FindChild(targetMuzzle);
-					if (childMuzzleTransform)
-					{
-						_projectileRay.origin = childMuzzleTransform.position;
-					}
-				}
-			}
+            if (_modelTransform)
+            {
+                var component = _modelTransform.GetComponent<ChildLocator>();
+                if (component)
+                {
+                    var childMuzzleTransform = component.FindChild(targetMuzzle);
+                    if (childMuzzleTransform)
+                    {
+                        _projectileRay.origin = childMuzzleTransform.position;
+                    }
+                }
+            }
 
-			AddRecoil(-1f * FireGrenades.recoilAmplitude, -2f * FireGrenades.recoilAmplitude,
+            AddRecoil(-1f * FireGrenades.recoilAmplitude, -2f * FireGrenades.recoilAmplitude,
                 -1f * FireGrenades.recoilAmplitude, 1f * FireGrenades.recoilAmplitude);
-			if (FireGrenades.effectPrefab)
-			{
-				EffectManager.SimpleMuzzleFlash(FireGrenades.effectPrefab, gameObject, targetMuzzle, false);
-			}
+            if (FireGrenades.effectPrefab)
+            {
+                EffectManager.SimpleMuzzleFlash(FireGrenades.effectPrefab, gameObject, targetMuzzle, false);
+            }
 
-			if (isAuthority)
-			{
+            if (isAuthority)
+            {
                 var missileTracker = characterBody.GetComponent<MissileTracker>();
                 if (!missileTracker)
                 {
@@ -105,10 +105,10 @@ namespace BadAssEngi.Skills.Primary.States
                 var currentTargetHurtBox = missileTracker.trackingTarget;
                 var target = currentTargetHurtBox ? currentTargetHurtBox.gameObject : null;
                 FireMissileProjectile(target, this, BaeAssets.PrefabEngiSwarmRocket, targetMuzzle);
-			}
+            }
 
-			characterBody.AddSpreadBloom(FireGrenades.spreadBloomValue);
-		}
+            characterBody.AddSpreadBloom(FireGrenades.spreadBloomValue);
+        }
 
         private static void FireMissileProjectile(GameObject target, BaseState entityState, GameObject projectilePrefab, string targetMuzzle)
         {
@@ -129,6 +129,7 @@ namespace BadAssEngi.Skills.Primary.States
             fireProjectileInfo.crit = RoR2.Util.CheckRoll(entityState.critStat, entityState.outer.commonComponents.characterBody.master);
             fireProjectileInfo.damage = entityState.damageStat * FireSeekerMissile.DamageCoefficient;
             fireProjectileInfo.damageColorIndex = DamageColorIndex.Default;
+            fireProjectileInfo.damageTypeOverride = new DamageTypeCombo?(DamageTypeCombo.GenericPrimary);
             fireProjectileInfo.owner = entityState.outer.gameObject;
             fireProjectileInfo.projectilePrefab = projectilePrefab;
             if (target)
@@ -136,9 +137,9 @@ namespace BadAssEngi.Skills.Primary.States
             ProjectileManager.instance.FireProjectile(fireProjectileInfo);
         }
 
-		public override InterruptPriority GetMinimumInterruptPriority()
-		{
-			return InterruptPriority.Skill;
-		}
+        public override InterruptPriority GetMinimumInterruptPriority()
+        {
+            return InterruptPriority.Skill;
+        }
     }
 }
