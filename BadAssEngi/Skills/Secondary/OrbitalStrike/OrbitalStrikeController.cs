@@ -79,8 +79,12 @@ namespace BadAssEngi.Skills.Secondary.OrbitalStrike
         private void DoSucc()
         {
             var monsters = TeamComponent.GetTeamMembers(TeamIndex.Monster);
-            foreach (var monster in monsters)
+            var monsterCount = monsters.Count;
+            for (int i = 0; i < monsterCount; i++)
             {
+                var monster = monsters[i];
+                if (!monster) continue;
+
                 var healthComponent = monster.GetComponent<HealthComponent>();
                 var characterMotor = monster.GetComponent<CharacterMotor>();
 
@@ -115,8 +119,12 @@ namespace BadAssEngi.Skills.Secondary.OrbitalStrike
         private void DoDamage()
         {
             var monsters = TeamComponent.GetTeamMembers(TeamIndex.Monster);
-            foreach (var monster in monsters)
+            var monsterCount = monsters.Count;
+            for (int i = 0; i < monsterCount; i++)
             {
+                var monster = monsters[i];
+                if (!monster) continue;
+
                 if (monster.transform.position.y - transform.position.y <= 0)
                     continue;
 
