@@ -214,6 +214,12 @@ namespace BadAssEngi.Assets
         {
             MiniGunPrefab = Resources.Load<GameObject>("prefabs/effects/tracers/tracercommandoboost").InstantiateClone("BAEMiniGunTracerPrefab", false);
 
+            var tracer = MiniGunPrefab.GetComponentInChildren<Tracer>();
+            tracer._effectManagerHelper = tracer.gameObject.AddComponent<EffectManagerHelper>();
+            var vfxAttributes = tracer.gameObject.AddComponent<VFXAttributes>();
+            vfxAttributes.vfxPriority = VFXAttributes.VFXPriority.Medium;
+            vfxAttributes.vfxIntensity = VFXAttributes.VFXIntensity.Medium;
+
             ContentAddition.AddEffect(MiniGunPrefab);
 
             PrefabEngiTurretRailGunPrefab.AddComponent<NetworkIdentity>();
