@@ -119,6 +119,11 @@ namespace BadAssEngi.Skills
 
             ChargeSeekerMissileSkillDef.activationStateMachineName = "Weapon";
             ChargeSeekerMissileSkillDef.activationState = new SerializableEntityStateType(typeof(ChargeSeekerMissile));
+            ContentAddition.AddEntityState(typeof(FireSeekerMissile), out var wasAdded);
+            if (!wasAdded)
+            {
+                Log.Error("Failure adding FireSeekerMissile type");
+            }
             ChargeSeekerMissileSkillDef.interruptPriority = InterruptPriority.Any;
             ChargeSeekerMissileSkillDef.baseRechargeInterval = 0;
             ChargeSeekerMissileSkillDef.baseMaxStock = 1;

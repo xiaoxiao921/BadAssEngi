@@ -25,7 +25,11 @@ namespace BadAssEngi.Util
 
                 ContentAddition.AddSkillDef(skills[i]);
 
-                LoadoutAPI.AddSkill(skills[i].activationState.stateType);
+                ContentAddition.AddEntityState(skills[i].activationState.stateType, out var wasAdded);
+                if (!wasAdded)
+                {
+                    Log.Error($"Failure adding {skills[i].activationState.stateType.FullName}");
+                }
             }
 
             ContentAddition.AddSkillFamily(family);
