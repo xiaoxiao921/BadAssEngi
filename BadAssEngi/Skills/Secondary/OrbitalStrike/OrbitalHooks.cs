@@ -34,7 +34,7 @@ namespace BadAssEngi.Skills.Secondary.OrbitalStrike
                 typeof(OrbitalHooks).GetMethodCached("KeepOrbitalCdClientScene"));
             _origClientChangeScene = _onClientChangeSceneHook.GenerateTrampoline<DClientChangeScene>();
 
-            On.RoR2.TeleportOutController.AddTPOutEffect += KeepOrbitalCd;
+            On.RoR2.TeleportOutController.AddTPOutEffect_CharacterModel_float_float_float += KeepOrbitalCd;
         }
 
         private static void OrbitalStrikeMineDoNotStick(On.RoR2.Projectile.ProjectileStickOnImpact.orig_Detach orig, ProjectileStickOnImpact self)
@@ -44,7 +44,7 @@ namespace BadAssEngi.Skills.Secondary.OrbitalStrike
             {
                 var cb = pc.owner.GetComponent<CharacterBody>();
 
-                if (cb == null || !cb)
+                if (!cb)
                     return;
 
                 var cm = cb.master;
@@ -87,7 +87,8 @@ namespace BadAssEngi.Skills.Secondary.OrbitalStrike
             _origClientChangeScene(instance, newSceneName, forceReload);
         }
 
-        private static void KeepOrbitalCd(On.RoR2.TeleportOutController.orig_AddTPOutEffect orig, CharacterModel characterModel, float beginAlpha, float endAlpha, float duration)
+        private static void KeepOrbitalCd(On.RoR2.TeleportOutController.orig_AddTPOutEffect_CharacterModel_float_float_float orig,
+            CharacterModel characterModel, float beginAlpha, float endAlpha, float duration)
         {
             try
             {
