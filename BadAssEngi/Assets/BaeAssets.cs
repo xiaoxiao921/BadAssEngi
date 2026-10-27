@@ -282,6 +282,7 @@ namespace BadAssEngi.Assets
 
             var pcEngiTurret = PrefabEngiTurretRocket.GetComponent<ProjectileController>();
             pcEngiTurret.ghostPrefab = PrefabEngiTurretGhostRocket;
+            pcEngiTurret.ghostPrefabAddress = null;
             PrefabEngiTurretRocket.AddComponent<RocketSmokeControllerGearboxEdition>();
             pcEngiTurret.allowPrediction = false;
 
@@ -302,6 +303,7 @@ namespace BadAssEngi.Assets
 
             var pcEngiSwarm = PrefabEngiSwarmRocket.GetComponent<ProjectileController>();
             pcEngiSwarm.ghostPrefab = PrefabEngiSwarmGhostRocket;
+            pcEngiSwarm.ghostPrefabAddress = null;
             PrefabEngiSwarmRocket.AddComponent<RocketSmokeControllerGearboxEdition>();
             pcEngiSwarm.allowPrediction = false;
 
