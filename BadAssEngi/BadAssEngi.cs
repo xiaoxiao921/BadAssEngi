@@ -41,7 +41,7 @@ namespace BadAssEngi
     {
         public const string ModGuid = "iDeathHD." + ModName;
         private const string ModName = "BadAssEngi";
-        private const string ModVer = "1.3.10";
+        private const string ModVer = "1.3.11";
 
         internal static BodyIndex EngiBodyIndex;
         private const string EngiBodyPrefabName = "EngiBody";
@@ -122,8 +122,20 @@ namespace BadAssEngi
 
             if (!foundCC)
             {
-                IL.RoR2.CharacterMaster.GetDeployableSameSlotLimit += ExpendMaxMinesCount;
+                On.RoR2.CharacterMaster.GetDeployableSameSlotLimit += ExpandMaxMinesCount;
             }
+        }
+
+        private static int ExpandMaxMinesCount(On.RoR2.CharacterMaster.orig_GetDeployableSameSlotLimit orig, CharacterMaster self, DeployableSlot slot)
+        {
+            var res = orig(self, slot);
+
+            if (slot == DeployableSlot.EngiMine)
+            {
+                return 10000;
+            }
+
+            return res;
         }
 
         private static void InitBadAssEngi()
@@ -194,26 +206,6 @@ namespace BadAssEngi
             }
 
             return blastAttackDamageInfo;
-        }
-
-        private static void ExpendMaxMinesCount(ILContext il)
-        {
-            var cursor = new ILCursor(il);
-
-            cursor.GotoNext(
-                i => i.MatchLdcI4(4), // DeployableSlot.EngiMine
-                i => i.MatchStloc(0)
-            );
-            cursor.Next.OpCode = OpCodes.Ldc_I4;
-            cursor.Next.Operand = 10000;
-
-            cursor.GotoNext(
-                i => i.MatchLdarg(0),
-                i => i.MatchCallOrCallvirt<CharacterMaster>("get_" + nameof(CharacterMaster.bodyInstanceObject)),
-                i => i.MatchCallOrCallvirt<GameObject>(nameof(GameObject.GetComponent))
-            );
-            cursor.RemoveRange(5);
-            cursor.Emit(OpCodes.Ldc_I4, 10000);
         }
 
         private static IEnumerator DelayedEngiColorChangeAndUpdateGrenadeType(float seconds)
