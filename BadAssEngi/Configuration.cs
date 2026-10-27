@@ -252,7 +252,7 @@ namespace BadAssEngi
             SeekerMissileMaxProjectileNumber = _file.Bind("Seeker Missile", "Projectile Number", defaultSeekerMissileMaxProjectileNumber,
                 "How many missiles can you fire at max charge.");
 
-            const float defaultClusterMineDamageCoefficient = 0.0355f;
+            const float defaultClusterMineDamageCoefficient = 0.06f;
             ClusterMineDamageCoefficient = _file.Bind("Cluster Mine", "Damage Coefficient", defaultClusterMineDamageCoefficient,
                 "By how much the damage should be multiplied by.");
 

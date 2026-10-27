@@ -52,6 +52,8 @@ namespace BadAssEngi.Skills.Secondary.ClusterMine.EngiStates
                 fireProjectileInfo.force = _force;
                 fireProjectileInfo.crit = RoR2.Util.CheckRoll(critStat, characterBody.master);
                 fireProjectileInfo.projectilePrefab = BaeAssets.EngiClusterMinePrefab;
+
+                ProjectileManager.instance.FireProjectile(fireProjectileInfo);
             }
         }
 
