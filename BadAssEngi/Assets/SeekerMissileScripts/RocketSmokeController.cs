@@ -9,12 +9,12 @@ namespace BadAssEngi.Assets.SeekerMissileScripts
         {
             try
             {
-                var ghostGo = this.GetComponent<ProjectileController>().ghost.gameObject;
+                var ghostGo = GetComponent<ProjectileController>().ghost.gameObject;
 
                 var particleSystems = ghostGo.GetComponentsInChildren<ParticleSystem>();
 
                 var index = ghostGo.transform.childCount;
-                var smoke = ghostGo.transform.GetChild(index - 1);
+                var smokeIndex = index - 1;
 
                 foreach (var particleSystem in particleSystems)
                 {
@@ -23,8 +23,13 @@ namespace BadAssEngi.Assets.SeekerMissileScripts
 #pragma warning restore CS0618 // Type or member is obsolete
                 }
 
-                smoke.SetParent(null);
-                Destroy(smoke.gameObject, 3f);
+                if (smokeIndex >= 0)
+                {
+                    var smoke = ghostGo.transform.GetChild(smokeIndex);
+
+                    smoke.SetParent(null);
+                    Destroy(smoke.gameObject, 3f);
+                }
             }
             catch (System.Exception e)
             {
