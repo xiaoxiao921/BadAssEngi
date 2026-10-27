@@ -46,7 +46,6 @@ namespace BadAssEngi.Animations
             if (EngiEmoteController.EmoteButton && EngiEmoteController.EmoteWindow)
                 return;
 
-
             var isLocal = false;
             foreach (var localUser in LocalUserManager.readOnlyLocalUsersList)
             {
@@ -76,12 +75,6 @@ namespace BadAssEngi.Animations
 
             if (!parent)
                 return;
-
-            var inventoryClusterTransform = parent.transform.Find("InventoryCluster");
-            if (!inventoryClusterTransform)
-                return;
-
-            var inventoryCluster = inventoryClusterTransform.gameObject;
 
             var canvas = RoR2Application.instance.mainCanvas;
             var scaler = canvas.GetComponent<CanvasScaler>();
@@ -144,8 +137,8 @@ namespace BadAssEngi.Animations
                     Object.Destroy(BaeAssets.PauseMenuPrefab);
                 }
 
-                EngiEmoteController.EmoteButton = Object.Instantiate(BaeAssets.MainMenuButtonPrefab, inventoryCluster.transform.parent);
-                EngiEmoteController.EmoteButton.name = "DirectorUIMenuButton";
+                EngiEmoteController.EmoteButton = Object.Instantiate(BaeAssets.MainMenuButtonPrefab, parent);
+                EngiEmoteController.EmoteButton.name = "BAEEmotesUIButton";
                 EngiEmoteController.EmoteButton.transform.localPosition = parent.transform.Find("Skill1Root").localPosition -
                                                                           new Vector3(Configuration.EmoteButtonUIPosX.Value,
                                                                               Configuration.EmoteButtonUIPosY.Value);
